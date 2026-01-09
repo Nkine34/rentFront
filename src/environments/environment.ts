@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   // Pour le développement, on pointe vers le backend Spring Boot.
-  apiUrl: 'http://localhost:8080'
+  apiUrl: 'http://localhost:8081'
 };

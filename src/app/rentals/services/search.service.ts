@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Location } from '../models/location.model';
-import { SearchCriteria } from '../models/search-criteria.model';
+import { Location } from '../models';
+import { SearchCriteria } from '../models';
 import { environment} from '../../../environments/environment';
 
 @Injectable({
@@ -26,13 +26,13 @@ export class SearchService {
 
     // Préparer les données pour l'envoi au backend
     const searchPayload = {
+      pets: criteria.travelers.pets,
+      adults: criteria.travelers.adults,
+      babies: criteria.travelers.babies,
+      children: criteria.travelers.children,
       destination: criteria.destination || '',
       checkIn: criteria.checkIn ? this.formatDate(criteria.checkIn) : null,
-      checkOut: criteria.checkOut ? this.formatDate(criteria.checkOut) : null,
-      adults: criteria.travelers.adults,
-      children: criteria.travelers.children,
-      babies: criteria.travelers.babies,
-      pets: criteria.travelers.pets
+      checkOut: criteria.checkOut ? this.formatDate(criteria.checkOut) : null
     };
 
     return this.http.post<Location[]>(url, searchPayload);

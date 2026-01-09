@@ -5,7 +5,6 @@
 } @else {
   <app-location-list
     [groupedLocations]="store.groupedLocations()"
-    [listingsPerCountry]="listingsPerCountry"
     (detailsClick)="navigateToDetails($event)">
   </app-location-list>
 }

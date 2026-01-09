@@ -3,6 +3,7 @@ import { HomeComponent } from './rentals/home/home.component';
 import { locationsResolver } from './rentals/location.resolver';
 import { SearchPageComponent } from './rentals/search/search-page.component';
 import { LocationDetailsComponent } from './rentals/details/location-details.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,12 @@ export const routes: Routes = [
     path: 'details/:id',
     component: LocationDetailsComponent,
     resolve: { data: locationsResolver }
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent),
+    canActivate: [AuthGuard],
+    data: { roles: ['user'] }
   },
   { path: '**', redirectTo: '' }
 ];

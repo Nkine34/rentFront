@@ -12,20 +12,21 @@
   }
 }
 
-.listings-row-container {
-  overflow-x: hidden; /* Cache le défilement horizontal */
-  overflow-y: hidden; /* Cache le défilement vertical si présent */
-}
+.listings-viewport {
+  height: 450px; /* Hauteur fixe pour le viewport */
+  width: 100%;
 
-.listings-row {
-  display: flex;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-  gap: 24px;
+  // Cible le conteneur interne du viewport pour forcer l'affichage horizontal
+  ::ng-deep .cdk-virtual-scroll-content-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .location-card {
-  width: 300px; /* Largeur fixe pour les cartes */
-  flex-shrink: 0; /* Empêche les cartes de rétrécir */
+  width: 300px;
+  margin-right: 24px; // Remplace le 'gap'
+  flex-shrink: 0;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 

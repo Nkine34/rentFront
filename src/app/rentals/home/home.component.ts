@@ -6,18 +6,17 @@ import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core'
 
 @Component({
   selector: 'app-home',
-// Hidden Lines
+  standalone: true,
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    LocationListComponent
+    LocationListComponent,
+    CommonModule
   ]
 })
 export class HomeComponent implements OnInit {
   protected readonly store = inject(LocationStore);
   private readonly router = inject(Router);
-
-  listingsPerCountry = 4;
 
   ngOnInit(): void {
     this.store.loadLocations();

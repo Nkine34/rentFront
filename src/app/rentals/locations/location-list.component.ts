@@ -7,6 +7,7 @@ import {CommonModule, DatePipe} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {PriceDisplayPipe} from '../pipes/price-display.pipe';
 import { NotificationService } from '../../shared/services/notification.service';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-location-list',
@@ -18,7 +19,8 @@ import { NotificationService } from '../../shared/services/notification.service'
     MatIconModule,
     DatePipe,
     PriceDisplayPipe,
-    NightsPipe
+    NightsPipe,
+    ScrollingModule
   ],
   templateUrl: './location-list.component.html',
   styleUrls: ['./location-list.component.scss'],
@@ -26,18 +28,21 @@ import { NotificationService } from '../../shared/services/notification.service'
 })
 export class LocationListComponent {
   @Input() groupedLocations: { [key: string]: Location[] } | null = {};
-  @Input() listingsPerCountry: number = 4;
   @Output() detailsClick = new EventEmitter<number>();
   private notificationService = inject(NotificationService);
 
   objectKeys = Object.keys;
+
+  trackById(index: number, item: Location): number {
+    return item.id;
+  }
 
   onDetailsClick(id: number): void {
     this.detailsClick.emit(id);
   }
 
   showGps(location: Location, event: MouseEvent): void {
-    event.stopPropagation(); // Correction cruciale pour arrêter la propagation du clic
+    event.stopPropagation();
     if (location.address.latitude && location.address.longitude) {
       this.notificationService.show(`GPS: ${location.address.latitude}, ${location.address.longitude}`);
     } else {

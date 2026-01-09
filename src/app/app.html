@@ -1,24 +1,45 @@
-<nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center;">
-  <a routerLink="/" style="text-decoration: none; display: flex; align-items: center;">
-    <img src="/logo.png" alt="Logo" style="height: 40px;">
-  </a>
+@if (isKeycloakInitialized()) {
+  <nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 16px;">
 
-  <!-- Barre de recherche intégrée au header -->
-  <div style="flex: 1; display: flex; justify-content: center; margin: 0 20px;">
-    <app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
+    <!-- Ligne supérieure : Logo à gauche, Menu à droite -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <a routerLink="/" style="text-decoration: none; display: flex; align-items: center;">
+        <img src="/logo.png" alt="Logo" style="height: 40px;">
+      </a>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu utilisateur">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- Ligne inférieure : Barre de recherche centrée -->
+    <div style="display: flex; justify-content: center; width: 100%;">
+      <app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      @if (!isLoggedIn()) {
+        <button mat-menu-item (click)="login()">
+          <span>Se connecter</span>
+        </button>
+      } @else {
+        <button mat-menu-item routerLink="/profile">
+          <span>Profil de {{ userProfile()?.firstName }}</span>
+        </button>
+        <button mat-menu-item>
+          <span>Devenir hôte</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="logout()">
+          <span>Se déconnecter</span>
+        </button>
+      }
+    </mat-menu>
+  </nav>
+  <router-outlet />
+} @else {
+  <!-- Optionnel: Affichez un spinner de chargement pendant l'initialisation -->
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <p>Chargement de l'application...</p>
   </div>
-
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu utilisateur">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <span>Se connecter</span>
-    </button>
-    <button mat-menu-item>
-      <span>Devenir hôte</span>
-    </button>
-  </mat-menu>
-</nav>
-<router-outlet />
+}
