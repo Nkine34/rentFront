@@ -19,10 +19,10 @@
 
     <mat-menu #menu="matMenu">
       @if (!authService.isLoggedIn()) {
-        <button mat-menu-item (click)="authService.login()">
+        <button mat-menu-item routerLink="/login">
           <span>Connexion</span>
         </button>
-        <button mat-menu-item (click)="authService.register()">
+        <button mat-menu-item routerLink="/register">
           <span>Inscription</span>
         </button>
       } @else {
