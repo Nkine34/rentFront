@@ -14,6 +14,8 @@ export class AuthService {
 
   public async init(): Promise<void> {
     try {
+      // On désactive complètement l'intercepteur automatique.
+      // On le remplacera par notre propre intercepteur manuel.
       const authenticated = await this.keycloak.init({
         config: {
           url: 'http://localhost:8080',
@@ -22,9 +24,9 @@ export class AuthService {
         },
         initOptions: {
           onLoad: 'check-sso',
-          silentCheckSsoRedirectUri:
-            window.location.origin + '/assets/silent-check-sso.html'
-        }
+          silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html'
+        },
+        enableBearerInterceptor: false // TRÈS IMPORTANT
       });
 
       this.isLoggedIn.set(authenticated);
@@ -32,7 +34,7 @@ export class AuthService {
         this.userProfile.set(await this.keycloak.loadUserProfile());
       }
     } catch (error) {
-      console.error('Keycloak init failed', error);
+      console.error('Keycloak init a échoué. L\'application continue en mode anonyme.', error);
     } finally {
       this.isInitialized.set(true);
     }
@@ -48,5 +50,12 @@ export class AuthService {
 
   public logout(): void {
     this.keycloak.logout(window.location.origin);
+  }
+
+  public getToken(): Promise<string | null> {
+    if (!this.isLoggedIn()) {
+      return Promise.resolve(null);
+    }
+    return this.keycloak.getToken();
   }
 }

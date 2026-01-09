@@ -22,7 +22,7 @@
         <button mat-menu-item (click)="authService.login()">
           <span>Connexion</span>
         </button>
-        <button mat-menu-item routerLink="/register">
+        <button mat-menu-item (click)="authService.register()">
           <span>Inscription</span>
         </button>
       } @else {

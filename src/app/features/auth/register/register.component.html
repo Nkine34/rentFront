@@ -5,26 +5,44 @@
     <mat-form-field>
       <mat-label>Prénom</mat-label>
       <input matInput formControlName="firstName">
+      @if (registerForm.get('firstName')?.hasError('required')) {
+        <mat-error>Le prénom est requis.</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Nom</mat-label>
       <input matInput formControlName="lastName">
+       @if (registerForm.get('lastName')?.hasError('required')) {
+        <mat-error>Le nom est requis.</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput formControlName="email" type="email">
+      @if (registerForm.get('email')?.hasError('required')) {
+        <mat-error>L'email est requis.</mat-error>
+      }
+      @if (registerForm.get('email')?.hasError('email')) {
+        <mat-error>Veuillez entrer une adresse email valide.</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Mot de passe</mat-label>
       <input matInput formControlName="password" type="password">
+      @if (registerForm.get('password')?.hasError('pattern')) {
+        <mat-error>8+ caractères, 1 maj, 1 min, 1 chiffre, 1 spécial.</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Confirmer le mot de passe</mat-label>
       <input matInput formControlName="confirmPassword" type="password">
+      @if (registerForm.hasError('mismatch')) {
+        <mat-error>Les mots de passe ne correspondent pas.</mat-error>
+      }
     </mat-form-field>
 
     <div class="phone-group">
@@ -51,10 +69,17 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-checkbox formControlName="acceptTerms">
+    <mat-checkbox formControlName="acceptTerms" color="primary">
       J'accepte les conditions générales d'utilisation.
     </mat-checkbox>
+     @if (registerForm.get('acceptTerms')?.hasError('required')) {
+        <mat-error>Vous devez accepter les conditions.</mat-error>
+      }
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">S'inscrire</button>
+    @if(errorMessage()) {
+      <p class="server-error">{{ errorMessage() }}</p>
+    }
+
+    <button mat-raised-button color="primary" type="submit">S'inscrire</button>
   </form>
 </div>
