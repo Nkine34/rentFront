@@ -105,5 +105,31 @@ export const LocationStore = signalStore(
         )
       )
     ),
+    /**
+     * Recherche les locations selon les critères fournis
+     * @param criteria Critères de recherche (destination, dates, voyageurs)
+     */
+    searchLocations: rxMethod<SearchCriteria>(
+      pipe(
+        tap((criteria) => {
+          patchState(store, { searchCriteria: criteria });
+          store.setLoading();
+        }),
+        switchMap((criteria) =>
+          searchService.searchLocations(criteria).pipe(
+            tapResponse({
+              next: (locations) => {
+                patchState(store, setAllEntities(locations));
+                store.setLoaded();
+              },
+              error: (error: Error) => {
+                console.error('Error searching locations', error);
+                store.setError('Erreur lors de la recherche des annonces.');
+              }
+            })
+          )
+        )
+      )
+    ),
   }))
 );

@@ -21,8 +21,9 @@ export class SearchPageComponent {
   listingsPerCountry = 100;
 
   handleSearch(criteria: SearchCriteria): void {
-    // Met à jour l'ensemble des critères de recherche dans le store
-    this.store.updateSearchCriteria(criteria);
+    // Déclenche la recherche avec les critères fournis
+    // Cette méthode appelle le backend avec les critères et met à jour le store
+    this.store.searchLocations(criteria);
   }
 
   // Méthode pour gérer la navigation
