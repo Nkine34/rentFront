@@ -4,6 +4,7 @@ import { locationsResolver } from './rentals/location.resolver';
 import { SearchPageComponent } from './rentals/search/search-page.component';
 import { LocationDetailsComponent } from './rentals/details/location-details.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './features/auth/register/register.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     path: 'details/:id',
     component: LocationDetailsComponent,
     resolve: { data: locationsResolver }
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'profile',

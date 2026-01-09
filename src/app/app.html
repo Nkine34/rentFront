@@ -1,4 +1,4 @@
-@if (isKeycloakInitialized()) {
+@if (authService.isInitialized()) {
   <nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 16px;">
 
     <!-- Ligne supérieure : Logo à gauche, Menu à droite -->
@@ -18,27 +18,29 @@
     </div>
 
     <mat-menu #menu="matMenu">
-      @if (!isLoggedIn()) {
-        <button mat-menu-item (click)="login()">
-          <span>Se connecter</span>
+      @if (!authService.isLoggedIn()) {
+        <button mat-menu-item (click)="authService.login()">
+          <span>Connexion</span>
+        </button>
+        <button mat-menu-item routerLink="/register">
+          <span>Inscription</span>
         </button>
       } @else {
         <button mat-menu-item routerLink="/profile">
-          <span>Profil de {{ userProfile()?.firstName }}</span>
+          <span>Profil de {{ authService.userProfile()?.firstName }}</span>
         </button>
         <button mat-menu-item>
           <span>Devenir hôte</span>
         </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item (click)="logout()">
-          <span>Se déconnecter</span>
+        <button mat-menu-item (click)="authService.logout()">
+          <span>Déconnexion</span>
         </button>
       }
     </mat-menu>
   </nav>
   <router-outlet />
 } @else {
-  <!-- Optionnel: Affichez un spinner de chargement pendant l'initialisation -->
   <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <p>Chargement de l'application...</p>
   </div>
