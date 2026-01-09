@@ -1,5 +1,24 @@
-<nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc;">
-  <a routerLink="/" style="margin-right: 16px; text-decoration: none; color: blue;">Accueil</a>
-  <a routerLink="/search" style="text-decoration: none; color: blue;">Rechercher</a>
+<nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center;">
+  <a routerLink="/" style="text-decoration: none; display: flex; align-items: center;">
+    <img src="/logo.png" alt="Logo" style="height: 40px;">
+  </a>
+
+  <!-- Barre de recherche intégrée au header -->
+  <div style="flex: 1; display: flex; justify-content: center; margin: 0 20px;">
+    <app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
+  </div>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu utilisateur">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span>Se connecter</span>
+    </button>
+    <button mat-menu-item>
+      <span>Devenir hôte</span>
+    </button>
+  </mat-menu>
 </nav>
 <router-outlet />
