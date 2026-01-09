@@ -1,0 +1,4464 @@
+[
+  {
+    "id": 1,
+    "type": "Appartement",
+    "description": "Un superbe appartement au cœur de Paris, avec une vue imprenable sur la Tour Eiffel. Idéal pour les couples et les petites familles.",
+    "photos": [
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "123 Rue de Rivoli",
+      "postalCode": "75001",
+      "city": "Paris",
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Jean Dupont",
+      "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 120
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Emplacement central", "Vue exceptionnelle", "Décoration moderne"],
+    "totalReviews": 250,
+    "availableFrom": "2024-03-06T00:00:00.000Z",
+    "availableTo": "2024-03-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 150,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "type": "Maison",
+    "description": "Belle maison familiale avec piscine à Marseille, idéale pour les vacances d'été.",
+    "photos": [
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "456 Avenue du Prado",
+      "postalCode": "13008",
+      "city": "Marseille",
+      "latitude": 43.2965,
+      "longitude": 5.3698
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Marie Dubois",
+      "photo": "https://randomuser.me/api/portraits/women/2.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 70,
+      "serviceFee": 40,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Grande piscine", "Jardin spacieux", "Proche des plages"],
+    "totalReviews": 150,
+    "availableFrom": "2024-11-07T00:00:00.000Z",
+    "availableTo": "2024-11-09T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 200,
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "type": "Chambre d'hôtes",
+    "description": "Charmante chambre d'hôtes au cœur du Vieux Lyon, avec petit-déjeuner inclus.",
+    "photos": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "789 Quai Saint-Antoine",
+      "postalCode": "69002",
+      "city": "Lyon",
+      "latitude": 45.75,
+      "longitude": 4.83
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Pierre Martin",
+      "photo": "https://randomuser.me/api/portraits/men/3.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 20,
+      "serviceFee": 15,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Petit-déjeuner inclus", "Proche des transports", "Quartier historique"],
+    "totalReviews": 180,
+    "availableFrom": "2024-04-10T00:00:00.000Z",
+    "availableTo": "2024-04-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 80,
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "type": "Cabane",
+    "description": "Cabane isolée en pleine nature, parfaite pour une escapade romantique ou une retraite paisible.",
+    "photos": [
+      "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1660623/pexels-photo-1660623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Chemin de la Forêt",
+      "postalCode": "24200",
+      "city": "Sarlat-la-Canéda",
+      "latitude": 44.8886,
+      "longitude": 1.2165
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "firePit": true, "smokeAlarm": true },
+    "host": {
+      "name": "Sophie Bernard",
+      "photo": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Immersion nature", "Calme absolu", "Feu de camp"],
+    "totalReviews": 110,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-07T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 180,
+    "rating": 5.0
+  },
+  {
+    "id": 5,
+    "type": "Appartement",
+    "description": "Appartement moderne avec vue sur la mer à Nice, à quelques pas de la Promenade des Anglais.",
+    "photos": [
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Promenade des Anglais",
+      "postalCode": "06000",
+      "city": "Nice",
+      "latitude": 43.7031,
+      "longitude": 7.2661
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "beachAccess": true, "smokeAlarm": true },
+    "host": {
+      "name": "Lucas Petit",
+      "photo": "https://randomuser.me/api/portraits/men/4.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 100
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 60,
+      "serviceFee": 35,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Climatisation"],
+    "totalReviews": 130,
+    "availableFrom": "2024-08-15T00:00:00.000Z",
+    "availableTo": "2024-08-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 130,
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "type": "Maison",
+    "description": "Maison de ville spacieuse près de la Place du Capitole, idéale pour les grands groupes.",
+    "photos": [
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Place du Capitole",
+      "postalCode": "31000",
+      "city": "Toulouse",
+      "latitude": 43.6047,
+      "longitude": 1.4442
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "washingMachine": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Camille Durand",
+      "photo": "https://randomuser.me/api/portraits/women/5.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 200
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Spacieuse", "Bien équipée"],
+    "totalReviews": 250,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 250,
+    "rating": 4.8
+  },
+  {
+    "id": 7,
+    "type": "Yourte",
+    "description": "Expérience unique en yourte au pied du Mont Blanc, pour les amoureux de la nature et du ski.",
+    "photos": [
+      "https://images.pexels.com/photos/1660623/pexels-photo-1660623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Route de la Montagne",
+      "postalCode": "74400",
+      "city": "Chamonix",
+      "latitude": 45.9237,
+      "longitude": 6.8694
+    },
+    "maxGuests": 4,
+    "bedrooms": 1,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "firePit": true, "skiInOut": true, "smokeAlarm": true },
+    "host": {
+      "name": "Antoine Lefevre",
+      "photo": "https://randomuser.me/api/portraits/men/6.jpg",
+      "isSuperhost": false,
+      "responseRate": 90,
+      "responseTime": "dans la journée",
+      "totalReviews": 50
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 30,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Accès direct aux pistes", "Vue montagne", "Expérience insolite"],
+    "totalReviews": 70,
+    "availableFrom": "2024-12-20T00:00:00.000Z",
+    "availableTo": "2024-12-27T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 120,
+    "rating": 4.9
+  },
+  {
+    "id": 8,
+    "type": "Bateau",
+    "description": "Péniche confortable amarrée sur la Garonne, pour une expérience unique à Bordeaux.",
+    "photos": [
+      "https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Quai de la Garonne",
+      "postalCode": "33000",
+      "city": "Bordeaux",
+      "latitude": 44.8412,
+      "longitude": -0.5805
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "firstAidKit": true },
+    "host": {
+      "name": "Isabelle Moreau",
+      "photo": "https://randomuser.me/api/portraits/women/7.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Expérience insolite", "Vue sur la ville", "Proche centre"],
+    "totalReviews": 80,
+    "availableFrom": "2024-05-01T00:00:00.000Z",
+    "availableTo": "2024-05-05T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 110,
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "type": "Appartement",
+    "description": "Appartement cosy au cœur de Strasbourg, à deux pas de la Cathédrale.",
+    "photos": [
+      "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue des Tonneliers",
+      "postalCode": "67000",
+      "city": "Strasbourg",
+      "latitude": 48.5839,
+      "longitude": 7.7445
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Thomas Dubois",
+      "photo": "https://randomuser.me/api/portraits/men/8.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 75
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Proche Cathédrale", "Bien équipé"],
+    "totalReviews": 90,
+    "availableFrom": "2024-09-10T00:00:00.000Z",
+    "availableTo": "2024-09-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 95,
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "type": "Maison troglodyte",
+    "description": "Séjour insolite dans une maison troglodyte, au cœur de la Vallée de la Loire.",
+    "photos": [
+      "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Route des Roches",
+      "postalCode": "37400",
+      "city": "Amboise",
+      "latitude": 47.4124,
+      "longitude": 0.9839
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Laura Gauthier",
+      "photo": "https://randomuser.me/api/portraits/women/9.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Expérience unique", "Calme", "Proche châteaux de la Loire"],
+    "totalReviews": 130,
+    "availableFrom": "2024-10-01T00:00:00.000Z",
+    "availableTo": "2024-10-07T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 160,
+    "rating": 4.9
+  },
+  {
+    "id": 11,
+    "type": "Château",
+    "description": "Magnifique château du 16ème siècle, idéal pour mariages et grands événements.",
+    "photos": [
+      "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Domaine de la Loire",
+      "postalCode": "49260",
+      "city": "Saumur",
+      "latitude": 47.26,
+      "longitude": -0.07
+    },
+    "maxGuests": 12,
+    "bedrooms": 6,
+    "beds": 8,
+    "bathrooms": 4,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "piano": true, "smokeAlarm": true },
+    "host": {
+      "name": "Philippe Leroy",
+      "photo": "https://randomuser.me/api/portraits/men/10.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 300
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 200,
+      "serviceFee": 100,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Luxe", "Piscine", "Grand parc"],
+    "totalReviews": 350,
+    "availableFrom": "2024-07-20T00:00:00.000Z",
+    "availableTo": "2024-07-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 800,
+    "rating": 5.0
+  },
+  {
+    "id": 12,
+    "type": "Appartement",
+    "description": "Appartement historique au cœur de Rouen, avec vue sur le Gros Horloge.",
+    "photos": [
+      "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue du Gros Horloge",
+      "postalCode": "76000",
+      "city": "Rouen",
+      "latitude": 49.4432,
+      "longitude": 1.0999
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "firstAidKit": true },
+    "host": {
+      "name": "Catherine Dubois",
+      "photo": "https://randomuser.me/api/portraits/women/11.jpg",
+      "isSuperhost": false,
+      "responseRate": 96,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 65
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 30,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Vue sur monument", "Proche commerces"],
+    "totalReviews": 80,
+    "availableFrom": "2024-04-01T00:00:00.000Z",
+    "availableTo": "2024-04-05T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 75,
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "type": "Maison",
+    "description": "Maison de vacances en Normandie, à deux pas de la plage de Cabourg.",
+    "photos": [
+      "https://images.pexels.com/photos/221540/pexels-photo-221540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Avenue de la Mer",
+      "postalCode": "14390",
+      "city": "Cabourg",
+      "latitude": 49.288,
+      "longitude": -0.116
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 5,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "freeParking": true, "beachAccess": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Nicolas Leroy",
+      "photo": "https://randomuser.me/api/portraits/men/12.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 75,
+      "serviceFee": 45,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Proche plage", "Jardin", "Idéal famille"],
+    "totalReviews": 200,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 220,
+    "rating": 4.8
+  },
+  {
+    "id": 14,
+    "type": "Tiny house",
+    "description": "Petite maison écologique au cœur de la Vendée, pour un séjour minimaliste et nature.",
+    "photos": [
+      "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1660623/pexels-photo-1660623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Le champ du repos",
+      "postalCode": "85000",
+      "city": "La Roche-sur-Yon",
+      "latitude": 46.67,
+      "longitude": -1.42
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "firePit": true, "smokeAlarm": true },
+    "host": {
+      "name": "Émilie Roussel",
+      "photo": "https://randomuser.me/api/portraits/women/13.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 70
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 30,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Écologique", "Calme", "Nature"],
+    "totalReviews": 90,
+    "availableFrom": "2024-06-15T00:00:00.000Z",
+    "availableTo": "2024-06-20T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 90,
+    "rating": 4.9
+  },
+  {
+    "id": 15,
+    "type": "Appartement",
+    "description": "Appartement lumineux en plein centre de Montpellier, proche de la Place de la Comédie.",
+    "photos": [
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Place de la Comédie",
+      "postalCode": "34000",
+      "city": "Montpellier",
+      "latitude": 43.6108,
+      "longitude": 3.8767
+    },
+    "maxGuests": 4,
+    "bedrooms": 1,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Julien Blanc",
+      "photo": "https://randomuser.me/api/portraits/men/14.jpg",
+      "isSuperhost": false,
+      "responseRate": 99,
+      "responseTime": "dans l'heure",
+      "totalReviews": 95
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Lumineux", "Climatisation"],
+    "totalReviews": 110,
+    "availableFrom": "2024-07-05T00:00:00.000Z",
+    "availableTo": "2024-07-12T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 110,
+    "rating": 4.7
+  },
+  {
+    "id": 16,
+    "type": "Riad",
+    "description": "Authentique Riad marocain au cœur d'Arles, avec patio et piscine.",
+    "photos": [
+      "https://images.pexels.com/photos/3214064/pexels-photo-3214064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la Kasbah",
+      "postalCode": "13200",
+      "city": "Arles",
+      "latitude": 43.6761,
+      "longitude": 4.6277
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 3,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "firstAidKit": true },
+    "host": {
+      "name": "Fatima Benali",
+      "photo": "https://randomuser.me/api/portraits/women/15.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 160
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Authentique", "Piscine privée", "Patio"],
+    "totalReviews": 190,
+    "availableFrom": "2024-09-01T00:00:00.000Z",
+    "availableTo": "2024-09-07T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 280,
+    "rating": 4.9
+  },
+  {
+    "id": 17,
+    "type": "Bateau",
+    "description": "Bateau habitable sur la Loire, pour une escapade originale à Nantes.",
+    "photos": [
+      "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Port de Plaisance",
+      "postalCode": "44000",
+      "city": "Nantes",
+      "latitude": 47.2184,
+      "longitude": -1.5536
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "fireExtinguisher": true },
+    "host": {
+      "name": "David Leblanc",
+      "photo": "https://randomuser.me/api/portraits/men/16.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 40
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Original", "Vue sur l'eau", "Proche centre"],
+    "totalReviews": 60,
+    "availableFrom": "2024-05-10T00:00:00.000Z",
+    "availableTo": "2024-05-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 130,
+    "rating": 4.6
+  },
+  {
+    "id": 18,
+    "type": "Appartement",
+    "description": "Appartement de charme sur le Cours Mirabeau, au cœur d'Aix-en-Provence.",
+    "photos": [
+      "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Cours Mirabeau",
+      "postalCode": "13100",
+      "city": "Aix-en-Provence",
+      "latitude": 43.5297,
+      "longitude": 5.4474
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "smokeAlarm": true },
+    "host": {
+      "name": "Sophie Martin",
+      "photo": "https://randomuser.me/api/portraits/women/17.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 55,
+      "serviceFee": 32,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Climatisation", "Proche commerces"],
+    "totalReviews": 140,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-07T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 140,
+    "rating": 4.8
+  },
+  {
+    "id": 19,
+    "type": "Ferme",
+    "description": "Ancienne ferme rénovée au cœur de la Gascogne, idéale pour un séjour à la campagne.",
+    "photos": [
+      "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Lieu-dit La Campagne",
+      "postalCode": "32000",
+      "city": "Auch",
+      "latitude": 43.645,
+      "longitude": 0.585
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "freeParking": true, "bbqGrill": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Jean-Luc Giraud",
+      "photo": "https://randomuser.me/api/portraits/men/18.jpg",
+      "isSuperhost": false,
+      "responseRate": 90,
+      "responseTime": "dans la journée",
+      "totalReviews": 70
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Campagne", "Calme", "Barbecue"],
+    "totalReviews": 90,
+    "availableFrom": "2024-06-20T00:00:00.000Z",
+    "availableTo": "2024-06-27T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 190,
+    "rating": 4.9
+  },
+  {
+    "id": 20,
+    "type": "Maison d'hôtes",
+    "description": "Maison d'hôtes typique en Alsace, au cœur des vignobles de Colmar.",
+    "photos": [
+      "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Route des Vins",
+      "postalCode": "68000",
+      "city": "Colmar",
+      "latitude": 48.079,
+      "longitude": 7.358
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "freeParking": true, "firstAidKit": true },
+    "host": {
+      "name": "Christine Meyer",
+      "photo": "https://randomuser.me/api/portraits/women/19.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 100
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 25,
+      "serviceFee": 18,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vignobles", "Authentique", "Calme"],
+    "totalReviews": 120,
+    "availableFrom": "2024-05-01T00:00:00.000Z",
+    "availableTo": "2024-05-05T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 100,
+    "rating": 4.8
+  },
+  {
+    "id": 21,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Bordeaux, proche des commerces et restaurants.",
+    "photos": [
+      "https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue Sainte-Catherine",
+      "postalCode": "33000",
+      "city": "Bordeaux",
+      "latitude": 44.8378,
+      "longitude": -0.5792
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Marc Dubois",
+      "photo": "https://randomuser.me/api/portraits/men/20.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Proche commerces", "Bien équipé"],
+    "totalReviews": 100,
+    "availableFrom": "2024-04-15T00:00:00.000Z",
+    "availableTo": "2024-04-20T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 95,
+    "rating": 4.7
+  },
+  {
+    "id": 22,
+    "type": "Maison",
+    "description": "Villa avec vue panoramique sur la Côte d'Azur, à quelques minutes de Nice.",
+    "photos": [
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Chemin des Crêtes",
+      "postalCode": "06360",
+      "city": "Èze",
+      "latitude": 43.7266,
+      "longitude": 7.3636
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "outdoorDining": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Sophie Leclerc",
+      "photo": "https://randomuser.me/api/portraits/women/21.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Vue panoramique", "Piscine", "Calme"],
+    "totalReviews": 180,
+    "availableFrom": "2024-07-10T00:00:00.000Z",
+    "availableTo": "2024-07-17T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 300,
+    "rating": 5.0
+  },
+  {
+    "id": 23,
+    "type": "Grange",
+    "description": "Grange rénovée avec goût en Auvergne, idéale pour un séjour en famille ou entre amis.",
+    "photos": [
+      "https://images.pexels.com/photos/236067/pexels-photo-236067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "La Ferme du Bonheur",
+      "postalCode": "63122",
+      "city": "Ceyrat",
+      "latitude": 45.7333,
+      "longitude": 3.0767
+    },
+    "maxGuests": 10,
+    "bedrooms": 5,
+    "beds": 7,
+    "bathrooms": 3,
+    "amenities": { "kitchen": true, "freeParking": true, "bbqGrill": true, "poolTable": true, "smokeAlarm": true },
+    "host": {
+      "name": "Michel Dubois",
+      "photo": "https://randomuser.me/api/portraits/men/22.jpg",
+      "isSuperhost": false,
+      "responseRate": 90,
+      "responseTime": "dans la journée",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 120,
+      "serviceFee": 70,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Spacieuse", "Billard", "Campagne"],
+    "totalReviews": 100,
+    "availableFrom": "2024-09-05T00:00:00.000Z",
+    "availableTo": "2024-09-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 350,
+    "rating": 4.8
+  },
+  {
+    "id": 24,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Lyon, proche de la Place Bellecour.",
+    "photos": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la République",
+      "postalCode": "69002",
+      "city": "Lyon",
+      "latitude": 45.764,
+      "longitude": 4.8357
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "dedicatedWorkspace": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Claire Lefevre",
+      "photo": "https://randomuser.me/api/portraits/women/23.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 130
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Proche transports", "Bien équipé"],
+    "totalReviews": 160,
+    "availableFrom": "2024-03-20T00:00:00.000Z",
+    "availableTo": "2024-03-25T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 120,
+    "rating": 4.7
+  },
+  {
+    "id": 25,
+    "type": "Maison",
+    "description": "Villa de luxe avec piscine à Biarritz, vue sur l'océan et accès direct à la plage.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Route de la Corniche",
+      "postalCode": "64200",
+      "city": "Biarritz",
+      "latitude": 43.483,
+      "longitude": -1.558
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "outdoorShower": true, "firstAidKit": true },
+    "host": {
+      "name": "Jean-Pierre Moreau",
+      "photo": "https://randomuser.me/api/portraits/men/24.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 200
+    },
+    "bookingDetails": {
+      "minNights": 4,
+      "cleaningFee": 150,
+      "serviceFee": 80,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Vue océan", "Accès plage", "Piscine"],
+    "totalReviews": 250,
+    "availableFrom": "2024-08-10T00:00:00.000Z",
+    "availableTo": "2024-08-17T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 280,
+    "rating": 4.9
+  },
+  {
+    "id": 26,
+    "type": "Chambre d'hôtes",
+    "description": "Chambre d'hôtes de charme à La Rochelle, proche du Vieux Port.",
+    "photos": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue des Remparts",
+      "postalCode": "17000",
+      "city": "La Rochelle",
+      "latitude": 46.1603,
+      "longitude": -1.1512
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Sophie Giraud",
+      "photo": "https://randomuser.me/api/portraits/women/25.jpg",
+      "isSuperhost": false,
+      "responseRate": 96,
+      "responseTime": "dans l'heure",
+      "totalReviews": 55
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 25,
+      "serviceFee": 18,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Proche Vieux Port", "Bien situé"],
+    "totalReviews": 70,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-05T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 85,
+    "rating": 4.6
+  },
+  {
+    "id": 27,
+    "type": "Appartement",
+    "description": "Appartement élégant avec vue sur la Place Stanislas à Nancy.",
+    "photos": [
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Place Stanislas",
+      "postalCode": "54000",
+      "city": "Nancy",
+      "latitude": 48.6939,
+      "longitude": 6.1844
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Pauline Dubois",
+      "photo": "https://randomuser.me/api/portraits/women/26.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue Place Stanislas", "Centre-ville", "Bien équipé"],
+    "totalReviews": 110,
+    "availableFrom": "2024-05-20T00:00:00.000Z",
+    "availableTo": "2024-05-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 105,
+    "rating": 4.7
+  },
+  {
+    "id": 28,
+    "type": "Maison",
+    "description": "Maison de luxe à Paris, proche des Champs-Élysées, avec jardin privé.",
+    "photos": [
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue du Faubourg Saint-Honoré",
+      "postalCode": "75008",
+      "city": "Paris",
+      "latitude": 48.8718,
+      "longitude": 2.3129
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "paidParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Charles Dupont",
+      "photo": "https://randomuser.me/api/portraits/men/27.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 250
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 150,
+      "serviceFee": 80,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Luxe", "Jardin privé", "Piscine"],
+    "totalReviews": 300,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 400,
+    "rating": 5.0
+  },
+  {
+    "id": 29,
+    "type": "Appartement",
+    "description": "Appartement avec vue sur le Vieux Port de Marseille, idéal pour découvrir la ville.",
+    "photos": [
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Vieux Port",
+      "postalCode": "13001",
+      "city": "Marseille",
+      "latitude": 43.2952,
+      "longitude": 5.3738
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Julie Martin",
+      "photo": "https://randomuser.me/api/portraits/women/28.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue Vieux Port", "Centre-ville", "Proche restaurants"],
+    "totalReviews": 110,
+    "availableFrom": "2024-09-10T00:00:00.000Z",
+    "availableTo": "2024-09-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 130,
+    "rating": 4.7
+  },
+  {
+    "id": 30,
+    "type": "Maison",
+    "description": "Maison de ville rénovée à Lyon, proche du Parc de la Tête d'Or.",
+    "photos": [
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la République",
+      "postalCode": "69002",
+      "city": "Lyon",
+      "latitude": 45.764,
+      "longitude": 4.8357
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "washingMachine": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "David Bernard",
+      "photo": "https://randomuser.me/api/portraits/men/29.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Proche parc", "Spacieuse", "Bien équipée"],
+    "totalReviews": 210,
+    "availableFrom": "2024-10-01T00:00:00.000Z",
+    "availableTo": "2024-10-07T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 210,
+    "rating": 4.8
+  },
+  {
+    "id": 31,
+    "type": "Appartement",
+    "description": "Appartement lumineux avec balcon à Nice, proche de la Place Garibaldi.",
+    "photos": [
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Place Garibaldi",
+      "postalCode": "06300",
+      "city": "Nice",
+      "latitude": 43.7009,
+      "longitude": 7.2759
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "smokeAlarm": true },
+    "host": {
+      "name": "Laura Petit",
+      "photo": "https://randomuser.me/api/portraits/women/30.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 70
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Balcon", "Lumineux", "Proche centre"],
+    "totalReviews": 90,
+    "availableFrom": "2024-04-01T00:00:00.000Z",
+    "availableTo": "2024-04-05T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 100,
+    "rating": 4.6
+  },
+  {
+    "id": 32,
+    "type": "Maison",
+    "description": "Maison de caractère à Toulouse, proche du centre historique.",
+    "photos": [
+      "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue du Taur",
+      "postalCode": "31000",
+      "city": "Toulouse",
+      "latitude": 43.605,
+      "longitude": 1.443
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "firstAidKit": true },
+    "host": {
+      "name": "Antoine Gauthier",
+      "photo": "https://randomuser.me/api/portraits/men/31.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 120
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 60,
+      "serviceFee": 35,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Charme", "Bien situé"],
+    "totalReviews": 140,
+    "availableFrom": "2024-05-15T00:00:00.000Z",
+    "availableTo": "2024-05-20T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 160,
+    "rating": 4.7
+  },
+  {
+    "id": 33,
+    "type": "Appartement",
+    "description": "Appartement cosy au cœur de Strasbourg, idéal pour un couple.",
+    "photos": [
+      "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue des Orfèvres",
+      "postalCode": "67000",
+      "city": "Strasbourg",
+      "latitude": 48.581,
+      "longitude": 7.749
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Marion Bernard",
+      "photo": "https://randomuser.me/api/portraits/women/32.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Cosy", "Proche transports"],
+    "totalReviews": 75,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-05T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 80,
+    "rating": 4.5
+  },
+  {
+    "id": 34,
+    "type": "Maison",
+    "description": "Maison familiale avec jardin à Nantes, proche des bords de Loire.",
+    "photos": [
+      "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Quai de la Fosse",
+      "postalCode": "44000",
+      "city": "Nantes",
+      "latitude": 47.211,
+      "longitude": -1.564
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "washingMachine": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Romain Dubois",
+      "photo": "https://randomuser.me/api/portraits/men/33.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 70,
+      "serviceFee": 40,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Jardin", "Proche Loire", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-07-20T00:00:00.000Z",
+    "availableTo": "2024-07-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 200,
+    "rating": 4.8
+  },
+  {
+    "id": 35,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Montpellier, avec balcon et vue sur la ville.",
+    "photos": [
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la Monnaie",
+      "postalCode": "34000",
+      "city": "Montpellier",
+      "latitude": 43.609,
+      "longitude": 3.879
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Clara Martin",
+      "photo": "https://randomuser.me/api/portraits/women/34.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Balcon", "Vue ville", "Climatisation"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 125,
+    "rating": 4.7
+  },
+  {
+    "id": 36,
+    "type": "Maison",
+    "description": "Maison de caractère à Arles, proche des Arènes, avec patio et piscine.",
+    "photos": [
+      "https://images.pexels.com/photos/3214064/pexels-photo-3214064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Place du Forum",
+      "postalCode": "13200",
+      "city": "Arles",
+      "latitude": 43.677,
+      "longitude": 4.628
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "bbqGrill": true, "firstAidKit": true },
+    "host": {
+      "name": "Louis Bernard",
+      "photo": "https://randomuser.me/api/portraits/men/35.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Proche Arènes", "Piscine", "Patio"],
+    "totalReviews": 210,
+    "availableFrom": "2024-09-15T00:00:00.000Z",
+    "availableTo": "2024-09-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 290,
+    "rating": 4.9
+  },
+  {
+    "id": 37,
+    "type": "Appartement",
+    "description": "Appartement de luxe à Paris, proche de la Place Vendôme, avec vue sur la ville.",
+    "photos": [
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la Paix",
+      "postalCode": "75002",
+      "city": "Paris",
+      "latitude": 48.869,
+      "longitude": 2.332
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Sophie Dubois",
+      "photo": "https://randomuser.me/api/portraits/women/36.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 120
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 60,
+      "serviceFee": 35,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Luxe", "Vue ville", "Centre-ville"],
+    "totalReviews": 150,
+    "availableFrom": "2024-03-10T00:00:00.000Z",
+    "availableTo": "2024-03-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 180,
+    "rating": 4.9
+  },
+  {
+    "id": 38,
+    "type": "Maison",
+    "description": "Villa moderne avec piscine à Marseille, proche de la Corniche Kennedy.",
+    "photos": [
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Corniche Kennedy",
+      "postalCode": "13007",
+      "city": "Marseille",
+      "latitude": 43.284,
+      "longitude": 5.359
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "outdoorShower": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Antoine Martin",
+      "photo": "https://randomuser.me/api/portraits/men/37.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 100
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine", "Vue mer", "Proche plage"],
+    "totalReviews": 120,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 260,
+    "rating": 4.8
+  },
+  {
+    "id": 39,
+    "type": "Appartement",
+    "description": "Appartement cosy au cœur du Vieux Lyon, proche des traboules.",
+    "photos": [
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue du Boeuf",
+      "postalCode": "69005",
+      "city": "Lyon",
+      "latitude": 45.760,
+      "longitude": 4.826
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "firstAidKit": true },
+    "host": {
+      "name": "Émilie Durand",
+      "photo": "https://randomuser.me/api/portraits/women/38.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vieux Lyon", "Cosy", "Proche restaurants"],
+    "totalReviews": 75,
+    "availableFrom": "2024-04-20T00:00:00.000Z",
+    "availableTo": "2024-04-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 40,
+    "type": "Maison",
+    "description": "Maison de caractère à Dijon, proche du centre historique et des vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "France",
+      "countryCode": "FR",
+      "street": "Rue de la Liberté",
+      "postalCode": "21000",
+      "city": "Dijon",
+      "latitude": 47.322,
+      "longitude": 5.041
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "freeParking": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Lucas Gauthier",
+      "photo": "https://randomuser.me/api/portraits/men/39.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Centre historique", "Vignobles", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-05T00:00:00.000Z",
+    "availableTo": "2024-06-12T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 230,
+    "rating": 4.9
+  },
+  {
+    "id": 41,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Madrid, proche de la Gran Vía.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Gran Vía, 10",
+      "postalCode": "28013",
+      "city": "Madrid",
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Maria Garcia",
+      "photo": "https://randomuser.me/api/portraits/women/40.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche transports"],
+    "totalReviews": 130,
+    "availableFrom": "2024-03-10T00:00:00.000Z",
+    "availableTo": "2024-03-15T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 120,
+    "rating": 4.7
+  },
+  {
+    "id": 42,
+    "type": "Maison",
+    "description": "Maison de ville avec piscine à Barcelone, proche du quartier gothique.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Carrer de la Boqueria, 1",
+      "postalCode": "08002",
+      "city": "Barcelone",
+      "latitude": 41.381,
+      "longitude": 2.172
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 3,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "outdoorDining": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Javier Lopez",
+      "photo": "https://randomuser.me/api/portraits/men/41.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Centre historique", "Bien équipée"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 220,
+    "rating": 4.8
+  },
+  {
+    "id": 43,
+    "type": "Casa particular",
+    "description": "Authentique Casa Particular à Séville, avec patio andalou.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Betis, 1",
+      "postalCode": "41010",
+      "city": "Séville",
+      "latitude": 37.382,
+      "longitude": -5.998
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "patio": true, "firstAidKit": true },
+    "host": {
+      "name": "Elena Rodriguez",
+      "photo": "https://randomuser.me/api/portraits/women/42.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 130
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Patio andalou", "Centre historique", "Climatisation"],
+    "totalReviews": 150,
+    "availableFrom": "2024-05-01T00:00:00.000Z",
+    "availableTo": "2024-05-07T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 100,
+    "rating": 4.9
+  },
+  {
+    "id": 44,
+    "type": "Appartement",
+    "description": "Appartement moderne à Valence, proche de la Cité des Arts et des Sciences.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaça de l'Ajuntament, 1",
+      "postalCode": "46002",
+      "city": "Valence",
+      "latitude": 39.469,
+      "longitude": -0.376
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Miguel Sanchez",
+      "photo": "https://randomuser.me/api/portraits/men/43.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 55,
+      "serviceFee": 32,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Proche plage", "Centre-ville", "Bien équipé"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-15T00:00:00.000Z",
+    "availableTo": "2024-08-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 45,
+    "type": "Ferme",
+    "description": "Ferme traditionnelle en Andalousie, avec piscine et vue sur la campagne.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Camino de la Acequia",
+      "postalCode": "29004",
+      "city": "Malaga",
+      "latitude": 36.719,
+      "longitude": -4.420
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 6,
+    "bathrooms": 3,
+    "amenities": { "kitchen": true, "pool": true, "freeParking": true, "bbqGrill": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Ana Perez",
+      "photo": "https://randomuser.me/api/portraits/women/44.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine", "Campagne", "Barbecue"],
+    "totalReviews": 200,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 300,
+    "rating": 4.9
+  },
+  {
+    "id": 46,
+    "type": "Appartement",
+    "description": "Appartement cosy en plein centre de Madrid, proche de la Plaza Mayor.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Mayor, 1",
+      "postalCode": "28013",
+      "city": "Madrid",
+      "latitude": 40.416,
+      "longitude": -3.707
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Carlos Ruiz",
+      "photo": "https://randomuser.me/api/portraits/men/45.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Plaza Mayor"],
+    "totalReviews": 75,
+    "availableFrom": "2024-04-01T00:00:00.000Z",
+    "availableTo": "2024-04-05T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 90,
+    "rating": 4.5
+  },
+  {
+    "id": 47,
+    "type": "Maison",
+    "description": "Maison de vacances avec vue sur la mer à Barcelone, proche de la plage.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Passeig Marítim, 1",
+      "postalCode": "08003",
+      "city": "Barcelone",
+      "latitude": 41.380,
+      "longitude": 2.190
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "outdoorShower": true, "firstAidKit": true },
+    "host": {
+      "name": "Sofia Garcia",
+      "photo": "https://randomuser.me/api/portraits/women/46.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 160
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Piscine"],
+    "totalReviews": 180,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 250,
+    "rating": 4.9
+  },
+  {
+    "id": 48,
+    "type": "Appartement",
+    "description": "Appartement moderne à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de Sierpes, 50",
+      "postalCode": "41004",
+      "city": "Séville",
+      "latitude": 37.389,
+      "longitude": -5.994
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Pablo Lopez",
+      "photo": "https://randomuser.me/api/portraits/men/47.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Climatisation", "Proche monuments"],
+    "totalReviews": 110,
+    "availableFrom": "2024-09-10T00:00:00.000Z",
+    "availableTo": "2024-09-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 115,
+    "rating": 4.7
+  },
+  {
+    "id": 49,
+    "type": "Maison",
+    "description": "Maison de ville à Valence, proche de la Plaza de la Reina.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaça de la Reina, 1",
+      "postalCode": "46003",
+      "city": "Valence",
+      "latitude": 39.475,
+      "longitude": -0.375
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "freeParking": true, "bbqGrill": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Laura Fernandez",
+      "photo": "https://randomuser.me/api/portraits/women/48.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 70,
+      "serviceFee": 40,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Centre-ville", "Jardin", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-20T00:00:00.000Z",
+    "availableTo": "2024-06-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 180,
+    "rating": 4.8
+  },
+  {
+    "id": 50,
+    "type": "Appartement",
+    "description": "Appartement avec vue sur la mer à Malaga, proche de la plage de la Malagueta.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Larios, 1",
+      "postalCode": "29005",
+      "city": "Malaga",
+      "latitude": 36.719,
+      "longitude": -4.420
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "smokeAlarm": true },
+    "host": {
+      "name": "Diego Gomez",
+      "photo": "https://randomuser.me/api/portraits/men/49.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Climatisation"],
+    "totalReviews": 100,
+    "availableFrom": "2024-05-05T00:00:00.000Z",
+    "availableTo": "2024-05-10T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 100,
+    "rating": 4.6
+  },
+  {
+    "id": 51,
+    "type": "Maison",
+    "description": "Maison de luxe à Madrid, proche du Palais Royal, avec piscine privée.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de Toledo, 1",
+      "postalCode": "28005",
+      "city": "Madrid",
+      "latitude": 40.413,
+      "longitude": -3.707
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "paidParking": true, "firstAidKit": true },
+    "host": {
+      "name": "Isabel Lopez",
+      "photo": "https://randomuser.me/api/portraits/women/50.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 200
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 120,
+      "serviceFee": 70,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Luxe", "Piscine privée", "Proche Palais Royal"],
+    "totalReviews": 250,
+    "availableFrom": "2024-07-10T00:00:00.000Z",
+    "availableTo": "2024-07-17T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 320,
+    "rating": 4.9
+  },
+  {
+    "id": 52,
+    "type": "Appartement",
+    "description": "Appartement moderne à Barcelone, proche de la Sagrada Familia.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Passeig de Gràcia, 92",
+      "postalCode": "08008",
+      "city": "Barcelone",
+      "latitude": 41.3851,
+      "longitude": 2.1734
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Juan Garcia",
+      "photo": "https://randomuser.me/api/portraits/men/51.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 100
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche Sagrada Familia"],
+    "totalReviews": 120,
+    "availableFrom": "2024-09-01T00:00:00.000Z",
+    "availableTo": "2024-09-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 140,
+    "rating": 4.8
+  },
+  {
+    "id": 53,
+    "type": "Maison",
+    "description": "Maison de ville à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Avenida de la Constitución, 1",
+      "postalCode": "41004",
+      "city": "Séville",
+      "latitude": 37.388,
+      "longitude": -5.993
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "patio": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Maria Rodriguez",
+      "photo": "https://randomuser.me/api/portraits/women/52.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Patio andalou", "Centre historique", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-10T00:00:00.000Z",
+    "availableTo": "2024-06-17T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 230,
+    "rating": 4.7
+  },
+  {
+    "id": 54,
+    "type": "Appartement",
+    "description": "Appartement moderne à Valence, proche de la Cité des Arts et des Sciences.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Colón, 1",
+      "postalCode": "46004",
+      "city": "Valence",
+      "latitude": 39.469,
+      "longitude": -0.376
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Jose Garcia",
+      "photo": "https://randomuser.me/api/portraits/men/53.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Proche plage", "Centre-ville", "Bien équipé"],
+    "totalReviews": 100,
+    "availableFrom": "2024-07-05T00:00:00.000Z",
+    "availableTo": "2024-07-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 105,
+    "rating": 4.6
+  },
+  {
+    "id": 55,
+    "type": "Maison",
+    "description": "Ferme traditionnelle en Andalousie, avec piscine et vue sur la campagne.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Paseo del Parque, 1",
+      "postalCode": "29016",
+      "city": "Malaga",
+      "latitude": 36.720,
+      "longitude": -4.419
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "pool": true, "freeParking": true, "bbqGrill": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Ana Lopez",
+      "photo": "https://randomuser.me/api/portraits/women/54.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine", "Campagne", "Barbecue"],
+    "totalReviews": 200,
+    "availableFrom": "2024-08-20T00:00:00.000Z",
+    "availableTo": "2024-08-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 280,
+    "rating": 4.9
+  },
+  {
+    "id": 56,
+    "type": "Appartement",
+    "description": "Appartement cosy en plein centre de Madrid, proche de la Puerta del Sol.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de Alcalá, 1",
+      "postalCode": "28014",
+      "city": "Madrid",
+      "latitude": 40.416,
+      "longitude": -3.703
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "David Garcia",
+      "photo": "https://randomuser.me/api/portraits/men/55.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche Puerta del Sol"],
+    "totalReviews": 110,
+    "availableFrom": "2024-03-25T00:00:00.000Z",
+    "availableTo": "2024-03-30T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 130,
+    "rating": 4.7
+  },
+  {
+    "id": 57,
+    "type": "Maison",
+    "description": "Maison de ville à Barcelone, proche du quartier gothique, avec patio privé.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Carrer de la Princesa, 1",
+      "postalCode": "08003",
+      "city": "Barcelone",
+      "latitude": 41.385,
+      "longitude": 2.180
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Laura Perez",
+      "photo": "https://randomuser.me/api/portraits/women/56.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 140
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 60,
+      "serviceFee": 35,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Patio privé", "Bien équipée"],
+    "totalReviews": 160,
+    "availableFrom": "2024-04-10T00:00:00.000Z",
+    "availableTo": "2024-04-15T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 190,
+    "rating": 4.8
+  },
+  {
+    "id": 58,
+    "type": "Appartement",
+    "description": "Appartement moderne à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle San Fernando, 1",
+      "postalCode": "41004",
+      "city": "Séville",
+      "latitude": 37.386,
+      "longitude": -5.993
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Miguel Rodriguez",
+      "photo": "https://randomuser.me/api/portraits/men/57.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Climatisation", "Proche monuments"],
+    "totalReviews": 100,
+    "availableFrom": "2024-05-20T00:00:00.000Z",
+    "availableTo": "2024-05-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 59,
+    "type": "Maison",
+    "description": "Maison de ville à Valence, proche de la Plaza de la Virgen.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaça de la Verge, 1",
+      "postalCode": "46001",
+      "city": "Valence",
+      "latitude": 39.476,
+      "longitude": -0.375
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Ana Lopez",
+      "photo": "https://randomuser.me/api/portraits/women/58.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Centre historique", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-15T00:00:00.000Z",
+    "availableTo": "2024-06-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 240,
+    "rating": 4.8
+  },
+  {
+    "id": 60,
+    "type": "Appartement",
+    "description": "Appartement avec vue sur la mer à Malaga, proche du port.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Paseo del Muelle Uno, 1",
+      "postalCode": "29016",
+      "city": "Malaga",
+      "latitude": 36.719,
+      "longitude": -4.419
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Diego Garcia",
+      "photo": "https://randomuser.me/api/portraits/men/59.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Proche port"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-05T00:00:00.000Z",
+    "availableTo": "2024-08-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 160,
+    "rating": 4.7
+  },
+  {
+    "id": 61,
+    "type": "Maison",
+    "description": "Maison de luxe à Madrid, proche de la Plaza Mayor, avec piscine privée.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaza Mayor, 1",
+      "postalCode": "28012",
+      "city": "Madrid",
+      "latitude": 40.415,
+      "longitude": -3.707
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "paidParking": true, "firstAidKit": true },
+    "host": {
+      "name": "Elena Sanchez",
+      "photo": "https://randomuser.me/api/portraits/women/60.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 200
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 120,
+      "serviceFee": 70,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Luxe", "Piscine privée", "Proche Plaza Mayor"],
+    "totalReviews": 250,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 310,
+    "rating": 4.9
+  },
+  {
+    "id": 62,
+    "type": "Appartement",
+    "description": "Appartement moderne à Barcelone, proche de la Cathédrale.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Carrer de Ferran, 1",
+      "postalCode": "08002",
+      "city": "Barcelone",
+      "latitude": 41.381,
+      "longitude": 2.176
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Carlos Perez",
+      "photo": "https://randomuser.me/api/portraits/men/61.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 70
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Cosy", "Proche Cathédrale"],
+    "totalReviews": 85,
+    "availableFrom": "2024-04-05T00:00:00.000Z",
+    "availableTo": "2024-04-10T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 63,
+    "type": "Maison",
+    "description": "Maison de ville à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de la Constitución, 1",
+      "postalCode": "41001",
+      "city": "Séville",
+      "latitude": 37.388,
+      "longitude": -5.993
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "paidParking": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Maria Gomez",
+      "photo": "https://randomuser.me/api/portraits/women/62.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 120,
+      "serviceFee": 70,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Piscine privée", "Centre historique", "Bien équipée"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-20T00:00:00.000Z",
+    "availableTo": "2024-07-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 350,
+    "rating": 5.0
+  },
+  {
+    "id": 64,
+    "type": "Appartement",
+    "description": "Appartement moderne à Valence, proche de la Cité des Arts et des Sciences.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaça de la Reina, 1",
+      "postalCode": "46003",
+      "city": "Valence",
+      "latitude": 39.475,
+      "longitude": -0.375
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Jose Lopez",
+      "photo": "https://randomuser.me/api/portraits/men/63.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche Cité des Arts"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 120,
+    "rating": 4.7
+  },
+  {
+    "id": 65,
+    "type": "Maison",
+    "description": "Maison de vacances avec vue sur la mer à Malaga, proche de la plage.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Marqués de Larios, 1",
+      "postalCode": "29005",
+      "city": "Malaga",
+      "latitude": 36.719,
+      "longitude": -4.420
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "outdoorShower": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Maria Sanchez",
+      "photo": "https://randomuser.me/api/portraits/women/64.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Piscine"],
+    "totalReviews": 210,
+    "availableFrom": "2024-09-10T00:00:00.000Z",
+    "availableTo": "2024-09-17T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 260,
+    "rating": 4.8
+  },
+  {
+    "id": 66,
+    "type": "Appartement",
+    "description": "Appartement cosy en plein centre de Madrid, proche de la Plaza Mayor.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de Preciados, 1",
+      "postalCode": "28013",
+      "city": "Madrid",
+      "latitude": 40.418,
+      "longitude": -3.703
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "David Ruiz",
+      "photo": "https://randomuser.me/api/portraits/men/65.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Plaza Mayor"],
+    "totalReviews": 75,
+    "availableFrom": "2024-04-15T00:00:00.000Z",
+    "availableTo": "2024-04-20T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 95,
+    "rating": 4.5
+  },
+  {
+    "id": 67,
+    "type": "Maison",
+    "description": "Maison de ville à Barcelone, proche du quartier gothique, avec patio privé.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Carrer de l'Argenteria, 1",
+      "postalCode": "08003",
+      "city": "Barcelone",
+      "latitude": 41.385,
+      "longitude": 2.180
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "patio": true, "smokeAlarm": true },
+    "host": {
+      "name": "Laura Gomez",
+      "photo": "https://randomuser.me/api/portraits/women/66.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 140
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 60,
+      "serviceFee": 35,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Patio privé", "Piscine"],
+    "totalReviews": 160,
+    "availableFrom": "2024-07-05T00:00:00.000Z",
+    "availableTo": "2024-07-12T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 210,
+    "rating": 4.8
+  },
+  {
+    "id": 68,
+    "type": "Appartement",
+    "description": "Appartement moderne à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Tetuán, 1",
+      "postalCode": "41001",
+      "city": "Séville",
+      "latitude": 37.388,
+      "longitude": -5.993
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Pablo Sanchez",
+      "photo": "https://randomuser.me/api/portraits/men/67.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Climatisation", "Proche monuments"],
+    "totalReviews": 100,
+    "availableFrom": "2024-05-10T00:00:00.000Z",
+    "availableTo": "2024-05-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 69,
+    "type": "Maison",
+    "description": "Maison de ville à Valence, proche de la Plaza de la Virgen.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Plaça de la Mare de Déu, 1",
+      "postalCode": "46001",
+      "city": "Valence",
+      "latitude": 39.476,
+      "longitude": -0.375
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Ana Lopez",
+      "photo": "https://randomuser.me/api/portraits/women/68.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Centre historique", "Bien équipée"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-15T00:00:00.000Z",
+    "availableTo": "2024-06-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 240,
+    "rating": 4.8
+  },
+  {
+    "id": 70,
+    "type": "Appartement",
+    "description": "Appartement avec vue sur la mer à Malaga, proche du port.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Paseo del Muelle Uno, 1",
+      "postalCode": "29016",
+      "city": "Malaga",
+      "latitude": 36.719,
+      "longitude": -4.419
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Diego Garcia",
+      "photo": "https://randomuser.me/api/portraits/men/69.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Proche port"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-05T00:00:00.000Z",
+    "availableTo": "2024-08-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 160,
+    "rating": 4.7
+  },
+  {
+    "id": 71,
+    "type": "Maison",
+    "description": "Maison de luxe à Madrid, proche de la Plaza Mayor, avec piscine privée.",
+    "photos": [
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de la Montera, 1",
+      "postalCode": "28013",
+      "city": "Madrid",
+      "latitude": 40.419,
+      "longitude": -3.703
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "paidParking": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Elena Sanchez",
+      "photo": "https://randomuser.me/api/portraits/women/70.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 200
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 120,
+      "serviceFee": 70,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Stricte"
+    },
+    "highlights": ["Luxe", "Piscine privée", "Proche Plaza Mayor"],
+    "totalReviews": 250,
+    "availableFrom": "2024-07-15T00:00:00.000Z",
+    "availableTo": "2024-07-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 310,
+    "rating": 4.9
+  },
+  {
+    "id": 72,
+    "type": "Appartement",
+    "description": "Appartement moderne à Barcelone, proche de la Cathédrale.",
+    "photos": [
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Carrer del Bisbe, 1",
+      "postalCode": "08002",
+      "city": "Barcelone",
+      "latitude": 41.382,
+      "longitude": 2.176
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Carlos Perez",
+      "photo": "https://randomuser.me/api/portraits/men/71.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 70
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre historique", "Cosy", "Proche Cathédrale"],
+    "totalReviews": 85,
+    "availableFrom": "2024-04-20T00:00:00.000Z",
+    "availableTo": "2024-04-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 120,
+    "rating": 4.6
+  },
+  {
+    "id": 73,
+    "type": "Maison",
+    "description": "Maison de ville à Séville, proche de la Cathédrale et de l'Alcazar.",
+    "photos": [
+      "https://images.pexels.com/photos/2079450/pexels-photo-2079450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Mateos Gago, 1",
+      "postalCode": "41004",
+      "city": "Séville",
+      "latitude": 37.386,
+      "longitude": -5.993
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "patio": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Maria Gomez",
+      "photo": "https://randomuser.me/api/portraits/women/72.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Patio andalou", "Centre historique", "Bien équipée"],
+    "totalReviews": 210,
+    "availableFrom": "2024-06-25T00:00:00.000Z",
+    "availableTo": "2024-07-02T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 270,
+    "rating": 4.8
+  },
+  {
+    "id": 74,
+    "type": "Appartement",
+    "description": "Appartement moderne à Valence, proche de la Cité des Arts et des Sciences.",
+    "photos": [
+      "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle de la Paz, 1",
+      "postalCode": "46003",
+      "city": "Valence",
+      "latitude": 39.475,
+      "longitude": -0.375
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Jose Lopez",
+      "photo": "https://randomuser.me/api/portraits/men/73.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche Cité des Arts"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-05T00:00:00.000Z",
+    "availableTo": "2024-08-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 135,
+    "rating": 4.7
+  },
+  {
+    "id": 75,
+    "type": "Maison",
+    "description": "Maison de vacances avec vue sur la mer à Malaga, proche de la plage.",
+    "photos": [
+      "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Espagne",
+      "countryCode": "ES",
+      "street": "Calle Granada, 1",
+      "postalCode": "29015",
+      "city": "Malaga",
+      "latitude": 36.720,
+      "longitude": -4.419
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "beachAccess": true, "outdoorShower": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Maria Sanchez",
+      "photo": "https://randomuser.me/api/portraits/women/74.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Vue mer", "Accès plage", "Piscine"],
+    "totalReviews": 210,
+    "availableFrom": "2024-09-01T00:00:00.000Z",
+    "availableTo": "2024-09-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 200,
+    "rating": 4.8
+  },
+  {
+    "id": 76,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Rome, proche du Colisée.",
+    "photos": [
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via del Corso, 10",
+      "postalCode": "00186",
+      "city": "Rome",
+      "latitude": 41.9028,
+      "longitude": 12.4964
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Giulia Rossi",
+      "photo": "https://randomuser.me/api/portraits/women/75.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 45,
+      "serviceFee": 28,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Climatisation", "Proche Colisée"],
+    "totalReviews": 130,
+    "availableFrom": "2024-03-10T00:00:00.000Z",
+    "availableTo": "2024-03-15T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 140,
+    "rating": 4.8
+  },
+  {
+    "id": 77,
+    "type": "Maison",
+    "description": "Maison de campagne en Toscane, avec piscine et vue sur les vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Strada in Chianti",
+      "postalCode": "50022",
+      "city": "Florence",
+      "latitude": 43.7696,
+      "longitude": 11.2558
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 3,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Marco Bianchi",
+      "photo": "https://randomuser.me/api/portraits/men/76.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vignobles", "Campagne"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 250,
+    "rating": 4.9
+  },
+  {
+    "id": 78,
+    "type": "Trullo",
+    "description": "Authentique Trullo dans les Pouilles, pour une expérience unique en Italie.",
+    "photos": [
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Monte San Michele, 1",
+      "postalCode": "72011",
+      "city": "Alberobello",
+      "latitude": 40.784,
+      "longitude": 17.237
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "freeParking": true, "patio": true, "firstAidKit": true },
+    "host": {
+      "name": "Sofia Ricci",
+      "photo": "https://randomuser.me/api/portraits/women/77.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 130
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Authentique", "Expérience unique", "Patio"],
+    "totalReviews": 150,
+    "availableFrom": "2024-05-01T00:00:00.000Z",
+    "availableTo": "2024-05-07T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 180,
+    "rating": 5.0
+  },
+  {
+    "id": 79,
+    "type": "Appartement",
+    "description": "Appartement moderne à Venise, proche de la Place Saint-Marc.",
+    "photos": [
+      "https://images.pexels.com/photos/3569950/pexels-photo-3569950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Piazza San Marco, 1",
+      "postalCode": "30124",
+      "city": "Venise",
+      "latitude": 45.434,
+      "longitude": 12.339
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "tv": true, "smokeAlarm": true },
+    "host": {
+      "name": "Luca Ferrari",
+      "photo": "https://randomuser.me/api/portraits/men/78.jpg",
+      "isSuperhost": false,
+      "responseRate": 98,
+      "responseTime": "dans l'heure",
+      "totalReviews": 90
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Vue canal", "Proche Place Saint-Marc"],
+    "totalReviews": 110,
+    "availableFrom": "2024-08-15T00:00:00.000Z",
+    "availableTo": "2024-08-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 160,
+    "rating": 4.7
+  },
+  {
+    "id": 80,
+    "type": "Dammuso",
+    "description": "Authentique Dammuso sur l'île de Pantelleria, avec piscine et vue sur la mer.",
+    "photos": [
+      "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Contrada Scauri, 1",
+      "postalCode": "91017",
+      "city": "Pantelleria",
+      "latitude": 36.78,
+      "longitude": 11.99
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "pool": true, "lakeAccess": true, "bbqGrill": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Elena Russo",
+      "photo": "https://randomuser.me/api/portraits/women/79.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vue mer", "Calme"],
+    "totalReviews": 210,
+    "availableFrom": "2024-06-01T00:00:00.000Z",
+    "availableTo": "2024-06-08T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 280,
+    "rating": 4.9
+  },
+  {
+    "id": 81,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Rome, proche du Panthéon.",
+    "photos": [
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Nazionale, 1",
+      "postalCode": "00184",
+      "city": "Rome",
+      "latitude": 41.902,
+      "longitude": 12.495
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Francesco Conti",
+      "photo": "https://randomuser.me/api/portraits/men/80.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Panthéon"],
+    "totalReviews": 100,
+    "availableFrom": "2024-04-01T00:00:00.000Z",
+    "availableTo": "2024-04-05T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 110,
+    "rating": 4.6
+  },
+  {
+    "id": 82,
+    "type": "Maison",
+    "description": "Maison de campagne en Toscane, avec piscine et vue sur les vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Piazzale Michelangelo, 1",
+      "postalCode": "50125",
+      "city": "Florence",
+      "latitude": 43.769,
+      "longitude": 11.255
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "outdoorDining": true, "firstAidKit": true },
+    "host": {
+      "name": "Chiara Moretti",
+      "photo": "https://randomuser.me/api/portraits/women/81.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vignobles", "Campagne"],
+    "totalReviews": 210,
+    "availableFrom": "2024-08-01T00:00:00.000Z",
+    "availableTo": "2024-08-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 290,
+    "rating": 4.9
+  },
+  {
+    "id": 83,
+    "type": "Trullo",
+    "description": "Authentique Trullo dans les Pouilles, pour une expérience unique en Italie.",
+    "photos": [
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Indipendenza, 1",
+      "postalCode": "72011",
+      "city": "Alberobello",
+      "latitude": 40.784,
+      "longitude": 17.237
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "freeParking": true, "bbqGrill": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Giovanni Esposito",
+      "photo": "https://randomuser.me/api/portraits/men/82.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Authentique", "Expérience unique", "Barbecue"],
+    "totalReviews": 75,
+    "availableFrom": "2024-06-10T00:00:00.000Z",
+    "availableTo": "2024-06-15T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 170,
+    "rating": 4.8
+  },
+  {
+    "id": 84,
+    "type": "Appartement",
+    "description": "Appartement moderne à Venise, proche du Pont du Rialto.",
+    "photos": [
+      "https://images.pexels.com/photos/3569950/pexels-photo-3569950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Riva del Ferro, 1",
+      "postalCode": "30124",
+      "city": "Venise",
+      "latitude": 45.434,
+      "longitude": 12.339
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Alessia Romano",
+      "photo": "https://randomuser.me/api/portraits/women/83.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue canal", "Climatisation", "Proche Pont du Rialto"],
+    "totalReviews": 130,
+    "availableFrom": "2024-09-01T00:00:00.000Z",
+    "availableTo": "2024-09-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 175,
+    "rating": 4.7
+  },
+  {
+    "id": 85,
+    "type": "Dammuso",
+    "description": "Authentique Dammuso sur l'île de Pantelleria, avec piscine et vue sur la mer.",
+    "photos": [
+      "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via del Porto, 1",
+      "postalCode": "91017",
+      "city": "Pantelleria",
+      "latitude": 36.78,
+      "longitude": 11.99
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "pool": true, "lakeAccess": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Giuseppe Gallo",
+      "photo": "https://randomuser.me/api/portraits/men/84.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vue mer", "Calme"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-10T00:00:00.000Z",
+    "availableTo": "2024-07-17T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 300,
+    "rating": 4.9
+  },
+  {
+    "id": 86,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Rome, proche de la Fontaine de Trevi.",
+    "photos": [
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Piazza Navona, 1",
+      "postalCode": "00186",
+      "city": "Rome",
+      "latitude": 41.899,
+      "longitude": 12.473
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Laura De Luca",
+      "photo": "https://randomuser.me/api/portraits/women/85.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Fontaine de Trevi"],
+    "totalReviews": 100,
+    "availableFrom": "2024-04-15T00:00:00.000Z",
+    "availableTo": "2024-04-20T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 130,
+    "rating": 4.7
+  },
+  {
+    "id": 87,
+    "type": "Maison",
+    "description": "Maison de campagne en Toscane, avec piscine et vue sur les vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via della Spada, 1",
+      "postalCode": "50123",
+      "city": "Florence",
+      "latitude": 43.771,
+      "longitude": 11.252
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Marco Rossi",
+      "photo": "https://randomuser.me/api/portraits/men/86.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vignobles", "Campagne"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-20T00:00:00.000Z",
+    "availableTo": "2024-06-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 280,
+    "rating": 4.8
+  },
+  {
+    "id": 88,
+    "type": "Trullo",
+    "description": "Authentique Trullo dans les Pouilles, pour une expérience unique en Italie.",
+    "photos": [
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Cesare Battisti, 1",
+      "postalCode": "72011",
+      "city": "Alberobello",
+      "latitude": 40.784,
+      "longitude": 17.237
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "freeParking": true, "fireplace": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Giulia Bianchi",
+      "photo": "https://randomuser.me/api/portraits/women/87.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Authentique", "Expérience unique", "Cheminée"],
+    "totalReviews": 75,
+    "availableFrom": "2024-05-10T00:00:00.000Z",
+    "availableTo": "2024-05-15T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 190,
+    "rating": 4.9
+  },
+  {
+    "id": 89,
+    "type": "Appartement",
+    "description": "Appartement moderne à Venise, proche du Pont du Rialto.",
+    "photos": [
+      "https://images.pexels.com/photos/3569950/pexels-photo-3569950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Fondamenta Zattere, 1",
+      "postalCode": "30123",
+      "city": "Venise",
+      "latitude": 45.434,
+      "longitude": 12.339
+    },
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Luca Rossi",
+      "photo": "https://randomuser.me/api/portraits/men/88.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue canal", "Climatisation", "Proche Pont du Rialto"],
+    "totalReviews": 130,
+    "availableFrom": "2024-08-05T00:00:00.000Z",
+    "availableTo": "2024-08-12T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 180,
+    "rating": 4.7
+  },
+  {
+    "id": 90,
+    "type": "Dammuso",
+    "description": "Authentique Dammuso sur l'île de Pantelleria, avec piscine et vue sur la mer.",
+    "photos": [
+      "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Roma, 1",
+      "postalCode": "91017",
+      "city": "Pantelleria",
+      "latitude": 36.78,
+      "longitude": 11.99
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "pool": true, "lakeAccess": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Elena Ferrari",
+      "photo": "https://randomuser.me/api/portraits/women/89.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vue mer", "Calme"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-01T00:00:00.000Z",
+    "availableTo": "2024-07-08T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 320,
+    "rating": 4.9
+  },
+  {
+    "id": 91,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Rome, proche du Panthéon.",
+    "photos": [
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via del Babuino, 1",
+      "postalCode": "00187",
+      "city": "Rome",
+      "latitude": 41.902,
+      "longitude": 12.482
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "smokeAlarm": true },
+    "host": {
+      "name": "Francesco Romano",
+      "photo": "https://randomuser.me/api/portraits/men/90.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Panthéon"],
+    "totalReviews": 100,
+    "availableFrom": "2024-04-20T00:00:00.000Z",
+    "availableTo": "2024-04-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 125,
+    "rating": 4.6
+  },
+  {
+    "id": 92,
+    "type": "Maison",
+    "description": "Maison de campagne en Toscane, avec piscine et vue sur les vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via de' Neri, 1",
+      "postalCode": "50122",
+      "city": "Florence",
+      "latitude": 43.771,
+      "longitude": 11.252
+    },
+    "maxGuests": 8,
+    "bedrooms": 4,
+    "beds": 5,
+    "bathrooms": 3,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Chiara Bianchi",
+      "photo": "https://randomuser.me/api/portraits/women/91.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 90,
+      "serviceFee": 55,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vignobles", "Campagne"],
+    "totalReviews": 210,
+    "availableFrom": "2024-07-15T00:00:00.000Z",
+    "availableTo": "2024-07-22T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 310,
+    "rating": 4.9
+  },
+  {
+    "id": 93,
+    "type": "Trullo",
+    "description": "Authentique Trullo dans les Pouilles, pour une expérience unique en Italie.",
+    "photos": [
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via Cavour, 1",
+      "postalCode": "72011",
+      "city": "Alberobello",
+      "latitude": 40.784,
+      "longitude": 17.237
+    },
+    "maxGuests": 5,
+    "bedrooms": 2,
+    "beds": 3,
+    "bathrooms": 1,
+    "amenities": { "kitchen": true, "patio": true, "bbqGrill": true, "smokeAlarm": true },
+    "host": {
+      "name": "Giovanni Russo",
+      "photo": "https://randomuser.me/api/portraits/men/92.jpg",
+      "isSuperhost": false,
+      "responseRate": 95,
+      "responseTime": "dans quelques heures",
+      "totalReviews": 60
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 40,
+      "serviceFee": 25,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Authentique", "Expérience unique", "Barbecue"],
+    "totalReviews": 75,
+    "availableFrom": "2024-05-20T00:00:00.000Z",
+    "availableTo": "2024-05-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 200,
+    "rating": 4.8
+  },
+  {
+    "id": 94,
+    "type": "Appartement",
+    "description": "Appartement moderne à Venise, proche du Pont du Rialto.",
+    "photos": [
+      "https://images.pexels.com/photos/3569950/pexels-photo-3569950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Riva degli Schiavoni, 1",
+      "postalCode": "30122",
+      "city": "Venise",
+      "latitude": 45.434,
+      "longitude": 12.340
+    },
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "airConditioning": true, "tv": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Alessia Conti",
+      "photo": "https://randomuser.me/api/portraits/women/93.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 110
+    },
+    "bookingDetails": {
+      "minNights": 2,
+      "cleaningFee": 50,
+      "serviceFee": 30,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Vue canal", "Climatisation", "Proche Pont du Rialto"],
+    "totalReviews": 130,
+    "availableFrom": "2024-08-10T00:00:00.000Z",
+    "availableTo": "2024-08-17T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 170,
+    "rating": 4.7
+  },
+  {
+    "id": 95,
+    "type": "Dammuso",
+    "description": "Authentique Dammuso sur l'île de Pantelleria, avec piscine et vue sur la mer.",
+    "photos": [
+      "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via San Leonardo, 1",
+      "postalCode": "91017",
+      "city": "Pantelleria",
+      "latitude": 36.78,
+      "longitude": 11.99
+    },
+    "maxGuests": 7,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "kitchen": true, "pool": true, "beachAccess": true, "outdoorShower": true, "fireExtinguisher": true },
+    "host": {
+      "name": "Giuseppe Ferrari",
+      "photo": "https://randomuser.me/api/portraits/men/94.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 180
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 100,
+      "serviceFee": 60,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vue mer", "Calme"],
+    "totalReviews": 210,
+    "availableFrom": "2024-06-15T00:00:00.000Z",
+    "availableTo": "2024-06-22T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 350,
+    "rating": 5.0
+  },
+  {
+    "id": 96,
+    "type": "Appartement",
+    "description": "Appartement moderne en plein centre de Rome, proche de la Fontaine de Trevi.",
+    "photos": [
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via del Tritone, 1",
+      "postalCode": "00187",
+      "city": "Rome",
+      "latitude": 41.902,
+      "longitude": 12.482
+    },
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "bathrooms": 1,
+    "amenities": { "wifi": true, "kitchen": true, "dedicatedWorkspace": true, "firstAidKit": true },
+    "host": {
+      "name": "Laura Romano",
+      "photo": "https://randomuser.me/api/portraits/women/95.jpg",
+      "isSuperhost": false,
+      "responseRate": 97,
+      "responseTime": "dans l'heure",
+      "totalReviews": 80
+    },
+    "bookingDetails": {
+      "minNights": 1,
+      "cleaningFee": 35,
+      "serviceFee": 20,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Flexible"
+    },
+    "highlights": ["Centre-ville", "Cosy", "Proche Fontaine de Trevi"],
+    "totalReviews": 100,
+    "availableFrom": "2024-04-20T00:00:00.000Z",
+    "availableTo": "2024-04-25T00:00:00.000Z",
+    "hostType": "particulier",
+    "pricePerNight": 125,
+    "rating": 4.6
+  },
+  {
+    "id": 97,
+    "type": "Maison",
+    "description": "Maison de campagne en Toscane, avec piscine et vue sur les vignobles.",
+    "photos": [
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3584925/pexels-photo-3584925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "address": {
+      "country": "Italie",
+      "countryCode": "IT",
+      "street": "Via della Spada, 1",
+      "postalCode": "50123",
+      "city": "Florence",
+      "latitude": 43.771,
+      "longitude": 11.252
+    },
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "bathrooms": 2,
+    "amenities": { "wifi": true, "kitchen": true, "pool": true, "freeParking": true, "carbonMonoxideAlarm": true },
+    "host": {
+      "name": "Marco Bianchi",
+      "photo": "https://randomuser.me/api/portraits/men/96.jpg",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "dans l'heure",
+      "totalReviews": 150
+    },
+    "bookingDetails": {
+      "minNights": 3,
+      "cleaningFee": 80,
+      "serviceFee": 50,
+      "taxRate": 0.1,
+      "cancellationPolicy": "Modérée"
+    },
+    "highlights": ["Piscine privée", "Vignobles", "Campagne"],
+    "totalReviews": 180,
+    "availableFrom": "2024-06-20T00:00:00.000Z",
+    "availableTo": "2024-06-27T00:00:00.000Z",
+    "hostType": "professionnel",
+    "pricePerNight": 280,
+    "rating": 4.8
+  }
+  ]

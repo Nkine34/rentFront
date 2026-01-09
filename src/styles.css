@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Styles forcés pour l'affichage des annonces par pays */
+.listings-row-container {
+  overflow-x: hidden !important; /* Cache le défilement horizontal */
+  overflow-y: hidden !important; /* Cache le défilement vertical si présent */
+}
+
+.listings-row {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Empêche le retour à la ligne */
+  gap: 24px !important;
+}
+
+.location-card {
+  width: 300px !important; /* Largeur fixe pour les cartes */
+  flex-shrink: 0 !important; /* Empêche les cartes de rétrécir */
+}

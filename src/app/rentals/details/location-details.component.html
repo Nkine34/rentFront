@@ -1,0 +1,49 @@
+<div class="details-container">
+  @if (store.loading()) {
+    <p>Chargement des détails de l'annonce...</p>
+  } @else if (store.error(); as error) {
+    <p class="error-message">{{ error }}</p>
+    <button mat-raised-button color="primary" (click)="goBack()">Retour</button>
+  } @else if (location(); as location) {
+    <mat-card class="location-detail-card">
+      <button mat-icon-button class="back-button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+
+      <mat-card-title>{{ location.type }} à {{ location.address.city }}</mat-card-title>
+      <mat-card-subtitle>{{ location.address.street }}, {{ location.address.postalCode }} {{ location.address.city }}, {{ location.address.country }}</mat-card-subtitle>
+
+      <div class="image-gallery">
+        @for (photo of location.photos; track photo) {
+          <img [src]="photo" alt="Photo of {{location.type}}">
+        }
+      </div>
+
+      <mat-card-content>
+        <div class="details-main-content">
+          <div class="listing-info">
+            <h3>Description</h3>
+            <p>{{ location.description }}</p>
+
+            <h3>Points forts</h3>
+            <ul class="highlights-list">
+              @for (highlight of location.highlights; track $index) {
+                <li><mat-icon>check</mat-icon> {{ highlight }}</li>
+              }
+            </ul>
+
+            <app-amenities-list [amenities]="location.amenities"></app-amenities-list>
+          </div>
+
+          <div class="host-and-booking">
+            <app-host-info [host]="location.host"></app-host-info>
+            <app-booking-card [pricePerNight]="location.pricePerNight" [details]="location.bookingDetails"></app-booking-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  } @else {
+    <p class="error-message">Annonce non trouvée.</p>
+    <button mat-raised-button color="primary" (click)="goBack()">Retour</button>
+  }
+</div>

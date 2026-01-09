@@ -1,0 +1,11 @@
+@if (store.loading()) {
+  <p class="loading-message">Chargement des annonces...</p>
+} @else if (store.error(); as error) {
+  <p class="error-message">{{ error }}</p>
+} @else {
+  <app-location-list
+    [groupedLocations]="store.groupedLocations()"
+    [listingsPerCountry]="listingsPerCountry"
+    (detailsClick)="navigateToDetails($event)">
+  </app-location-list>
+}

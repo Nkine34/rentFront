@@ -1,0 +1,40 @@
+@if (groupedLocations && objectKeys(groupedLocations).length > 0) {
+  <div class="countries-container">
+    @for (country of objectKeys(groupedLocations); track country) {
+      <section class="country-section">
+        <h2>{{ country }} ({{ groupedLocations[country].length }} annonces)</h2>
+        <div class="listings-row-container">
+          <div class="listings-row">
+            @for (location of groupedLocations[country].slice(0, listingsPerCountry); track location.id) {
+              <mat-card class="location-card" (click)="onDetailsClick(location.id)">
+                <div class="card-image-container">
+                  <img mat-card-image [src]="location.photos[0]" alt="Photo of {{location.type}} in {{location.address.city}}">
+                  <div class="rating">
+                    <mat-icon>star</mat-icon>
+                    <span>{{ location.rating.toFixed(1) }}</span>
+                  </div>
+                </div>
+                <mat-card-header>
+                  <div class="header-text">
+                    <mat-card-title>{{ location.type }} {{ location.address.city }}</mat-card-title>
+                    <mat-card-subtitle>Hôte {{ location.hostType }}</mat-card-subtitle>
+                  </div>
+                  <button mat-icon-button (click)="showGps(location, $event)" class="gps-button">
+                    <mat-icon>location_on</mat-icon>
+                  </button>
+                </mat-card-header>
+                <mat-card-content>
+                  <p class="specs">{{ location.maxGuests }} voyageurs · {{ location.bedrooms }} chambre(s) · {{ location.beds }} lit(s) · {{ location.bathrooms }} salle(s) de bain</p>
+                  <p>{{ location.availableFrom | date:'d' }}–{{ location.availableTo | date:'d MMM' }}</p>
+                  <p class="price"><strong>{{ location.pricePerNight | priceDisplay:([location.availableFrom, location.availableTo] | nights) }}</strong></p>
+                </mat-card-content>
+              </mat-card>
+            }
+          </div>
+        </div>
+      </section>
+    }
+  </div>
+} @else {
+  <p class="no-results">Aucune annonce ne correspond à votre recherche.</p>
+}

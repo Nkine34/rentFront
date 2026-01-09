@@ -1,0 +1,13 @@
+<app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
+
+@if (store.loading()) {
+  <p>Recherche en cours...</p>
+} @else if (store.error(); as error) {
+  <p class="error-message">{{ error }}</p>
+} @else {
+  <app-location-list
+    [groupedLocations]="store.filteredAndGroupedLocations()"
+    [listingsPerCountry]="listingsPerCountry"
+    (detailsClick)="navigateToDetails($event)">
+  </app-location-list>
+}
