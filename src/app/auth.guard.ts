@@ -1,33 +1,18 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { KeycloakService, KeycloakAuthGuard } from 'keycloak-angular';
+import { inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
+import { AuthService } from './features/auth/auth.service';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard extends KeycloakAuthGuard {
-  constructor(
-    protected override readonly router: Router,
-    protected readonly keycloak: KeycloakService
-  ) {
-    super(router, keycloak);
+export const authGuard: CanActivateFn = (route, state) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+
+  if (authService.isLoggedIn()) {
+    // Si l'utilisateur est connecté, on le laisse passer.
+    return true;
+  } else {
+    // Si l'utilisateur n'est pas connecté, on le redirige vers notre page de login.
+    // On sauvegarde l'URL qu'il voulait visiter pour l'y rediriger après la connexion.
+    router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+    return false;
   }
-
-  public async isAccessAllowed(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Promise<boolean> {
-    if (!this.authenticated) {
-      await this.keycloak.login({
-        redirectUri: window.location.origin + state.url
-      });
-    }
-
-    const requiredRoles = route.data['roles'];
-    if (!requiredRoles || requiredRoles.length === 0) {
-      return true;
-    }
-
-    return requiredRoles.every((role: string) => this.roles.includes(role));
-  }
-}
+};

@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
 import { Observable, throwError, from } from 'rxjs';
-import { catchError, switchMap, tap } from 'rxjs/operators';
+import { catchError, switchMap, tap, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,48 +16,40 @@ export class AuthService {
   public isLoggedIn = signal(false);
   public userProfile = signal<KeycloakProfile | null>(null);
 
-  constructor() {
-    this.init();
-  }
+  constructor() {}
 
-  private async init(): Promise<void> {
+  public async init(): Promise<void> {
+    console.log('AuthService: Début de l\'initialisation...');
     try {
-      // On vérifie si un token est déjà dans le localStorage
-      const token = localStorage.getItem('access_token');
-      if (token) {
-        // On initialise Keycloak avec le token existant
-        const authenticated = await this.keycloak.init({
-          config: {
-            url: 'http://localhost:8080',
-            realm: 'rent',
-            clientId: 'rent-front'
-          },
-          initOptions: {
-            token: token,
-            refreshToken: localStorage.getItem('refresh_token') || undefined,
-            onLoad: 'check-sso'
-          },
-          enableBearerInterceptor: false
-        });
-        this.isLoggedIn.set(authenticated);
-        if (authenticated) {
-          this.userProfile.set(await this.keycloak.loadUserProfile());
-        }
-      } else {
-        // Pas de token, initialisation simple
-        await this.keycloak.init({
-          config: {
-            url: 'http://localhost:8080',
-            realm: 'rent',
-            clientId: 'rent-front'
-          },
-          enableBearerInterceptor: false
-        });
+      // Initialisation la plus simple et passive possible.
+      // Aucune option qui pourrait causer une redirection.
+      await this.keycloak.init({
+        config: {
+          url: 'http://localhost:8080',
+          realm: 'rent',
+          clientId: 'rent-front'
+        },
+        initOptions: {}, // Vide !
+        enableBearerInterceptor: false
+      });
+
+      console.log('AuthService: Keycloak.init() terminé.');
+
+      // C'est SEULEMENT APRES l'init qu'on vérifie si l'utilisateur est connecté
+      // (par exemple, s'il revient de la page de login de Keycloak avec un token dans l'URL)
+      const loggedIn = await this.keycloak.isLoggedIn();
+      this.isLoggedIn.set(loggedIn);
+      console.log('AuthService: Statut de connexion vérifié :', loggedIn);
+
+      if (loggedIn) {
+        this.userProfile.set(await this.keycloak.loadUserProfile());
       }
+
     } catch (error) {
-      console.error('Keycloak init a échoué.', error);
+      console.error('AuthService: Keycloak init a échoué. L\'application continue en mode anonyme.', error);
     } finally {
       this.isInitialized.set(true);
+      console.log('AuthService: Initialisation terminée, isInitialized est maintenant true.');
     }
   }
 
@@ -71,6 +63,7 @@ export class AuthService {
       switchMap(() => from(this.keycloak.loadUserProfile()).pipe(
         tap(profile => this.userProfile.set(profile))
       )),
+      map(() => {}),
       catchError(this.handleError)
     );
   }
@@ -80,7 +73,9 @@ export class AuthService {
     localStorage.removeItem('refresh_token');
     this.isLoggedIn.set(false);
     this.userProfile.set(null);
-    this.keycloak.logout(window.location.origin);
+    // On ne redirige plus vers le logout de Keycloak pour éviter les problèmes
+    // avec le flux de mot de passe. On redirige simplement vers l'accueil.
+    window.location.href = '/';
   }
 
   public getToken(): string | null {

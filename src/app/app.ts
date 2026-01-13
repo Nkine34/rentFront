@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -23,14 +23,13 @@ import { AuthService } from './features/auth/auth.service';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App {
   private readonly store = inject(LocationStore);
   private readonly router = inject(Router);
   public readonly authService = inject(AuthService);
 
-  async ngOnInit() {
-    await this.authService.init();
-  }
+  // ngOnInit est maintenant vide, l'initialisation est gérée par APP_INITIALIZER
+  constructor() {}
 
   handleSearch(criteria: SearchCriteria): void {
     this.store.searchLocations(criteria);
