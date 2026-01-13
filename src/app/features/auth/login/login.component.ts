@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -13,6 +13,7 @@ import { AuthService } from '../auth.service';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -53,7 +54,10 @@ export class LoginComponent implements OnInit {
 
     this.authService.loginWithPassword(email!, password!).subscribe({
       next: () => {
-        this.router.navigateByUrl(this.returnUrl);
+        // Rediriger vers le callback pour traiter les informations utilisateur
+        this.router.navigate(['/callback'], {
+          queryParams: { returnUrl: this.returnUrl }
+        });
       },
       error: (err) => {
         this.errorMessage.set(err.message);

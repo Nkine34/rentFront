@@ -10,7 +10,7 @@ export const authInterceptor: HttpInterceptorFn = (
   const authService = inject(AuthService);
 
   // Liste des routes publiques de l'API
-  const publicApiRoutes = ['/api/locations', '/api/users/register'];
+  const publicApiRoutes = ['/api/locations', '/api/users/register', '/api/auth/login'];
 
   // Ne rien faire si ce n'est pas une requête API ou si c'est une route publique
   if (!req.url.startsWith('/api') || publicApiRoutes.some(route => req.url.includes(route))) {
