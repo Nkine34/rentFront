@@ -1,0 +1,123 @@
+<div class="location-shell-container">
+  <!-- Header -->
+  <mat-toolbar color="primary" class="header">
+    <button mat-icon-button routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="title">{{ formTitle }}</span>
+    <span class="spacer"></span>
+
+    <!-- Save State Chip -->
+    <mat-chip-listbox class="save-state-chip">
+      @if (saveState === 'draft') {
+        <mat-chip-option color="accent" selected>
+          <mat-icon matChipAvatar>save</mat-icon> Draft Saved
+        </mat-chip-option>
+      }
+      @if (saveState === 'published') {
+        <mat-chip-option color="primary" selected>
+          <mat-icon matChipAvatar>check_circle</mat-icon> Published
+        </mat-chip-option>
+      }
+      @if (saveState === 'unsaved') {
+        <mat-chip-option color="warn" selected>
+          <mat-icon matChipAvatar>warning</mat-icon> Unsaved Changes
+        </mat-chip-option>
+      }
+      @if (saveState === 'error') {
+        <mat-chip-option color="warn" selected>
+          <mat-icon matChipAvatar>error</mat-icon> Error
+        </mat-chip-option>
+      }
+    </mat-chip-listbox>
+
+    <button mat-button (click)="saveDraft()" [disabled]="isLoading()">Save Draft</button>
+    <button mat-button (click)="preview()" [disabled]="isLoading()">Preview</button>
+    <button mat-raised-button color="accent" (click)="publish()" [disabled]="!rentalForm.valid || isLoading()">
+      @if (isLoading()) {
+        <mat-icon class="spinner-icon">
+          <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
+        </mat-icon>
+      }
+      Publish
+    </button>
+  </mat-toolbar>
+
+  <!-- Main Content with Stepper -->
+  <div class="content">
+    <mat-card class="stepper-card">
+      <mat-stepper #stepper [linear]="false" [orientation]="stepperOrientation" [formGroup]="rentalForm">
+        <!-- Step 1: General Info -->
+        <mat-step label="General Info" formGroupName="basics">
+          <ng-template matStepContent>
+            <app-basics-form [parentForm]="rentalForm"></app-basics-form>
+            <div class="stepper-actions">
+              <button mat-button matStepperNext [disabled]="!rentalForm.get('basics')?.valid || isLoading()">Next</button>
+            </div>
+          </ng-template>
+        </mat-step>
+
+        <!-- Step 2: Address & Map -->
+        <mat-step label="Address & Map" formGroupName="address">
+          <ng-template matStepContent>
+            <app-address-map-form [parentForm]="rentalForm"></app-address-map-form>
+            <div class="stepper-actions">
+              <button mat-button matStepperPrevious [disabled]="isLoading()">Back</button>
+              <button mat-button matStepperNext [disabled]="!rentalForm.get('address')?.valid || isLoading()">Next</button>
+            </div>
+          </ng-template>
+        </mat-step>
+
+        <!-- Step 3: Photos & Highlights -->
+        <mat-step label="Photos & Highlights">
+            <ng-template matStepContent>
+                <app-photos-highlights-form
+                    [parentForm]="rentalForm"
+                    (filesSelected)="onFilesSelected($event)"
+                    (photoDeleted)="onPhotoDeleted($event)">
+                </app-photos-highlights-form>
+                <div class="stepper-actions">
+                    <button mat-button matStepperPrevious [disabled]="isLoading()">Back</button>
+                    <button mat-button matStepperNext [disabled]="isLoading()">Next</button>
+                </div>
+            </ng-template>
+        </mat-step>
+
+        <!-- Step 4: Details & Amenities -->
+        <mat-step label="Details & Amenities" formGroupName="details">
+            <ng-template matStepContent>
+                <app-details-form [parentForm]="rentalForm"></app-details-form>
+                <div class="stepper-actions">
+                    <button mat-button matStepperPrevious [disabled]="isLoading()">Back</button>
+                    <button mat-button matStepperNext [disabled]="isLoading()">Next</button>
+                </div>
+            </ng-template>
+        </mat-step>
+
+        <!-- Step 5: Pricing, Availability & Rules -->
+        <mat-step label="Pricing, Availability & Rules">
+          <ng-template matStepContent>
+            <app-pricing-availability-form [parentForm]="rentalForm"></app-pricing-availability-form>
+            <div class="stepper-actions">
+              <button mat-button matStepperPrevious [disabled]="isLoading()">Back</button>
+              <button mat-raised-button color="primary" (click)="publish()" [disabled]="!rentalForm.valid || isLoading()">
+                @if (isLoading()) {
+                  <mat-icon class="spinner-icon">
+                    <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
+                  </mat-icon>
+                }
+                Publish
+              </button>
+            </div>
+          </ng-template>
+        </mat-step>
+      </mat-stepper>
+    </mat-card>
+  </div>
+
+  <!-- Mobile Sticky Footer -->
+  <div class="mobile-sticky-footer">
+    <button mat-button (click)="stepper.previous()" [disabled]="stepper.selectedIndex === 0 || isLoading()">Back</button>
+    <button mat-raised-button color="primary" (click)="stepper.next()" [disabled]="stepper.selectedIndex === 4 || isLoading()">Next</button>
+  </div>
+</div>

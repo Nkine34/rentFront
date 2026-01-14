@@ -1,0 +1,27 @@
+.form-section-card {
+  @include card-premium;
+  margin-bottom: spacing(4);
+}
+
+.form-row, .date-row, .price-row {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: spacing(2);
+  margin-bottom: spacing(3);
+}
+
+.period-card {
+  margin-bottom: spacing(2);
+  &:hover { box-shadow: var(--shadow-heavy); }
+}
+
+.delete-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.periods-container {
+  max-height: 400px;
+  overflow-y: auto;
+}

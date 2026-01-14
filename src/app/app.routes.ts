@@ -1,4 +1,4 @@
-import {Routes} from '@angular/router';
+import { Routes } from '@angular/router';
 import { authGuard } from './auth.guard';
 import { HomeComponent } from './rentals/home/home.component';
 import { locationsResolver } from './rentals/location.resolver';
@@ -42,13 +42,18 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: 'become-host',
+    path: 'host/become-host',
     loadComponent: () => import('./features/host/become-host/become-host.component').then(m => m.BecomeHostComponent),
     canActivate: [authGuard]
   },
   {
     path: 'host/rentals',
-    loadChildren: () => import('./rental-management/rental-management-module').then(m => m.RentalManagementModule),
+    loadChildren: () => import('./features/host/host-rentals.routes').then(m => m.hostRentalsRoutes),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'locations', // New base path for locations feature
+    loadChildren: () => import('./locations/locations.routes').then(m => m.locationsRoutes),
     canActivate: [authGuard]
   },
   { path: '**', redirectTo: '' }

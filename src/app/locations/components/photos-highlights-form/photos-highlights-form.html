@@ -1,0 +1,101 @@
+<mat-card class="form-section-card premium-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar color="primary">photo_library</mat-icon>
+    <mat-card-title>📸 Photos & Points forts</mat-card-title>
+    <mat-card-subtitle>5-15 photos HD + 3-5 highlights attractifs</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- 1. UPLOAD ZONE Drag & Drop -->
+    <div class="upload-zone" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)" [class.drag-over]="isDragOver">
+
+      <input #fileInput type="file" multiple accept="image/jpeg,image/png,image/gif" (change)="onFileSelect($event)"
+        hidden>
+
+      <div class="upload-content">
+        <mat-icon class="upload-icon">cloud_upload</mat-icon>
+        <h3>Glisse tes photos ici</h3>
+        <p>ou clique pour sélectionner (max {{MAX_FILE_SIZE_MB}}Mo/photo)</p>
+        <button mat-raised-button color="accent" (click)="fileInput.click()"
+          [disabled]="selectedFiles().length + existingPhotos().length >= MAX_FILES">
+          Choisir photos
+        </button>
+      </div>
+
+      <!-- Progress si upload en cours -->
+      @if (isUploading) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      }
+    </div>
+
+    <!-- 2. PREVIEWS NOUVELLES PHOTOS -->
+    @if (previews().length > 0) {
+    <div class="photo-grid">
+      @for (preview of previews(); track preview; let i = $index) {
+      <div class="photo-preview">
+        <img [src]="preview" [alt]="'Photo ' + (i + 1)">
+        <button mat-icon-button class="delete-btn" (click)="removeNewFile(i)" matTooltip="Supprimer">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- 3. PHOTOS EXISTANTES -->
+    @if (existingPhotos().length > 0) {
+    <div class="section-divider">
+      <h4>Photos actuelles ({{existingPhotos().length}})</h4>
+    </div>
+
+    <div class="photo-grid">
+      @for (photo of existingPhotos(); track photo.id; let i = $index) {
+      <div class="photo-preview existing">
+        <img [src]="photo.url" [alt]="photo.description">
+        @if (photo.isPrimary) {
+        <mat-icon class="primary-badge">star</mat-icon>
+        }
+        <button mat-icon-button class="delete-btn" (click)="removeExistingPhoto(photo.id!, i)" matTooltip="Supprimer">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- 4. HIGHLIGHTS (chips) -->
+    <div class="section-divider">
+      <h4>Points forts ({{highlights.length}})</h4>
+    </div>
+
+    <!-- Remplace la section HIGHLIGHTS -->
+    <!-- Version ULTRA SIMPLE - chips natives -->
+    <div formArrayName="highlights" class="highlights-container">
+      @for (highlight of highlights.controls; track highlight; let i = $index) {
+      <div class="highlight-row" [formGroupName]="i">
+        <mat-form-field class="highlight-input">
+          <mat-label>Point fort #{{i + 1}}</mat-label>
+          <input matInput formControlName="title" placeholder="Ex: Wifi gratuit, Vue mer...">
+          <button mat-icon-button matSuffix (click)="removeHighlight(i)" matTooltip="Supprimer">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      }
+
+      <button mat-stroked-button color="primary" (click)="addHighlight()">
+        ➕ Ajouter point fort
+      </button>
+    </div>
+
+
+    <!-- 5. VALIDATION STATUS -->
+    <div class="validation-status">
+      @if (totalPhotos() < 5) { <mat-chip color="warn">Min 5 photos requises</mat-chip>
+        } @else {
+        <mat-chip color="primary">Photos OK ({{totalPhotos()}}/{{MAX_FILES}})</mat-chip>
+        }
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,101 @@
+<mat-card [formGroup]="parentForm" class="form-section-card premium-spacing">
+  <mat-card-header>
+    <mat-icon mat-card-avatar color="primary">payments</mat-icon>
+    <mat-card-title>💰 Pricing & Availability</mat-card-title>
+    <mat-card-subtitle>
+      Prix de base + périodes spécifiques (saison, promo).
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="premium-content">
+    <!-- 1. PRIX BASE GLOBAL -->
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="flex-1">
+        <mat-label>Prix base / nuit</mat-label>
+        <input matInput type="number" formControlName="basePrice"
+               inputmode="decimal">
+        @if (parentForm.get('basePrice')?.touched && parentForm.get('basePrice')?.invalid) {
+          @if (parentForm.get('basePrice')?.hasError('required')) {
+            <mat-error>Prix obligatoire</mat-error>
+          }
+          @if (parentForm.get('basePrice')?.hasError('min')) {
+            <mat-error>Minimum 10€</mat-error>
+          }
+        }
+        <mat-hint>Appliquer aux nouvelles périodes</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-32">
+        <mat-label>Devise</mat-label>
+        <mat-select formControlName="currency">
+          @for (currency of availableCurrencies(); track currency) {
+            <mat-option [value]="currency">{{currency}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- 2. PÉRIODES DISPONIBILITÉS -->
+    <div class="section-title">
+      <h3>📅 Périodes spéciales</h3>
+      <p>Définis tes dispos + prix saisonniers/promo</p>
+    </div>
+
+    <div formArrayName="availability" class="periods-container">
+      @for (period of getAvailabilityControls(); track period; let i = $index) {
+        <mat-card class="period-card" [formGroupName]="i">
+          <mat-card-header>
+            <mat-card-title>Période {{i + 1}}</mat-card-title>
+            <button mat-icon-button class="delete-btn"
+                    matTooltip="Supprimer"
+                    (click)="removeAvailabilityPeriod(i)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="date-row">
+              <mat-form-field>
+                <mat-label>Début</mat-label>
+                <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+                <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+                <mat-datepicker #startPicker></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Fin</mat-label>
+                <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+                <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                <mat-datepicker #endPicker panelClass="date-picker"></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="price-row">
+              <mat-form-field class="price-input">
+                <mat-label>Prix spécial</mat-label>
+                <input matInput type="number" formControlName="priceBase">
+                <mat-hint>Override prix base</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Promo %</mat-label>
+                <input matInput type="number" formControlName="promoRate" max="100">
+                <mat-hint>0 = pas de promo</mat-hint>
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+
+    <!-- 3. ACTIONS -->
+    <div class="actions-row">
+      <button mat-stroked-button color="primary"
+              (click)="addAvailabilityPeriod()"
+              matTooltip="Ajoute période saison/promo">
+        <mat-icon>add_circle_outline</mat-icon>
+        Nouvelle période
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -24,15 +24,16 @@
       <button mat-menu-item routerLink="/register">
         <span>Inscription</span>
       </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item routerLink="/locations/new">
+        <span>Commencer à héberger</span>
+      </button>
     } @else {
       <button mat-menu-item routerLink="/profile">
         <span>Profil de {{ authService.userProfile()?.firstName }}</span>
       </button>
-      <button mat-menu-item>
-        <span>Devenir hôte</span>
-      </button>
-      <button mat-menu-item routerLink="/host/rentals/new">
-        <span>Créer/Gérer un logement</span>
+      <button mat-menu-item routerLink="/host/locations">
+        <span>Mes logements ({{ 0 }})</span> <!-- Placeholder for count -->
       </button>
       <mat-divider></mat-divider>
       <button mat-menu-item (click)="authService.logout()">
