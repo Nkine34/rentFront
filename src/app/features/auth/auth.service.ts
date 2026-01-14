@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
 import { Observable, throwError, from } from 'rxjs';
-import { catchError, switchMap, tap, map } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 import { CurrentUser } from './models/current-user.model';
 
 @Injectable({
@@ -23,29 +23,24 @@ export class AuthService {
   public async init(): Promise<void> {
     console.log('AuthService: Début de l\'initialisation...');
     try {
-      // Initialisation la plus simple et passive possible.
-      // Aucune option qui pourrait causer une redirection.
       await this.keycloak.init({
         config: {
           url: 'http://localhost:8080',
           realm: 'rent',
           clientId: 'front-rent'
         },
-        initOptions: {}, // Vide !
+        initOptions: {},
         enableBearerInterceptor: false
       });
 
       console.log('AuthService: Keycloak.init() terminé.');
 
-      // C'est SEULEMENT APRES l'init qu'on vérifie si l'utilisateur est connecté
-      // (par exemple, s'il revient de la page de login de Keycloak avec un token dans l'URL)
       const loggedIn = await this.keycloak.isLoggedIn();
       this.isLoggedIn.set(loggedIn);
       console.log('AuthService: Statut de connexion vérifié :', loggedIn);
 
       if (loggedIn) {
         this.userProfile.set(await this.keycloak.loadUserProfile());
-        // Charger le profil utilisateur complet depuis le serveur
         this.loadCurrentUser();
       }
 
@@ -57,9 +52,6 @@ export class AuthService {
     }
   }
 
-  /**
-   * Charger le profil utilisateur complet depuis /api/users/me
-   */
   public loadCurrentUser(): Observable<CurrentUser> {
     return this.http.get<any>('/api/users/me').pipe(
       map(dto => ({
@@ -79,9 +71,6 @@ export class AuthService {
     );
   }
 
-  /**
-   * Décoder un JWT et extraire les informations utilisateur
-   */
   public decodeJwt(token: string): CurrentUser | null {
     try {
       const payload = token.split('.')[1];
@@ -109,16 +98,20 @@ export class AuthService {
         localStorage.setItem('refresh_token', tokens.refresh_token);
         this.isLoggedIn.set(true);
 
-        // Décoder le JWT pour mettre à jour currentUser immédiatement
         const user = this.decodeJwt(tokens.access_token);
         if (user) {
           this.currentUser.set(user);
+          // Simuler un KeycloakProfile à partir des infos du JWT
+          const profile: KeycloakProfile = {
+            username: user.email,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+          };
+          this.userProfile.set(profile);
         }
       }),
-      switchMap(() => from(this.keycloak.loadUserProfile()).pipe(
-        tap(profile => this.userProfile.set(profile))
-      )),
-      map(() => {}),
+      map(() => {}), // On transforme le résultat en void pour le subscriber
       catchError(this.handleError)
     );
   }
@@ -129,8 +122,6 @@ export class AuthService {
     this.isLoggedIn.set(false);
     this.userProfile.set(null);
     this.currentUser.set(null);
-    // On ne redirige plus vers le logout de Keycloak pour éviter les problèmes
-    // avec le flux de mot de passe. On redirige simplement vers l'accueil.
     window.location.href = '/';
   }
 
@@ -139,6 +130,10 @@ export class AuthService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    return throwError(() => new Error('Email ou mot de passe invalide.'));
+    console.error('AuthService login failed:', error);
+    if (error.status === 401) {
+      return throwError(() => new Error('Email ou mot de passe invalide.'));
+    }
+    return throwError(() => new Error('Un problème est survenu lors de la connexion.'));
   }
 }
