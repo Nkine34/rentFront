@@ -18,7 +18,7 @@ export class AuthService {
   public userProfile = signal<KeycloakProfile | null>(null);
   public currentUser = signal<CurrentUser | null>(null);
 
-  constructor() {}
+  constructor() { }
 
   public async init(): Promise<void> {
     console.log('AuthService: Début de l\'initialisation...');
@@ -42,6 +42,24 @@ export class AuthService {
       if (loggedIn) {
         this.userProfile.set(await this.keycloak.loadUserProfile());
         this.loadCurrentUser();
+      } else {
+        const token = localStorage.getItem('access_token');
+        if (token) {
+          console.log('AuthService: Tentative de restauration de session via localStorage...');
+          const user = this.decodeJwt(token);
+          if (user) {
+            this.currentUser.set(user);
+            this.isLoggedIn.set(true);
+            const profile: KeycloakProfile = {
+              username: user.email,
+              email: user.email,
+              firstName: user.firstName,
+              lastName: user.lastName,
+            };
+            this.userProfile.set(profile);
+            console.log('AuthService: Session restaurée depuis le localStorage.');
+          }
+        }
       }
 
     } catch (error) {
@@ -111,7 +129,7 @@ export class AuthService {
           this.userProfile.set(profile);
         }
       }),
-      map(() => {}), // On transforme le résultat en void pour le subscriber
+      map(() => { }), // On transforme le résultat en void pour le subscriber
       catchError(this.handleError)
     );
   }
@@ -125,7 +143,14 @@ export class AuthService {
     window.location.href = '/';
   }
 
-  public getToken(): string | null {
+  public async getToken(): Promise<string | null> {
+    try {
+      if (await this.keycloak.isLoggedIn()) {
+        return await this.keycloak.getToken();
+      }
+    } catch (error) {
+      // Keycloak error or not initialized
+    }
     return localStorage.getItem('access_token');
   }
 

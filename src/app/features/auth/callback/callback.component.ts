@@ -35,11 +35,11 @@ export class CallbackComponent implements OnInit {
     this.processCallback();
   }
 
-  private processCallback(): void {
+  private async processCallback(): Promise<void> {
     try {
       // Récupérer le token depuis le localStorage
       // (il a été sauvegardé par LoginComponent/AuthService)
-      const token = this.authService.getToken();
+      const token = await this.authService.getToken();
 
       if (!token) {
         console.warn('Aucun token trouvé dans le callback');

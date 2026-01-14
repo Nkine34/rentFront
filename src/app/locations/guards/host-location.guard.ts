@@ -19,6 +19,6 @@ export const HostLocationGuard: CanActivateFn = (route, state) => {
   }
 
   // User is logged in but not a host - redirect to become-host page
-  router.navigate(['/host/become-host']);
+  router.navigate(['/host/become-host'], { queryParams: { returnUrl: state.url } });
   return false;
 };

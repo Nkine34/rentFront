@@ -250,16 +250,17 @@ export class LocationShellComponent implements OnInit, OnDestroy {
                         next: (photoResponse: any) => {
                           console.log('Photos uploaded successfully:', photoResponse);
                           this.snackBar.open('Photos uploaded!', 'Dismiss', { duration: 3000 });
-                          this.router.navigate(['/host/rentals', savedRentalId, 'edit']);
+                          this.router.navigate(['/']);
                         },
                         error: (photoErr: any) => {
                           console.error('Error uploading photos:', photoErr);
                           this.snackBar.open('Error uploading photos.', 'Dismiss', { duration: 3000 });
+                          // Stay on page on error
                           this.saveState = 'error';
                         }
                       });
                   } else {
-                    this.router.navigate(['/host/rentals', savedRentalId, 'edit']);
+                    this.router.navigate(['/']);
                   }
                 },
                 error: (publishErr: any) => {

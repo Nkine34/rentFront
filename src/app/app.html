@@ -1,4 +1,5 @@
-<nav style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 16px;">
+<nav
+  style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 16px;">
 
   <!-- Ligne supérieure : Logo à gauche, Menu à droite -->
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -18,27 +19,30 @@
 
   <mat-menu #menu="matMenu">
     @if (!authService.isLoggedIn()) {
-      <button mat-menu-item routerLink="/login">
-        <span>Connexion</span>
-      </button>
-      <button mat-menu-item routerLink="/register">
-        <span>Inscription</span>
-      </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item routerLink="/locations/new">
-        <span>Commencer à héberger</span>
-      </button>
+    <button mat-menu-item routerLink="/login">
+      <span>Connexion</span>
+    </button>
+    <button mat-menu-item routerLink="/host/rentals">
+      <span>Hôte</span>
+    </button>
+    <button mat-menu-item routerLink="/register">
+      <span>Inscription</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/locations/new">
+      <span>Commencer à héberger</span>
+    </button>
     } @else {
-      <button mat-menu-item routerLink="/profile">
-        <span>Profil de {{ authService.userProfile()?.firstName }}</span>
-      </button>
-      <button mat-menu-item routerLink="/host/locations">
-        <span>Mes logements ({{ 0 }})</span> <!-- Placeholder for count -->
-      </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item (click)="authService.logout()">
-        <span>Déconnexion</span>
-      </button>
+    <button mat-menu-item routerLink="/profile">
+      <span>Profil de {{ authService.userProfile()?.firstName }}</span>
+    </button>
+    <button mat-menu-item routerLink="/host/rentals">
+      <span>Hôte</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="authService.logout()">
+      <span>Déconnexion</span>
+    </button>
     }
   </mat-menu>
 </nav>
