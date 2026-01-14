@@ -146,10 +146,12 @@ export class AuthService {
   public async getToken(): Promise<string | null> {
     try {
       if (await this.keycloak.isLoggedIn()) {
+        await this.keycloak.updateToken(20);
         return await this.keycloak.getToken();
       }
     } catch (error) {
-      // Keycloak error or not initialized
+      // Keycloak error or not initialized or session expired
+      console.warn('Failed to refresh token or not logged in via Keycloak', error);
     }
     return localStorage.getItem('access_token');
   }
