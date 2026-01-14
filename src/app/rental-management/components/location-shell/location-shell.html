@@ -52,8 +52,10 @@
           <ng-template matStepContent>
             <app-rental-form
               [formGroup]="rentalForm"
+              [rentalId]="rentalId"
               (formReady)="onRentalFormReady($event)"
               (filesSelected)="onFilesSelected($event)"
+              (photoDeleted)="onPhotoDeleted($event)"
             ></app-rental-form>
             <div class="stepper-actions">
               <button mat-button matStepperNext [disabled]="!rentalForm.get('title')?.valid || !rentalForm.get('description')?.valid || !rentalForm.get('locationType')?.valid || !rentalForm.get('capacity')?.valid || !rentalForm.get('bedrooms')?.valid || !rentalForm.get('beds')?.valid || !rentalForm.get('bathrooms')?.valid || loading">Next</button>
@@ -66,8 +68,10 @@
           <ng-template matStepContent>
             <app-rental-form
               [formGroup]="rentalForm"
+              [rentalId]="rentalId"
               (formReady)="onRentalFormReady($event)"
               (filesSelected)="onFilesSelected($event)"
+              (photoDeleted)="onPhotoDeleted($event)"
             ></app-rental-form>
             <div class="stepper-actions">
               <button mat-button matStepperPrevious [disabled]="loading">Back</button>
@@ -81,8 +85,10 @@
           <ng-template matStepContent>
             <app-rental-form
               [formGroup]="rentalForm"
+              [rentalId]="rentalId"
               (formReady)="onRentalFormReady($event)"
               (filesSelected)="onFilesSelected($event)"
+              (photoDeleted)="onPhotoDeleted($event)"
             ></app-rental-form>
             <div class="stepper-actions">
               <button mat-button matStepperPrevious [disabled]="loading">Back</button>
@@ -96,8 +102,10 @@
           <ng-template matStepContent>
             <app-rental-form
               [formGroup]="rentalForm"
+              [rentalId]="rentalId"
               (formReady)="onRentalFormReady($event)"
               (filesSelected)="onFilesSelected($event)"
+              (photoDeleted)="onPhotoDeleted($event)"
             ></app-rental-form>
             <div class="stepper-actions">
               <button mat-button matStepperPrevious [disabled]="loading">Back</button>
@@ -111,8 +119,10 @@
           <ng-template matStepContent>
             <app-rental-form
               [formGroup]="rentalForm"
+              [rentalId]="rentalId"
               (formReady)="onRentalFormReady($event)"
               (filesSelected)="onFilesSelected($event)"
+              (photoDeleted)="onPhotoDeleted($event)"
             ></app-rental-form>
             <div class="stepper-actions">
               <button mat-button matStepperPrevious [disabled]="loading">Back</button>

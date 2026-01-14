@@ -25,8 +25,10 @@ import { PricingAvailabilityFormComponent } from '../pricing-availability-form/p
 })
 export class RentalForm implements OnInit {
   @Input() formGroup!: FormGroup; // The main form group passed from parent
+  @Input() rentalId: string | null = null; // Input to receive the rental ID
   @Output() formReady = new EventEmitter<FormGroup>(); // Emits the constructed form group
   @Output() filesSelected = new EventEmitter<File[]>(); // Emits selected files
+  @Output() photoDeleted = new EventEmitter<string>(); // Emits ID of deleted photo
 
   selectedFiles: File[] = []; // Local state for selected files
 

@@ -25,7 +25,7 @@
       @for (photo of existingPhotos; track photo; let i = $index) {
         <mat-card class="preview-item existing-photo">
           <img [src]="photo.url" [alt]="photo.description">
-          <button mat-icon-button class="remove-preview-btn" (click)="removeExistingPhoto(i)">
+          <button mat-icon-button class="remove-preview-btn" (click)="removeExistingPhoto(photo.id!, i)">
             <mat-icon>close</mat-icon>
           </button>
         </mat-card>

@@ -138,6 +138,15 @@ export class LocationShellComponent implements OnInit, OnDestroy {
     }
   }
 
+  onPhotoDeleted(photoId: string): void {
+    // When a photo is deleted, mark the form as unsaved
+    if (this.saveState !== 'published') {
+      this.saveState = 'unsaved';
+    }
+    // Optionally, you might want to trigger a saveDraft here or update the form's photos array
+    // For now, the PhotosHighlightsFormComponent handles the actual deletion from backend.
+  }
+
   get highlights(): FormArray {
     return this.rentalForm.get('highlights') as FormArray;
   }
@@ -163,20 +172,43 @@ export class LocationShellComponent implements OnInit, OnDestroy {
   }
 
   saveDraft(): void {
-    if (this.rentalForm.valid) { // Or check for partial validity for drafts
-      this.loading = true;
-      // Simulate API call for draft save
-      setTimeout(() => {
-        console.log('Draft saved!', this.rentalForm.value);
-        this.snackBar.open('Draft saved successfully!', 'Dismiss', { duration: 3000 });
-        this.saveState = 'draft';
-        this.loading = false;
-      }, 1500);
-    } else {
-      this.snackBar.open('Form is invalid, cannot save draft.', 'Dismiss', { duration: 3000 });
-      this.rentalForm.markAllAsTouched();
-      this.saveState = 'error';
+    if (!this.rentalForm) {
+      this.snackBar.open('Form not initialized.', 'Dismiss', { duration: 3000 });
+      return;
     }
+
+    this.loading = true;
+    const payload: LLocation = this.rentalForm.value;
+    let rentalObservable: Observable<LLocation>;
+
+    if (this.isEditMode && this.rentalId) {
+      rentalObservable = this.rentalApiService.updateRental(this.rentalId, payload);
+    } else {
+      // For a new draft, create the rental first
+      rentalObservable = this.rentalApiService.createRental(payload);
+    }
+
+    rentalObservable
+      .pipe(finalize(() => this.loading = false))
+      .subscribe({
+        next: (response: LLocation) => {
+          console.log('Draft saved!', response);
+          this.snackBar.open('Draft saved successfully!', 'Dismiss', { duration: 3000 });
+          this.saveState = 'draft';
+          // If it was a new draft, update rentalId and switch to edit mode
+          if (!this.isEditMode) {
+            this.rentalId = response.id!;
+            this.isEditMode = true;
+            this.formTitle = 'Edit Rental';
+            this.router.navigate(['/host/rentals', this.rentalId, 'edit'], { replaceUrl: true });
+          }
+        },
+        error: (err: any) => {
+          console.error('Error saving draft:', err);
+          this.snackBar.open('Failed to save draft.', 'Dismiss', { duration: 3000 });
+          this.saveState = 'error';
+        }
+      });
   }
 
   preview(): void {

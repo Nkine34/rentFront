@@ -31,4 +31,9 @@ export class RentalApiService { // Renamed to RentalApiService for consistency
     // Assuming your backend has an endpoint like /api/rentals/{locationId}/photos for uploads
     return this.http.post(`${this.apiUrl}/${locationId}/photos`, formData);
   }
+
+  deletePhoto(locationId: string, photoId: string): Observable<void> {
+    // Assuming your backend has an endpoint like /api/rentals/{locationId}/photos/{photoId} for deletion
+    return this.http.delete<void>(`${this.apiUrl}/${locationId}/photos/${photoId}`);
+  }
 }

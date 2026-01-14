@@ -6,7 +6,12 @@
   <app-address-map-form [formGroup]="addressFormGroup"></app-address-map-form>
 
   <!-- Step 3: Amenities & Photos -->
-  <app-photos-highlights-form [formGroup]="formGroup" (filesSelected)="onFilesSelected($event)"></app-photos-highlights-form>
+  <app-photos-highlights-form
+    [formGroup]="formGroup"
+    [rentalId]="rentalId"
+    (filesSelected)="onFilesSelected($event)"
+    (photoDeleted)="photoDeleted.emit($event)"
+  ></app-photos-highlights-form>
 
   <!-- Step 4: Rules & Publication -->
   <app-details-form [formGroup]="formGroup"></app-details-form>
