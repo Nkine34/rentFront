@@ -1,19 +1,24 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../../features/auth/auth.service'; // Assuming AuthService exists
+import { AuthService } from '../../features/auth/auth.service';
 
 export const HostLocationGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  // TODO: Implement actual host check (e.g., check user roles)
-  // For now, just check if logged in
-  if (authService.isLoggedIn()) {
-    // In a real app, you'd check if the user has a 'host' role
-    // For demonstration, we'll assume any logged-in user can be a host for now.
-    return true;
-  } else {
-    router.navigate(['/login']); // Redirect to login if not authenticated
+  // Check if user is logged in
+  if (!authService.isLoggedIn()) {
+    router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
     return false;
   }
+
+  // Check if user is a host
+  const currentUser = authService.currentUser();
+  if (currentUser && currentUser.isHost) {
+    return true;
+  }
+
+  // User is logged in but not a host - redirect to become-host page
+  router.navigate(['/host/become-host']);
+  return false;
 };

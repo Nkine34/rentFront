@@ -190,17 +190,12 @@ export class LocationShellComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // this.loading = true; // Managed by store
     const payload: Location = this.rentalForm.value;
-    let rentalObservable: Observable<Location>;
-
-    if (this.isEditMode && this.rentalId) {
-      rentalObservable = this.locationsStore.updateRental(this.rentalId, payload);
-    } else {
-      rentalObservable = this.locationsStore.createRental(payload);
+    if (this.rentalId) {
+      payload.id = this.rentalId;
     }
 
-    rentalObservable
+    this.locationsStore.saveDraft(payload)
       .subscribe({
         next: (response: Location) => {
           console.log('Draft saved!', response);
@@ -228,46 +223,55 @@ export class LocationShellComponent implements OnInit, OnDestroy {
 
   publish(): void {
     if (this.rentalForm.valid) {
-      // this.loading = true; // Managed by store
       const payload: Location = this.rentalForm.value;
-      let rentalObservable: Observable<Location>;
-
-      if (this.isEditMode && this.rentalId) {
-        rentalObservable = this.locationsStore.updateRental(this.rentalId, payload);
-      } else {
-        rentalObservable = this.locationsStore.createRental(payload);
+      if (this.rentalId) {
+        payload.id = this.rentalId;
       }
 
-      rentalObservable
+      // First save/update the rental
+      this.locationsStore.saveDraft(payload)
         .subscribe({
           next: (response: Location) => {
             console.log('Rental saved successfully:', response);
             const savedRentalId = response.id!;
-            this.snackBar.open('Rental published successfully!', 'Dismiss', { duration: 3000 });
-            this.saveState = 'published';
 
-            if (this.selectedFiles.length > 0) {
-              // this.loading = true; // Managed by store
-              this.locationsApiService.uploadPhotos(savedRentalId, this.selectedFiles) // Use direct API for photo upload
-                .subscribe({
-                  next: (photoResponse: any) => {
-                    console.log('Photos uploaded successfully:', photoResponse);
-                    this.snackBar.open('Photos uploaded!', 'Dismiss', { duration: 3000 });
+            // Then publish it
+            this.locationsStore.publishRental(savedRentalId)
+              .subscribe({
+                next: (publishedRental: Location) => {
+                  console.log('Rental published successfully:', publishedRental);
+                  this.snackBar.open('Rental published successfully!', 'Dismiss', { duration: 3000 });
+                  this.saveState = 'published';
+
+                  // Upload photos if any
+                  if (this.selectedFiles.length > 0) {
+                    this.locationsApiService.uploadPhotos(savedRentalId, this.selectedFiles)
+                      .subscribe({
+                        next: (photoResponse: any) => {
+                          console.log('Photos uploaded successfully:', photoResponse);
+                          this.snackBar.open('Photos uploaded!', 'Dismiss', { duration: 3000 });
+                          this.router.navigate(['/host/rentals', savedRentalId, 'edit']);
+                        },
+                        error: (photoErr: any) => {
+                          console.error('Error uploading photos:', photoErr);
+                          this.snackBar.open('Error uploading photos.', 'Dismiss', { duration: 3000 });
+                          this.saveState = 'error';
+                        }
+                      });
+                  } else {
                     this.router.navigate(['/host/rentals', savedRentalId, 'edit']);
-                  },
-                  error: (photoErr: any) => {
-                    console.error('Error uploading photos:', photoErr);
-                    this.snackBar.open('Error uploading photos.', 'Dismiss', { duration: 3000 });
-                    this.saveState = 'error';
                   }
-                });
-            } else {
-              this.router.navigate(['/host/rentals', savedRentalId, 'edit']);
-            }
+                },
+                error: (publishErr: any) => {
+                  console.error('Error publishing rental:', publishErr);
+                  this.snackBar.open('Error publishing rental.', 'Dismiss', { duration: 3000 });
+                  this.saveState = 'error';
+                }
+              });
           },
           error: (err: any) => {
             console.error('Error saving rental:', err);
-            this.snackBar.open('Error publishing rental.', 'Dismiss', { duration: 3000 });
+            this.snackBar.open('Error saving rental.', 'Dismiss', { duration: 3000 });
             this.saveState = 'error';
           }
         });

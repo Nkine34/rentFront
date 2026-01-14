@@ -25,8 +25,12 @@ export class LocationsStore {
   currentRental = computed(() => this.state().currentRental);
   isLoading = computed(() => this.state().isLoading);
   error = computed(() => this.state().error);
+  isDraft = computed(() => {
+    const rental = this.state().currentRental;
+    return rental ? !rental.id : true;
+  });
 
-  constructor(private locationsApiService: LocationsApiService) {}
+  constructor(private locationsApiService: LocationsApiService) { }
 
   loadRental(id: string): void {
     this.state.update(state => ({ ...state, isLoading: true, error: null }));
@@ -50,6 +54,22 @@ export class LocationsStore {
     this.state.update(state => ({ ...state, isLoading: true, error: null }));
     return this.locationsApiService.updateRental(id, rental).pipe(
       tap(updatedRental => this.state.update(state => ({ ...state, currentRental: updatedRental }))),
+      finalize(() => this.state.update(state => ({ ...state, isLoading: false })))
+    );
+  }
+
+  saveDraft(rental: Partial<Location>): Observable<Location> {
+    this.state.update(state => ({ ...state, isLoading: true, error: null }));
+    return this.locationsApiService.saveDraft(rental).pipe(
+      tap(savedRental => this.state.update(state => ({ ...state, currentRental: savedRental }))),
+      finalize(() => this.state.update(state => ({ ...state, isLoading: false })))
+    );
+  }
+
+  publishRental(id: string): Observable<Location> {
+    this.state.update(state => ({ ...state, isLoading: true, error: null }));
+    return this.locationsApiService.publishRental(id).pipe(
+      tap(publishedRental => this.state.update(state => ({ ...state, currentRental: publishedRental }))),
       finalize(() => this.state.update(state => ({ ...state, isLoading: false })))
     );
   }

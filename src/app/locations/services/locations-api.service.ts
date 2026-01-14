@@ -27,6 +27,18 @@ export class LocationsApiService { // Renamed class
     return this.http.put<Location>(`${this.apiUrl}/${id}`, rental);
   }
 
+  saveDraft(rental: Partial<Location>): Observable<Location> {
+    if (rental.id) {
+      return this.updateRental(rental.id, rental);
+    } else {
+      return this.createRental(rental as Location);
+    }
+  }
+
+  publishRental(id: string): Observable<Location> {
+    return this.http.post<Location>(`${this.apiUrl}/${id}/publish`, {});
+  }
+
   uploadPhotos(locationId: string, files: File[]): Observable<any> {
     const formData = new FormData();
     files.forEach(file => {
