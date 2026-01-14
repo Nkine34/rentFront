@@ -48,12 +48,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "node_modules",
-                "src/styles"
+                "node_modules"
               ]
             }
           },
@@ -110,12 +109,11 @@
               }
             ],
             "styles": [
-              "src/custom-theme.scss"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "node_modules",
-                "src/styles"
+                "node_modules"
               ]
             }
           }

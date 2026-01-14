@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 // Import child components
 import { BasicsFormComponent } from '../basics-form/basics-form';
@@ -13,14 +13,13 @@ import { PricingAvailabilityFormComponent } from '../pricing-availability-form/p
   selector: 'app-rental-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     BasicsFormComponent,
     AddressMapFormComponent,
     PhotosHighlightsFormComponent,
     DetailsFormComponent,
     PricingAvailabilityFormComponent
-  ],
+],
   templateUrl: './rental-form.html',
   styleUrls: ['./rental-form.css']
 })

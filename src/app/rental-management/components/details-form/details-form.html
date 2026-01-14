@@ -26,30 +26,42 @@
         <mat-form-field appearance="outline">
           <mat-label>Minimum Nights</mat-label>
           <input matInput type="number" formControlName="minNights">
-          <mat-error *ngIf="formGroup.get('bookingDetails.minNights')?.hasError('min')">Must be at least 1</mat-error>
+          @if (formGroup.get('bookingDetails.minNights')?.hasError('min')) {
+            <mat-error>Must be at least 1</mat-error>
+          }
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Maximum Nights</mat-label>
           <input matInput type="number" formControlName="maxNights">
-          <mat-error *ngIf="formGroup.get('bookingDetails.maxNights')?.hasError('min')">Must be at least 1</mat-error>
+          @if (formGroup.get('bookingDetails.maxNights')?.hasError('min')) {
+            <mat-error>Must be at least 1</mat-error>
+          }
         </mat-form-field>
       </div>
       <div class="form-grid">
         <mat-form-field appearance="outline">
           <mat-label>Cleaning Fee ($)</mat-label>
           <input matInput type="number" formControlName="cleaningFee">
-          <mat-error *ngIf="formGroup.get('bookingDetails.cleaningFee')?.hasError('min')">Cannot be negative</mat-error>
+          @if (formGroup.get('bookingDetails.cleaningFee')?.hasError('min')) {
+            <mat-error>Cannot be negative</mat-error>
+          }
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Service Fee (%)</mat-label>
           <input matInput type="number" formControlName="serviceFee">
-          <mat-error *ngIf="formGroup.get('bookingDetails.serviceFee')?.hasError('min')">Cannot be negative</mat-error>
+          @if (formGroup.get('bookingDetails.serviceFee')?.hasError('min')) {
+            <mat-error>Cannot be negative</mat-error>
+          }
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Tax Rate (%)</mat-label>
           <input matInput type="number" formControlName="taxRate">
-          <mat-error *ngIf="formGroup.get('bookingDetails.taxRate')?.hasError('min')">Cannot be negative</mat-error>
-          <mat-error *ngIf="formGroup.get('bookingDetails.taxRate')?.hasError('max')">Cannot exceed 100</mat-error>
+          @if (formGroup.get('bookingDetails.taxRate')?.hasError('min')) {
+            <mat-error>Cannot be negative</mat-error>
+          }
+          @if (formGroup.get('bookingDetails.taxRate')?.hasError('max')) {
+            <mat-error>Cannot exceed 100</mat-error>
+          }
         </mat-form-field>
       </div>
       <mat-form-field appearance="outline" class="full-width">
@@ -59,7 +71,9 @@
           <mat-option value="moderate">Moderate</mat-option>
           <mat-option value="strict">Strict</mat-option>
         </mat-select>
-        <mat-error *ngIf="formGroup.get('bookingDetails.cancellationPolicy')?.hasError('required')">Policy is required</mat-error>
+        @if (formGroup.get('bookingDetails.cancellationPolicy')?.hasError('required')) {
+          <mat-error>Policy is required</mat-error>
+        }
       </mat-form-field>
     </div>
   </mat-card-content>

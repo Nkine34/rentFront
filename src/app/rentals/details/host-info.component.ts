@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Host } from '../models/host.model';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-host-info',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [MatIconModule],
   template: `
     <div class="host-card">
       <h4>Hôte</h4>

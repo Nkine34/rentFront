@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar
 
 // Angular Material Imports
@@ -17,7 +17,6 @@ import { LLocationPhoto } from '../../models/rental.models'; // Import LLocation
   selector: 'app-photos-highlights-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
@@ -25,7 +24,7 @@ import { LLocationPhoto } from '../../models/rental.models'; // Import LLocation
     MatIconModule,
     MatButtonModule,
     MatChipsModule
-  ],
+],
   templateUrl: './photos-highlights-form.html',
   styleUrls: ['./photos-highlights-form.css']
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { LocationListComponent } from '../locations/location-list.component';
 import { LocationStore } from '../state/location.store';
@@ -10,9 +10,8 @@ import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core'
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    LocationListComponent,
-    CommonModule
-  ]
+    LocationListComponent
+]
 })
 export class HomeComponent implements OnInit {
   protected readonly store = inject(LocationStore);

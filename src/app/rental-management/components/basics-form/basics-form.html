@@ -8,13 +8,17 @@
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Listing Title</mat-label>
       <input matInput formControlName="title" placeholder="e.g., Cozy Apartment near Downtown">
-      <mat-error *ngIf="formGroup.get('title')?.hasError('required')">Title is required</mat-error>
+      @if (formGroup.get('title')?.hasError('required')) {
+        <mat-error>Title is required</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Description</mat-label>
       <textarea matInput formControlName="description" rows="5" placeholder="Give a detailed description of your rental."></textarea>
-      <mat-error *ngIf="formGroup.get('description')?.hasError('required')">Description is required</mat-error>
+      @if (formGroup.get('description')?.hasError('required')) {
+        <mat-error>Description is required</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
@@ -27,36 +31,54 @@
         <mat-option value="condo">Condo</mat-option>
         <mat-option value="townhouse">Townhouse</mat-option>
       </mat-select>
-      <mat-error *ngIf="formGroup.get('locationType')?.hasError('required')">Location type is required</mat-error>
+      @if (formGroup.get('locationType')?.hasError('required')) {
+        <mat-error>Location type is required</mat-error>
+      }
     </mat-form-field>
 
     <div class="form-grid">
       <mat-form-field appearance="outline">
         <mat-label>Capacity</mat-label>
         <input matInput type="number" formControlName="capacity">
-        <mat-error *ngIf="formGroup.get('capacity')?.hasError('required')">Capacity is required</mat-error>
-        <mat-error *ngIf="formGroup.get('capacity')?.hasError('min')">Must be at least 1</mat-error>
+        @if (formGroup.get('capacity')?.hasError('required')) {
+          <mat-error>Capacity is required</mat-error>
+        }
+        @if (formGroup.get('capacity')?.hasError('min')) {
+          <mat-error>Must be at least 1</mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Bedrooms</mat-label>
         <input matInput type="number" formControlName="bedrooms">
-        <mat-error *ngIf="formGroup.get('bedrooms')?.hasError('required')">Bedrooms is required</mat-error>
-        <mat-error *ngIf="formGroup.get('bedrooms')?.hasError('min')">Must be at least 1</mat-error>
+        @if (formGroup.get('bedrooms')?.hasError('required')) {
+          <mat-error>Bedrooms is required</mat-error>
+        }
+        @if (formGroup.get('bedrooms')?.hasError('min')) {
+          <mat-error>Must be at least 1</mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Beds</mat-label>
         <input matInput type="number" formControlName="beds">
-        <mat-error *ngIf="formGroup.get('beds')?.hasError('required')">Beds is required</mat-error>
-        <mat-error *ngIf="formGroup.get('beds')?.hasError('min')">Must be at least 1</mat-error>
+        @if (formGroup.get('beds')?.hasError('required')) {
+          <mat-error>Beds is required</mat-error>
+        }
+        @if (formGroup.get('beds')?.hasError('min')) {
+          <mat-error>Must be at least 1</mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Bathrooms</mat-label>
         <input matInput type="number" formControlName="bathrooms">
-        <mat-error *ngIf="formGroup.get('bathrooms')?.hasError('required')">Bathrooms is required</mat-error>
-        <mat-error *ngIf="formGroup.get('bathrooms')?.hasError('min')">Must be at least 1</mat-error>
+        @if (formGroup.get('bathrooms')?.hasError('required')) {
+          <mat-error>Bathrooms is required</mat-error>
+        }
+        @if (formGroup.get('bathrooms')?.hasError('min')) {
+          <mat-error>Must be at least 1</mat-error>
+        }
       </mat-form-field>
     </div>
   </mat-card-content>

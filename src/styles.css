@@ -1,44 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss → VERSION ANGULAR 21 MAINTENABLE */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* 1. Thème prébuilt (zéro maintenance) */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* Styles forcés pour l'affichage des annonces par pays */
+/* 2. Variables CSS globales (évolutives) */
+:root {
+  /* Couleurs */
+  --primary: #3f51b5;
+  --accent: #ffc107;
+  --warn: #f44336;
+  --bg-primary: #f8f9fa;
+  --surface: #ffffff;
+
+  /* Typographie (remplace define-typography-config) */
+  --font-family: 'Roboto', "Helvetica Neue", sans-serif;
+  --h1: clamp(2rem, 5vw, 3rem);
+  --h2: clamp(1.5rem, 4vw, 2.5rem);
+  --h3: clamp(1.25rem, 3.5vw, 2rem);
+  --body-lg: clamp(1rem, 2.5vw, 1.125rem);
+  --body: clamp(0.875rem, 2vw, 1rem);
+  --caption: clamp(0.75rem, 1.5vw, 0.875rem);
+
+  /* Spacing 8px grid */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 40px;
+  --sp-6: 48px;
+}
+
+/* 3. Reset + Global */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  line-height: 1.6;
+}
+
+/* 4. Utilitaires (tes paddings existants améliorés) */
+@function sp($n) {
+  @return calc(var(--sp-1) * #{$n});
+}
+
+.p-1 { padding: sp(1); }
+.p-2 { padding: sp(2); }
+.p-3 { padding: sp(3); }
+.m-1 { margin: sp(1); }
+.m-2 { margin: sp(2); }
+.m-3 { margin: sp(3); }
+
+/* 5. Responsive mixins (modernes) */
+@mixin screen-sm { @media (max-width: 768px) { @content; } }
+@mixin screen-md { @media (min-width: 769px) and (max-width: 1024px) { @content; } }
+@mixin screen-lg { @media (min-width: 1025px) { @content; } }
+
+/* 6. Tes styles existants (listings + shake) */
 .listings-row-container {
-  overflow-x: hidden !important; /* Cache le défilement horizontal */
-  overflow-y: hidden !important; /* Cache le défilement vertical si présent */
+  overflow: hidden !important;
 }
 
 .listings-row {
   display: flex !important;
-  flex-wrap: nowrap !important; /* Empêche le retour à la ligne */
-  gap: 24px !important;
+  flex-wrap: nowrap !important;
+  gap: sp(3) !important;
 }
 
 .location-card {
-  width: 300px !important; /* Largeur fixe pour les cartes */
-  flex-shrink: 0 !important; /* Empêche les cartes de rétrécir */
+  width: 300px !important;
+  flex-shrink: 0 !important;
 }
 
-/* Shake animation for invalid form fields */
+/* Shake animation améliorée */
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
 }
 
 .mat-form-field.ng-invalid.ng-touched .mat-form-field-wrapper {
-  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
+
+/* 7. Cards premium (pour ta feature locations) */
+.card-premium {
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.section { padding: sp(4) 0; }

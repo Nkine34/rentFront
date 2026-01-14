@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {CommonModule} from '@angular/common';
+
 import {Router} from '@angular/router';
 import {LocationListComponent} from '../locations/location-list.component';
 import {LocationStore} from '../state/location.store';
@@ -7,7 +7,7 @@ import {LocationStore} from '../state/location.store';
 @Component({
   selector: 'app-search-page',
   standalone: true,
-  imports: [CommonModule, LocationListComponent],
+  imports: [LocationListComponent],
   templateUrl: './search-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -9,26 +9,36 @@
 
     <!-- Save State Chip -->
     <mat-chip-listbox class="save-state-chip">
-      <mat-chip-option *ngIf="saveState === 'draft'" color="accent" selected>
-        <mat-icon matChipAvatar>save</mat-icon> Draft Saved
-      </mat-chip-option>
-      <mat-chip-option *ngIf="saveState === 'published'" color="primary" selected>
-        <mat-icon matChipAvatar>check_circle</mat-icon> Published
-      </mat-chip-option>
-      <mat-chip-option *ngIf="saveState === 'unsaved'" color="warn" selected>
-        <mat-icon matChipAvatar>warning</mat-icon> Unsaved Changes
-      </mat-chip-option>
-      <mat-chip-option *ngIf="saveState === 'error'" color="warn" selected>
-        <mat-icon matChipAvatar>error</mat-icon> Error
-      </mat-chip-option>
+      @if (saveState === 'draft') {
+        <mat-chip-option color="accent" selected>
+          <mat-icon matChipAvatar>save</mat-icon> Draft Saved
+        </mat-chip-option>
+      }
+      @if (saveState === 'published') {
+        <mat-chip-option color="primary" selected>
+          <mat-icon matChipAvatar>check_circle</mat-icon> Published
+        </mat-chip-option>
+      }
+      @if (saveState === 'unsaved') {
+        <mat-chip-option color="warn" selected>
+          <mat-icon matChipAvatar>warning</mat-icon> Unsaved Changes
+        </mat-chip-option>
+      }
+      @if (saveState === 'error') {
+        <mat-chip-option color="warn" selected>
+          <mat-icon matChipAvatar>error</mat-icon> Error
+        </mat-chip-option>
+      }
     </mat-chip-listbox>
 
     <button mat-button (click)="saveDraft()" [disabled]="loading">Save Draft</button>
     <button mat-button (click)="preview()" [disabled]="loading">Preview</button>
     <button mat-raised-button color="accent" (click)="publish()" [disabled]="!rentalForm.valid || loading">
-      <mat-icon *ngIf="loading" class="spinner-icon">
-        <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
-      </mat-icon>
+      @if (loading) {
+        <mat-icon class="spinner-icon">
+          <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
+        </mat-icon>
+      }
       Publish
     </button>
   </mat-toolbar>
@@ -107,9 +117,11 @@
             <div class="stepper-actions">
               <button mat-button matStepperPrevious [disabled]="loading">Back</button>
               <button mat-raised-button color="primary" (click)="publish()" [disabled]="!rentalForm.valid || loading">
-                <mat-icon *ngIf="loading" class="spinner-icon">
-                  <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
-                </mat-icon>
+                @if (loading) {
+                  <mat-icon class="spinner-icon">
+                    <mat-progress-spinner diameter="20" mode="indeterminate" color="primary"></mat-progress-spinner>
+                  </mat-icon>
+                }
                 Publish
               </button>
             </div>

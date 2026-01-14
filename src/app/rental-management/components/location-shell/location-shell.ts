@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Observable, Subscription, finalize } from 'rxjs';
@@ -30,7 +30,6 @@ type SaveState = 'draft' | 'published' | 'unsaved' | 'error';
   selector: 'app-location-shell',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
@@ -42,9 +41,9 @@ type SaveState = 'draft' | 'published' | 'unsaved' | 'error';
     MatMenuModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
-    MatChipsModule, // Add MatChipsModule
+    MatChipsModule,
     RentalForm
-  ],
+],
   templateUrl: './location-shell.html',
   styleUrls: ['./location-shell.css']
 })

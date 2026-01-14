@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, computed, inject, Signal} from '@angular/core';
-import {CommonModule} from '@angular/common';
+
 import {map} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {toSignal} from '@angular/core/rxjs-interop';
@@ -16,14 +16,13 @@ import {AmenitiesListComponent} from './amenities-list.component';
   selector: 'app-location-details',
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
     HostInfoComponent,
     BookingCardComponent,
     AmenitiesListComponent
-  ],
+],
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

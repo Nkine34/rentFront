@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 // Angular Material Imports
 import { MatCardModule } from '@angular/material/card';
@@ -14,7 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
   selector: 'app-details-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
@@ -22,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatCheckboxModule,
     MatSelectModule
-  ],
+],
   templateUrl: './details-form.html',
   styleUrls: ['./details-form.css']
 })

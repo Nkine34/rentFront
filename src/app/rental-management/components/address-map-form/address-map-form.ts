@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 // Angular Material Imports
 import { MatCardModule } from '@angular/material/card';
@@ -16,15 +16,14 @@ import { GoogleMapsModule, MapInfoWindow, MapMarker } from '@angular/google-maps
   selector: 'app-address-map-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    GoogleMapsModule // Corrected to GoogleMapsModule
-  ],
+    GoogleMapsModule
+],
   templateUrl: './address-map-form.html',
   styleUrls: ['./address-map-form.css']
 })

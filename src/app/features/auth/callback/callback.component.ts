@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { CommonModule } from '@angular/common';
+
 
 /**
  * Component responsable de traiter le callback Keycloak.
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-callback',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <div class="callback-container">
       <p>Traitement de votre connexion...</p>

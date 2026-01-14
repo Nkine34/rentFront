@@ -3,7 +3,7 @@ import {NightsPipe} from '../pipes/nights.pipe';
 import {Location} from '../models/location.model';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import {CommonModule, DatePipe} from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {PriceDisplayPipe} from '../pipes/price-display.pipe';
 import { NotificationService } from '../../shared/services/notification.service';

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatIconModule } from '@angular/material/icon';
 import { Amenities } from '../models/amenities.model';
 import { AmenityDetailsPipe } from '../pipes/amenity-details.pipe';
@@ -7,7 +7,7 @@ import { AmenityDetailsPipe } from '../pipes/amenity-details.pipe';
 @Component({
   selector: 'app-amenities-list',
   standalone: true,
-  imports: [CommonModule, MatIconModule, AmenityDetailsPipe],
+  imports: [MatIconModule, AmenityDetailsPipe],
   template: `
     <h3>Équipements</h3>
     @if (amenities) {

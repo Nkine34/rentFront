@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 // Angular Material Imports
 import { MatCardModule } from '@angular/material/card';
@@ -16,7 +16,6 @@ import { MatNativeDateModule } from '@angular/material/core'; // For matDatepick
   selector: 'app-pricing-availability-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
@@ -26,7 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core'; // For matDatepick
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule
-  ],
+],
   templateUrl: './pricing-availability-form.html',
   styleUrls: ['./pricing-availability-form.css']
 })
