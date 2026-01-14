@@ -1,7 +1,7 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
+import { KeycloakService } from 'keycloak-angular';
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { CurrentUser } from './models/current-user.model';

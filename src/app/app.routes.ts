@@ -46,5 +46,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/host/become-host/become-host.component').then(m => m.BecomeHostComponent),
     canActivate: [authGuard]
   },
+  {
+    path: 'host/rentals',
+    loadChildren: () => import('./rental-management/rental-management-module').then(m => m.RentalManagementModule),
+    canActivate: [authGuard]
+  },
   { path: '**', redirectTo: '' }
 ];

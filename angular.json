@@ -48,9 +48,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
-              "src/styles.css"
-            ]
+              "src/custom-theme.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "src/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -105,8 +110,14 @@
               }
             ],
             "styles": [
-              "src/styles.css"
-            ]
+              "src/custom-theme.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "src/styles"
+              ]
+            }
           }
         }
       }
