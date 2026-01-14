@@ -1,0 +1,76 @@
+<mat-card [formGroup]="formGroup" class="form-section-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>location_on</mat-icon>
+    <mat-card-title>Location Address</mat-card-title>
+    <mat-card-subtitle>Where is your place located?</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Street Address</mat-label>
+      <input matInput formControlName="street" placeholder="e.g., 123 Main St">
+      <mat-error *ngIf="formGroup.get('street')?.hasError('required')">Street address is required</mat-error>
+    </mat-form-field>
+
+    <div class="form-grid">
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+        <mat-error *ngIf="formGroup.get('city')?.hasError('required')">City is required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>State / Province</mat-label>
+        <input matInput formControlName="state">
+        <mat-error *ngIf="formGroup.get('state')?.hasError('required')">State/Province is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-grid">
+      <mat-form-field appearance="outline">
+        <mat-label>ZIP / Postal Code</mat-label>
+        <input matInput formControlName="zipCode">
+        <mat-error *ngIf="formGroup.get('zipCode')?.hasError('required')">ZIP/Postal Code is required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country">
+        <mat-error *ngIf="formGroup.get('country')?.hasError('required')">Country is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width map-search-field">
+      <mat-label>Search Address on Map</mat-label>
+      <input matInput [formControl]="addressSearch" placeholder="e.g., Eiffel Tower, Paris">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="map-container">
+      <google-map
+        height="300px"
+        width="100%"
+        [zoom]="zoom"
+        [center]="center"
+        [options]="{ disableDefaultUI: true }"
+        (mapClick)="mapClicked($event)"
+      >
+        <map-marker
+          *ngIf="markerPosition"
+          [position]="markerPosition"
+          [options]="markerOptions"
+          (mapDragend)="markerDragged($event)"
+        ></map-marker>
+      </google-map>
+    </div>
+
+    <div class="form-grid map-coords">
+      <mat-form-field appearance="outline">
+        <mat-label>Latitude</mat-label>
+        <input matInput type="number" formControlName="latitude" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Longitude</mat-label>
+        <input matInput type="number" formControlName="longitude" readonly>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
+

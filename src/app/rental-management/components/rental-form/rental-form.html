@@ -1,0 +1,16 @@
+<div [formGroup]="formGroup">
+  <!-- Step 1: General Info -->
+  <app-basics-form [formGroup]="formGroup"></app-basics-form>
+
+  <!-- Step 2: Address & Map -->
+  <app-address-map-form [formGroup]="addressFormGroup"></app-address-map-form>
+
+  <!-- Step 3: Amenities & Photos -->
+  <app-photos-highlights-form [formGroup]="formGroup" (filesSelected)="onFilesSelected($event)"></app-photos-highlights-form>
+
+  <!-- Step 4: Rules & Publication -->
+  <app-details-form [formGroup]="formGroup"></app-details-form>
+
+  <!-- Step 5: Pricing & Availability -->
+  <app-pricing-availability-form [formGroup]="formGroup"></app-pricing-availability-form>
+</div>

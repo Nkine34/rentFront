@@ -1,0 +1,129 @@
+.location-shell-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Light grey background */
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .title {
+  margin-left: 16px;
+  font-size: 1.25rem; /* h6 equivalent */
+  font-weight: 500;
+}
+
+.header .spacer {
+  flex: 1 1 auto;
+}
+
+.header .spinner-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.content {
+  flex: 1;
+  padding: 24px; /* p-3 equivalent */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+}
+
+.stepper-card {
+  width: 100%;
+  max-width: 1200px; /* Max width for desktop */
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Stepper actions styling */
+.stepper-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Sticky Footer for Mobile */
+.mobile-sticky-footer {
+  display: none; /* Hidden by default */
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  gap: 8px;
+  z-index: 999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) { /* Tablet and smaller */
+  .stepper-card {
+    padding: 16px;
+  }
+
+  /* Stepper vertical for tablet */
+  .mat-stepper-horizontal {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .content {
+    padding: 16px; /* p-2 equivalent */
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px;
+  }
+
+  .header .title {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .header .mat-button {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .stepper-actions {
+    flex-direction: column;
+  }
+
+  .stepper-actions button {
+    width: 100%;
+  }
+
+  .mobile-sticky-footer {
+    display: flex; /* Show on mobile */
+  }
+
+  /* Hide header action buttons on mobile when sticky footer is active */
+  .header .mat-button:not(.mat-icon-button) {
+    display: none;
+  }
+}
+
+/* Stepper dot styling */
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done {
+  background-color: mat.get-color-from-palette(mat.$indigo-palette, 500);
+  color: white;
+}
+
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: mat.get-color-from-palette(mat.$amber-palette, 500);
+  color: black;
+}

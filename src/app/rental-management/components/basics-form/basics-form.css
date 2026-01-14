@@ -1,0 +1,31 @@
+.form-section-card {
+  margin-bottom: 24px;
+}
+
+.form-section-card mat-card-header {
+  padding-bottom: 16px;
+}
+
+.form-section-card mat-card-title {
+  font-size: 1.5rem; /* h5 equivalent */
+}
+
+.form-section-card mat-card-subtitle {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.form-grid mat-form-field {
+  width: 100%;
+}
