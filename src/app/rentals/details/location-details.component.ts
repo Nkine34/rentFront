@@ -1,16 +1,20 @@
-import {ChangeDetectionStrategy, Component, computed, inject, Signal} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, Signal } from '@angular/core';
 
-import {map} from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
-import {toSignal} from '@angular/core/rxjs-interop';
-import {Location} from '../models/location.model';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {LocationStore} from '../state/location.store';
-import {HostInfoComponent} from './host-info.component';
-import {BookingCardComponent} from './booking-card.component';
-import {AmenitiesListComponent} from './amenities-list.component';
+import { Action } from 'rxjs/internal/scheduler/Action';
+import { map } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Location } from '../models/location.model';
+import { DatePipe } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { LocationStore } from '../state/location.store';
+import { HostInfoComponent } from './host-info.component';
+import { BookingCardComponent } from './booking-card.component';
+import { AmenitiesListComponent } from './amenities-list.component';
 
 @Component({
   selector: 'app-location-details',
@@ -19,10 +23,13 @@ import {AmenitiesListComponent} from './amenities-list.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     HostInfoComponent,
     BookingCardComponent,
-    AmenitiesListComponent
-],
+    AmenitiesListComponent,
+    DatePipe
+  ],
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
