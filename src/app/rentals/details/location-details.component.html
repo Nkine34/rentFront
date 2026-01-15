@@ -1,58 +1,118 @@
-<div class="details-container">
-  @if (store.loading()) {
-  <p>Chargement des détails de l'annonce...</p>
-  } @else if (store.error(); as error) {
-  <p class="error-message">{{ error }}</p>
-  <button mat-raised-button color="primary" (click)="goBack()">Retour</button>
-  } @else if (location(); as location) {
-  <mat-card class="location-detail-card">
-    <button mat-icon-button class="back-button" (click)="goBack()">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
+@if (location(); as location) {
+<div class="page-wrapper">
+  <!-- HERO HEADER (Gradient + Info) -->
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="text-content">
+        <span class="badge-superhost" *ngIf="location.host.isSuperhost">🏆 Superhost</span>
+        <h1>{{ location.type }} à {{ location.address.city }}</h1>
+        <p class="subtitle">
+          <mat-icon>star</mat-icon> {{ location.rating }} ({{ location.totalReviews }} avis) •
+          {{ location.address.city }}, {{ location.address.country }} •
+          {{ location.maxGuests }} voyageurs • {{ location.bedrooms }} chambres
+        </p>
+      </div>
 
-    <mat-card-title>{{ location.type }} à {{ location.address.city }}</mat-card-title>
-    <mat-card-subtitle>{{ location.address.street }}, {{ location.address.postalCode }} {{ location.address.city }}, {{
-      location.address.country }}</mat-card-subtitle>
-
-    <div class="image-gallery">
-      @for (photo of location.photos; track photo) {
-      <img [src]="photo" alt="Photo of {{location.type}}">
-      }
-    </div>
-
-    <mat-card-content>
-      <div class="details-main-content">
-        <div class="listing-info">
-          <h3>Description</h3>
-          <p>{{ location.description }}</p>
-
-          <h3>Points forts</h3>
-          <ul class="highlights-list">
-            @for (highlight of location.highlights; track $index) {
-            <li><mat-icon>check</mat-icon> {{ highlight }}</li>
-            }
-          </ul>
-
-          <h3>Disponibilités</h3>
-          <div class="availability-calendar">
-            <mat-calendar [minDate]="location.availableFrom | date:'yyyy-MM-dd'"
-              [maxDate]="location.availableTo | date:'yyyy-MM-dd'"></mat-calendar>
-          </div>
-
-          <app-amenities-list [amenities]="location.amenities"></app-amenities-list>
-        </div>
-
-        <div class="host-and-booking">
-          <app-host-info [host]="location.host"></app-host-info>
-          <app-booking-card [pricePerNight]="location.pricePerNight" [details]="location.bookingDetails"
-            [maxGuests]="location.maxGuests">
-          </app-booking-card>
+      <div class="host-badge">
+        <img [src]="location.host.photo" [alt]="location.host.name" class="avatar">
+        <div class="host-meta">
+          <span class="name">{{ location.host.name }}</span>
+          <span class="response-rate">Répond à {{ location.host.responseRate }}%</span>
         </div>
       </div>
-    </mat-card-content>
-  </mat-card>
-  } @else {
-  <p class="error-message">Annonce non trouvée.</p>
-  <button mat-raised-button color="primary" (click)="goBack()">Retour</button>
-  }
+    </div>
+  </header>
+
+  <div class="container main-layout">
+
+    <!-- PHOTO GALLERY (Grid) -->
+    <section class="gallery-section">
+      <div class="gallery-grid">
+        @for (photo of location.photos.slice(0,5); track photo; let i = $index) {
+        <div class="photo-item" [class.main]="i === 0">
+          <img [src]="photo" [alt]="location.type">
+          @if (i === 4) {
+          <div class="more-photos-overlay">+{{ location.photos.length - 5 }} photos</div>
+          }
+        </div>
+        }
+      </div>
+    </section>
+
+    <div class="content-grid two-column">
+      <!-- LEFT COLUMN: Details -->
+      <main class="details-column">
+
+        <!-- HIGHLIGHTS -->
+        <section class="highlights-section">
+          <h2>Points forts</h2>
+          <div class="highlights-grid">
+            @for (highlight of location.highlights; track highlight) {
+            <div class="highlight-chip">
+              <mat-icon>check_circle_outline</mat-icon>
+              <span>{{ highlight }}</span>
+            </div>
+            }
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- DESCRIPTION -->
+        <section class="description-section">
+          <h2>À propos de ce logement</h2>
+          <p>{{ location.description }}</p>
+        </section>
+
+        <hr class="divider">
+
+        <!-- AMENITIES -->
+        <section class="amenities-section">
+          <h2>Ce que propose ce logement</h2>
+          <div class="amenities-grid">
+            <!-- Using a simplified list here for styling control, or existing component but styled -->
+            <app-amenities-list [amenities]="location.amenities"></app-amenities-list>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- CALENDAR SECTION (Main) -->
+        <section class="availability-section">
+          <div class="section-header">
+            <h2>Disponibilités</h2>
+            <span class="badge-demand">🔥 Très demandé</span>
+          </div>
+          <p class="dates-range">{{ location.availableFrom | date:'d MMMM' }} - {{ location.availableTo | date:'d MMMM
+            yyyy' }}</p>
+
+          <div class="calendar-wrapper">
+            <mat-calendar [minDate]="location.availableFrom | date:'yyyy-MM-dd'"
+              [maxDate]="location.availableTo | date:'yyyy-MM-dd'" class="premium-calendar"></mat-calendar>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- RIGHT COLUMN: Sticky Booking Sidebar -->
+      <aside class="booking-sidebar">
+        <app-booking-card [pricePerNight]="location.pricePerNight" [details]="location.bookingDetails"
+          [maxGuests]="location.maxGuests" class="sticky-card">
+        </app-booking-card>
+      </aside>
+    </div>
+
+  </div>
 </div>
+} @else if (store.loading()) {
+<div class="loading-state">
+  <div class="spinner"></div> <!-- Custom CSS spinner -->
+  <p>Chargement de votre expérience...</p>
+</div>
+} @else {
+<div class="error-state">
+  <h1>Oups !</h1>
+  <p>{{ store.error() }}</p>
+  <button mat-flat-button color="primary" (click)="goBack()">Retour à l'accueil</button>
+</div>
+}
