@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './auth.guard';
-import { HomeComponent } from './rentals/home/home.component';
-import { locationsResolver } from './rentals/location.resolver';
+import { HomeComponent } from './features/rentals/home/home.component';
+import { locationsResolver } from './features/rentals/location.resolver';
 import { LoginComponent } from './features/auth/login/login.component';
 import { CallbackComponent } from './features/auth/callback/callback.component';
-import { SearchPageComponent } from './rentals/search/search-page.component';
+import { SearchPageComponent } from './features/rentals/search/search-page.component';
 import { RegisterComponent } from './features/auth/register/register.component';
-import { LocationDetailsComponent } from './rentals/details/location-details.component';
+import { LocationDetailsComponent } from './features/rentals/details/location-details.component';
 
 export const routes: Routes = [
   {
@@ -62,13 +62,13 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: 'locations', // New base path for locations feature
-    loadChildren: () => import('./locations/locations.routes').then(m => m.locationsRoutes),
+    path: 'locations', // New base path for locations feature (Host Properties)
+    loadChildren: () => import('./features/host/properties/locations.routes').then(m => m.locationsRoutes),
     canActivate: [authGuard]
   },
   {
     path: 'inbox',
-    loadComponent: () => import('./rentals/inbox/inbox.component').then(m => m.InboxComponent),
+    loadComponent: () => import('./features/rentals/inbox/inbox.component').then(m => m.InboxComponent),
     canActivate: [authGuard]
   },
   { path: '**', redirectTo: '' }

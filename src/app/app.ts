@@ -5,9 +5,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { SearchBarComponent } from './rentals/search/search-bar.component';
-import { LocationStore } from './rentals/state/location.store';
-import { SearchCriteria } from './rentals/models';
+import { SearchBarComponent } from './features/rentals/search/search-bar.component';
+import { LocationStore } from './features/rentals/state/location.store';
+import { SearchCriteria } from './features/rentals/models';
 import { AuthService } from './features/auth/auth.service';
 import { CommonModule } from '@angular/common';
 

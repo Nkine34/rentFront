@@ -2,8 +2,8 @@ import { Component, Input, OnInit, Signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { ReviewDto } from '../../../shared/models/review.model';
-import { ReviewService } from '../../../shared/services/review.service';
+import { ReviewDto } from '../../../../shared/models/review.model';
+import { ReviewService } from '../../../../shared/services/review.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -29,3 +29,4 @@ export class ReviewListComponent implements OnInit {
         return Array(5).fill(0).map((x, i) => i < rating ? 1 : 0);
     }
 }
+

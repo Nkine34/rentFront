@@ -5,20 +5,20 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { LocationsApiService } from '../../../locations/services/locations-api.service';
-import { Location } from '../../../locations/models/location.interface';
+import { LocationsApiService } from '../properties/services/locations-api.service';
+import { Location } from '../properties/models/location.interface';
 
 @Component({
-    standalone: true,
-    selector: 'app-rental-list',
-    imports: [
-        CommonModule,
-        MatCardModule,
-        MatButtonModule,
-        MatIconModule,
-        MatProgressSpinnerModule
-    ],
-    template: `
+  standalone: true,
+  selector: 'app-rental-list',
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatProgressSpinnerModule
+  ],
+  template: `
     <div class="rental-list-container">
       <div class="header">
         <h1>Mes Annonces</h1>
@@ -92,7 +92,7 @@ import { Location } from '../../../locations/models/location.interface';
       }
     </div>
   `,
-    styles: [`
+  styles: [`
     .rental-list-container {
       padding: 2rem;
       max-width: 1400px;
@@ -303,41 +303,41 @@ import { Location } from '../../../locations/models/location.interface';
   `]
 })
 export class RentalListComponent implements OnInit {
-    rentals = signal<Location[]>([]);
-    loading = signal(false);
-    error = signal<string | null>(null);
+  rentals = signal<Location[]>([]);
+  loading = signal(false);
+  error = signal<string | null>(null);
 
-    constructor(
-        private locationsApiService: LocationsApiService,
-        private router: Router
-    ) { }
+  constructor(
+    private locationsApiService: LocationsApiService,
+    private router: Router
+  ) { }
 
-    ngOnInit(): void {
-        this.loadRentals();
-    }
+  ngOnInit(): void {
+    this.loadRentals();
+  }
 
-    loadRentals(): void {
-        this.loading.set(true);
-        this.error.set(null);
+  loadRentals(): void {
+    this.loading.set(true);
+    this.error.set(null);
 
-        this.locationsApiService.getMyLocations().subscribe({
-            next: (locations) => {
-                this.rentals.set(locations);
-                this.loading.set(false);
-            },
-            error: (err) => {
-                console.error('Error loading rentals:', err);
-                this.error.set('Impossible de charger vos annonces. Veuillez réessayer.');
-                this.loading.set(false);
-            }
-        });
-    }
+    this.locationsApiService.getMyLocations().subscribe({
+      next: (locations) => {
+        this.rentals.set(locations);
+        this.loading.set(false);
+      },
+      error: (err) => {
+        console.error('Error loading rentals:', err);
+        this.error.set('Impossible de charger vos annonces. Veuillez réessayer.');
+        this.loading.set(false);
+      }
+    });
+  }
 
-    createNewRental(): void {
-        this.router.navigate(['/locations/new']);
-    }
+  createNewRental(): void {
+    this.router.navigate(['/locations/new']);
+  }
 
-    editRental(id: string): void {
-        this.router.navigate(['/locations', id, 'edit']);
-    }
+  editRental(id: string): void {
+    this.router.navigate(['/locations', id, 'edit']);
+  }
 }

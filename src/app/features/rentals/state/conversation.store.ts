@@ -8,7 +8,7 @@ import { tapResponse } from '@ngrx/operators';
 
 import { Conversation, Message } from '../models';
 import { ConversationService } from '../services/conversation.service';
-import { withCallState } from '../../shared/state/call-state.feature';
+import { withCallState } from '../../../shared/state/call-state.feature';
 
 // --- State Definition ---
 interface ConversationState {

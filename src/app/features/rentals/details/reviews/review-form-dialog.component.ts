@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
-import { ReviewService } from '../../../shared/services/review.service';
-import { CreateReviewDto } from '../../../shared/models/review.model';
+import { ReviewService } from '../../../../shared/services/review.service';
+import { CreateReviewDto } from '../../../../shared/models/review.model';
 
 @Component({
     selector: 'app-review-form-dialog',
@@ -57,7 +57,7 @@ export class ReviewFormDialogComponent {
                     this.snackBar.open('Merci pour votre avis !', 'Fermer', { duration: 3000 });
                     this.dialogRef.close(true);
                 },
-                error: (err) => {
+                error: (err: any) => {
                     console.error('Error creating review', err);
                     this.snackBar.open('Erreur lors de l\'envoi de l\'avis', 'Fermer', { duration: 3000 });
                     this.isSubmitting = false;

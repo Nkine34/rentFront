@@ -7,7 +7,7 @@ import { tapResponse } from '@ngrx/operators';
 
 import { Location, SearchCriteria } from '../models';
 import { SearchService } from '../services/search.service';
-import { withCallState } from '../../shared/state/call-state.feature';
+import { withCallState } from '../../../shared/state/call-state.feature';
 
 // --- 1. Définition de la structure de l'état ---
 interface LocationsState {

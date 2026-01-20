@@ -33,10 +33,10 @@
         <mat-spinner diameter="60"></mat-spinner>
         <p>Searching properties...</p>
       </div>
-      } @else if (store.error(); as error) {
+      } @else if (store.error()) {
       <div class="error-state">
         <mat-icon style="font-size: 48px; width: 48px; height: 48px;">error_outline</mat-icon>
-        <p>{{ error }}</p>
+        <p>{{ store.error() }}</p>
       </div>
       } @else {
       <div class="results-header">

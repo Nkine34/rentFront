@@ -1,13 +1,13 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output} from '@angular/core';
-import {Location} from '../models';
-import {NightsPipe} from '../pipes/nights.pipe';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Location } from '../models';
+import { NightsPipe } from '../pipes/nights.pipe';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule, DatePipe } from '@angular/common';
-import {PriceDisplayPipe} from '../pipes/price-display.pipe';
-import { NotificationService } from '../../shared/services/notification.service';
+import { PriceDisplayPipe } from '../pipes/price-display.pipe';
+import { NotificationService } from '../../../shared/services/notification.service';
 
 @Component({
   selector: 'app-location-list',
