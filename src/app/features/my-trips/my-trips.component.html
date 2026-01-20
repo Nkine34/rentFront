@@ -39,7 +39,10 @@
 
             <mat-card-actions align="end">
                 <button mat-button color="primary" [routerLink]="['/details', trip.locationId]">Relouer</button>
-                @if (trip.status === 'PENDING' || trip.status === 'CONFIRMED') {
+                @if (canReview(trip)) {
+                <button mat-flat-button color="accent" (click)="leaveReview(trip)">Laissez un avis</button>
+                }
+                @if (trip.status === 'PENDING' || (trip.status === 'CONFIRMED' && !canReview(trip))) {
                 <button mat-button color="warn" (click)="cancelReservation(trip.id)">Annuler</button>
                 }
             </mat-card-actions>

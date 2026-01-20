@@ -14,6 +14,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { LocationStore } from '../state/location.store';
 import { BookingCardComponent } from './booking-card.component';
 import { AmenitiesListComponent } from './amenities-list.component';
+import { ReviewListComponent } from './reviews/review-list.component';
 
 @Component({
   selector: 'app-location-details',
@@ -27,6 +28,7 @@ import { AmenitiesListComponent } from './amenities-list.component';
     MatNativeDateModule,
     BookingCardComponent,
     AmenitiesListComponent,
+    ReviewListComponent,
     DatePipe
   ],
   templateUrl: './location-details.component.html',

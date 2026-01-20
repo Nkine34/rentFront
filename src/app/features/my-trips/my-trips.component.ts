@@ -10,6 +10,8 @@ import { DatePipe, CurrencyPipe } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ReviewFormDialogComponent } from '../../rentals/details/reviews/review-form-dialog.component';
 
 @Component({
     selector: 'app-my-trips',
@@ -22,7 +24,8 @@ import { RouterModule } from '@angular/router';
         MatChipsModule,
         MatProgressSpinnerModule,
         MatSnackBarModule,
-        RouterModule
+        RouterModule,
+        MatDialogModule
     ],
     templateUrl: './my-trips.component.html',
     styleUrls: ['./my-trips.component.scss']
@@ -30,6 +33,7 @@ import { RouterModule } from '@angular/router';
 export class MyTripsComponent implements OnInit {
     private readonly reservationService = inject(ReservationService);
     private readonly snackBar = inject(MatSnackBar);
+    private readonly dialog = inject(MatDialog);
 
     reservations = signal<ReservationListDto[]>([]);
     isLoading = signal(true);
@@ -83,5 +87,25 @@ export class MyTripsComponent implements OnInit {
             case 'REJECTED': return 'Refusé';
             default: return status;
         }
+    }
+
+    leaveReview(reservation: ReservationListDto) {
+        this.dialog.open(ReviewFormDialogComponent, {
+            width: '500px',
+            data: {
+                reservationId: reservation.id,
+                locationName: reservation.locationTitle
+            }
+        }).afterClosed().subscribe(result => {
+            if (result) {
+                this.loadReservations(); // Refresh if review was added
+            }
+        });
+    }
+
+    canReview(reservation: ReservationListDto): boolean {
+        const today = new Date();
+        const endDate = new Date(reservation.endDate);
+        return reservation.status === 'CONFIRMED' && endDate < today;
     }
 }

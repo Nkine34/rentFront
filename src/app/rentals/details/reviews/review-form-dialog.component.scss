@@ -1,0 +1,46 @@
+.dialog-content {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.rating-selector {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    p {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+
+        mat-icon {
+            font-size: 2rem;
+            width: 2rem;
+            height: 2rem;
+
+            &.filled {
+                color: #ff385c;
+            }
+        }
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+mat-dialog-actions {
+    padding: 1rem 1.5rem !important;
+}
+
+button[color="primary"] {
+    background-color: #ff385c !important;
+    color: white !important;
+}

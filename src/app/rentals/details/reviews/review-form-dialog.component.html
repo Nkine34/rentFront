@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Votre expérience à {{ data.locationName }}</h2>
+
+<mat-dialog-content class="dialog-content">
+    <form [formGroup]="reviewForm">
+        <div class="rating-selector">
+            <p>Note globale</p>
+            <div class="stars">
+                <button type="button" mat-icon-button *ngFor="let s of [1,2,3,4,5]" (click)="setRating(s)">
+                    <mat-icon [color]="reviewForm.get('overallRating')?.value >= s ? 'accent' : ''"
+                        [class.filled]="reviewForm.get('overallRating')?.value >= s">
+                        {{ reviewForm.get('overallRating')?.value >= s ? 'star' : 'star_outline' }}
+                    </mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Votre commentaire</mat-label>
+            <textarea matInput formControlName="comment" rows="5"
+                placeholder="Parlez-nous de votre séjour..."></textarea>
+            <mat-hint>Minimum 10 caractères</mat-hint>
+            <mat-error *ngIf="reviewForm.get('comment')?.hasError('minlength')">
+                Le commentaire est trop court.
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="dialogRef.close()">Annuler</button>
+    <button mat-raised-button color="primary" [disabled]="reviewForm.invalid || isSubmitting" (click)="onSubmit()">
+        {{ isSubmitting ? 'Envoi...' : 'Publier l\'avis' }}
+    </button>
+</mat-dialog-actions>

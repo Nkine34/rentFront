@@ -91,6 +91,10 @@
               [maxDate]="location.availableTo | date:'yyyy-MM-dd'" class="premium-calendar"></mat-calendar>
           </div>
         </section>
+        <hr class="divider">
+
+        <!-- REVIEWS SECTION -->
+        <app-review-list [locationId]="location.id"></app-review-list>
 
       </main>
 

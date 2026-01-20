@@ -1,0 +1,37 @@
+<div class="reviews-container">
+    <h3>
+        <mat-icon>star</mat-icon>
+        Avis clients
+    </h3>
+
+    <div *ngIf="reviews$ | async as reviews; else loading">
+        <div *ngIf="reviews.length === 0" class="no-reviews">
+            Aucun avis pour le moment. Soyez le premier à en laisser un !
+        </div>
+
+        <div class="reviews-grid">
+            <mat-card *ngFor="let review of reviews" class="review-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="user-avatar">
+                        {{ review.authorName.charAt(0) }}
+                    </div>
+                    <mat-card-title>{{ review.authorName }}</mat-card-title>
+                    <mat-card-subtitle>{{ review.createdAt | date:'mediumDate' }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="rating-stars">
+                        <mat-icon *ngFor="let star of getStars(review.overallRating)" [color]="star ? 'accent' : ''"
+                            [class.filled]="star">
+                            {{ star ? 'star' : 'star_outline' }}
+                        </mat-icon>
+                    </div>
+                    <p class="comment">{{ review.comment }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <div class="loading-state">Chargement des avis...</div>
+    </ng-template>
+</div>
