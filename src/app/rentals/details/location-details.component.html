@@ -28,17 +28,18 @@
     <!-- PHOTO GALLERY (Grid) -->
     <section class="gallery-section">
       <div class="gallery-grid">
-        @for (photo of location.photos.slice(0,5); track photo; let i = $index) {
-        <div class="photo-item" [class.main]="i === 0">
-          <img [src]="photo" [alt]="location.type">
-          @if (i === 4) {
-          <div class="more-photos-overlay">+{{ location.photos.length - 5 }} photos</div>
+        @for (photo of sortedPhotos().slice(0,5); track photo.id; let i = $index) {
+        <div class="photo-item" [class.main]="i === 0" (click)="openGallery(i)">
+          <img [src]="photo.url" [alt]="location.type">
+          @if (i === 4 && sortedPhotos().length > 5) {
+          <div class="more-photos-overlay">+{{ sortedPhotos().length - 5 }} photos</div>
           }
         </div>
         }
       </div>
     </section>
 
+    <!-- Content Grid -->
     <div class="content-grid two-column">
       <!-- LEFT COLUMN: Details -->
       <main class="details-column">
@@ -106,7 +107,13 @@
       </aside>
     </div>
 
-  </div>
+  </div> <!-- End container -->
+
+  <!-- IMAGE GALLERY OVERLAY -->
+  @if (isGalleryOpen()) {
+  <app-image-gallery [photos]="sortedPhotos()" [initialIndex]="selectedImageIndex()" (close)="closeGallery()">
+  </app-image-gallery>
+  }
 </div>
 } @else if (store.loading()) {
 <div class="loading-state">

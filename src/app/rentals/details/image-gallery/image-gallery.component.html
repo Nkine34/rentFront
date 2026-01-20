@@ -1,0 +1,30 @@
+<div class="gallery-overlay" (click)="onClose()">
+
+    <div class="gallery-content" (click)="$event.stopPropagation()">
+
+        <button mat-icon-button class="close-btn" (click)="onClose()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        @if (photos.length > 1) {
+        <button mat-icon-button class="nav-btn prev-btn" (click)="prev()">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        }
+
+        <div class="image-wrapper">
+            <img [src]="currentPhoto?.url" [alt]="'Photo ' + (currentIndex + 1)">
+        </div>
+
+        @if (photos.length > 1) {
+        <button mat-icon-button class="nav-btn next-btn" (click)="next()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+        }
+
+        <div class="counter-badge">
+            {{ currentIndex + 1 }} / {{ photos.length }}
+        </div>
+
+    </div>
+</div>

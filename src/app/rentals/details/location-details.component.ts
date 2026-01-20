@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, Signal, signal } from '@angular/core';
 import { CommonModule, DatePipe, NgIf } from '@angular/common'; // NgIf added specifically
 import { map } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,6 +16,8 @@ import { BookingCardComponent } from './booking-card.component';
 import { AmenitiesListComponent } from './amenities-list.component';
 import { ReviewListComponent } from './reviews/review-list.component';
 
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+
 @Component({
   selector: 'app-location-details',
   standalone: true,
@@ -29,7 +31,8 @@ import { ReviewListComponent } from './reviews/review-list.component';
     BookingCardComponent,
     AmenitiesListComponent,
     ReviewListComponent,
-    DatePipe
+    DatePipe,
+    ImageGalleryComponent
   ],
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.scss'],
@@ -40,6 +43,10 @@ export class LocationDetailsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   protected readonly store = inject(LocationStore);
+
+  // Gallery State
+  readonly isGalleryOpen = signal(false);
+  readonly selectedImageIndex = signal(0);
 
   // 1. Signal 'id' from URL
   private readonly locationId = toSignal(
@@ -53,7 +60,30 @@ export class LocationDetailsComponent {
     return this.store.entityMap()[Number(id)];
   });
 
+  // 3. Computed Signal for Sorted Photos (Primary first, then by order)
+  readonly sortedPhotos = computed(() => {
+    const loc = this.location();
+    if (!loc || !loc.photos) return [];
+
+    return [...loc.photos].sort((a, b) => {
+      // Primary photo always first
+      if (a.isPrimary && !b.isPrimary) return -1;
+      if (!a.isPrimary && b.isPrimary) return 1;
+      // Then by order index
+      return (a.orderIndex || 0) - (b.orderIndex || 0);
+    });
+  });
+
   goBack(): void {
     this.router.navigate(['/']);
+  }
+
+  openGallery(index: number): void {
+    this.selectedImageIndex.set(index);
+    this.isGalleryOpen.set(true);
+  }
+
+  closeGallery(): void {
+    this.isGalleryOpen.set(false);
   }
 }
