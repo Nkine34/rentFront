@@ -1,6 +1,7 @@
 <mat-drawer-container class="luxestay-container" autosize>
   <!-- SIDEBAR -->
-  <mat-drawer #drawer mode="side" opened position="end" class="luxestay-sidebar">
+  <mat-drawer #drawer mode="side" opened position="end" class="luxestay-sidebar" (mouseenter)="onDrawerMouseEnter()"
+    (mouseleave)="onDrawerMouseLeave(drawer)">
     <div class="sidebar-content">
       <!-- User Profile -->
       <div class="user-profile">
@@ -47,6 +48,14 @@
           <div class="nav-text">
             <span class="nav-title">List Your Property</span>
             <span class="nav-subtitle">START HOSTING</span>
+          </div>
+        </a>
+
+        <a routerLink="/inbox" routerLinkActive="active" class="nav-item">
+          <mat-icon>chat</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">Inbox</span>
+            <span class="nav-subtitle">MESSAGES</span>
           </div>
         </a>
 
@@ -111,7 +120,8 @@
 
         <!-- User Avatar to open menu -->
         @if (authService.isLoggedIn() && authService.userProfile(); as profile) {
-        <button mat-icon-button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
+        <button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
+          <span class="trigger-name">{{ profile.firstName }}</span>
           <div class="navbar-avatar">
             <img src="/assets/default-avatar.png" [alt]="profile.firstName">
           </div>

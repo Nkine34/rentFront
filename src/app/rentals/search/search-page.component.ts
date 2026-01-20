@@ -47,7 +47,7 @@ export class SearchPageComponent {
       id: location.id,
       title: `${location.type} ${location.address.city}`,
       location: `${location.address.city}, ${location.address.country}`,
-      imageUrl: location.photos[0] || '/assets/placeholder.jpg',
+      imageUrl: location.photos[0]?.url || '/assets/placeholder.jpg',
       rating: location.rating,
       bedrooms: location.bedrooms,
       bathrooms: location.bathrooms,

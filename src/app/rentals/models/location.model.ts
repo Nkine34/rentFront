@@ -4,12 +4,14 @@ import { Amenities } from "./amenities.model";
 import { Host } from "./host.model";
 import { BookingDetails } from "./booking-details.model";
 
+import { LocationPhoto } from "./location-photo.model";
+
 export interface Location {
   id: number;
   type: HousingType;
   address: Address;
   description: string;
-  photos: string[];
+  photos: LocationPhoto[];
   maxGuests: number;
   bedrooms: number;
   beds: number;

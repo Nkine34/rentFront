@@ -1,0 +1,34 @@
+<div class="list-header">
+    <h2>Messages</h2>
+    <div class="filters">
+        <!-- Future: Search input or filters -->
+    </div>
+</div>
+
+<div class="conversation-list">
+    @for (conversation of store.sortedConversations(); track conversation.id) {
+    <div class="conversation-item" [class.active]="store.activeConversationId() === conversation.id"
+        [class.unread]="!conversation.isRead" (click)="selectConversation(conversation.id)">
+        <div class="avatar-wrapper">
+            <img [src]="conversation.hostAvatar || '/assets/default-avatar.png'" alt="Avatar">
+            @if (!conversation.isRead) {
+            <span class="unread-dot"></span>
+            }
+        </div>
+
+        <div class="conversation-content">
+            <div class="top-row">
+                <span class="host-name">{{ conversation.hostName }}</span>
+                <span class="time">{{ conversation.lastMessageAt | date:'shortTime' }}</span>
+            </div>
+            <div class="location-name">{{ conversation.locationName }}</div>
+            <div class="message-preview">{{ conversation.lastMessage }}</div>
+        </div>
+    </div>
+    } @empty {
+    <div class="empty-list">
+        <mat-icon>chat_bubble_outline</mat-icon>
+        <p>No messages yet</p>
+    </div>
+    }
+</div>

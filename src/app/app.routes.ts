@@ -66,5 +66,10 @@ export const routes: Routes = [
     loadChildren: () => import('./locations/locations.routes').then(m => m.locationsRoutes),
     canActivate: [authGuard]
   },
+  {
+    path: 'inbox',
+    loadComponent: () => import('./rentals/inbox/inbox.component').then(m => m.InboxComponent),
+    canActivate: [authGuard]
+  },
   { path: '**', redirectTo: '' }
 ];

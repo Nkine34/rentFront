@@ -1,0 +1,50 @@
+.inbox-container {
+    height: calc(100vh - 84px); // Adjust based on navbar height
+    background-color: #f9f9f9;
+}
+
+.inbox-drawer-container {
+    height: 100%;
+    background-color: transparent;
+}
+
+.conversation-drawer {
+    width: 350px;
+    border-right: 1px solid #e0e0e0;
+    background-color: white;
+}
+
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #717171;
+    background-color: white;
+
+    .empty-content {
+        text-align: center;
+
+        img {
+            width: 120px;
+            margin-bottom: 24px;
+            opacity: 0.5;
+        }
+
+        h3 {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+// Mobile Responsiveness
+@media (max-width: 768px) {
+    .conversation-drawer {
+        width: 100%;
+        position: absolute;
+        /* Take full screen */
+        z-index: 2;
+    }
+
+    /* Logic to hide drawer when chat is active will need to be added later via TS */
+}

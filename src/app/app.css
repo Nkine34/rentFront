@@ -289,6 +289,25 @@
 
 .top-navbar .navbar-container .user-menu-trigger {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 24px;
+    transition: background 0.2s ease;
+}
+
+.top-navbar .navbar-container .user-menu-trigger:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.top-navbar .navbar-container .user-menu-trigger .trigger-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #1a1a1a;
 }
 
 .top-navbar .navbar-container .navbar-avatar {

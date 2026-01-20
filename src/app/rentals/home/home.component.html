@@ -34,7 +34,8 @@
       @for (location of trendingLocations(); track location.id) {
       <div class="location-card" (click)="navigateToDetails(location.id)">
         <div class="card-image-wrapper">
-          <img [src]="location.photos[0]" [alt]="location.type + ' in ' + location.address.city">
+          <img [src]="location.photos[0]?.url || '/assets/placeholder.jpg'"
+            [alt]="location.type + ' in ' + location.address.city">
           <div class="card-badge">
             <mat-icon>star</mat-icon>
             <span>{{ location.rating.toFixed(1) }}</span>
@@ -85,7 +86,8 @@
       @for (location of topStays(); track location.id) {
       <div class="location-card" (click)="navigateToDetails(location.id)">
         <div class="card-image-wrapper">
-          <img [src]="location.photos[0]" [alt]="location.type + ' in ' + location.address.city">
+          <img [src]="location.photos[0]?.url || '/assets/placeholder.jpg'"
+            [alt]="location.type + ' in ' + location.address.city">
           <div class="card-badge">
             <mat-icon>star</mat-icon>
             <span>{{ location.rating.toFixed(1) }}</span>

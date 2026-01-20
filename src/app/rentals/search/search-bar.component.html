@@ -3,7 +3,8 @@
 
     <div class="search-segment">
       <label for="destination-input">Destination</label>
-      <input id="destination-input" [formControl]="searchForm.controls.destination" placeholder="Rechercher une destination">
+      <input id="destination-input" [formControl]="searchForm.controls.destination"
+        placeholder="Rechercher une destination">
     </div>
 
     <div class="divider"></div>
@@ -11,7 +12,8 @@
     <div class="search-segment" (click)="checkInPicker.open()">
       <label>Arrivée</label>
       <input class="hidden-input" [matDatepicker]="checkInPicker" [formControl]="searchForm.controls.checkIn">
-      <span>{{ searchForm.controls.checkIn.value ? (searchForm.controls.checkIn.value | date:'dd/MM/yy') : 'Quand ?' }}</span>
+      <span>{{ searchForm.controls.checkIn.value ? (searchForm.controls.checkIn.value | date:'dd/MM/yy') : 'Quand ?'
+        }}</span>
     </div>
     <mat-datepicker #checkInPicker></mat-datepicker>
 
@@ -20,7 +22,8 @@
     <div class="search-segment" (click)="checkOutPicker.open()">
       <label>Départ</label>
       <input class="hidden-input" [matDatepicker]="checkOutPicker" [formControl]="searchForm.controls.checkOut">
-      <span>{{ searchForm.controls.checkOut.value ? (searchForm.controls.checkOut.value | date:'dd/MM/yy') : 'Quand ?' }}</span>
+      <span>{{ searchForm.controls.checkOut.value ? (searchForm.controls.checkOut.value | date:'dd/MM/yy') : 'Quand ?'
+        }}</span>
     </div>
     <mat-datepicker #checkOutPicker></mat-datepicker>
 
@@ -37,7 +40,8 @@
           <p>13 ans et plus</p>
         </div>
         <div class="counter">
-          <button mat-icon-button (click)="decrement('adults')" [disabled]="adults() <= 1"><mat-icon>remove_circle_outline</mat-icon></button>
+          <button mat-icon-button (click)="decrement('adults')"
+            [disabled]="adults() <= 1"><mat-icon>remove_circle_outline</mat-icon></button>
           <span>{{ adults() }}</span>
           <button mat-icon-button (click)="increment('adults')"><mat-icon>add_circle_outline</mat-icon></button>
         </div>
@@ -48,7 +52,8 @@
           <p>De 2 à 12 ans</p>
         </div>
         <div class="counter">
-          <button mat-icon-button (click)="decrement('children')" [disabled]="children() === 0"><mat-icon>remove_circle_outline</mat-icon></button>
+          <button mat-icon-button (click)="decrement('children')"
+            [disabled]="children() === 0"><mat-icon>remove_circle_outline</mat-icon></button>
           <span>{{ children() }}</span>
           <button mat-icon-button (click)="increment('children')"><mat-icon>add_circle_outline</mat-icon></button>
         </div>
@@ -59,12 +64,21 @@
           <p>Moins de 2 ans</p>
         </div>
         <div class="counter">
-          <button mat-icon-button (click)="decrement('babies')" [disabled]="babies() === 0"><mat-icon>remove_circle_outline</mat-icon></button>
+          <button mat-icon-button (click)="decrement('babies')"
+            [disabled]="babies() === 0"><mat-icon>remove_circle_outline</mat-icon></button>
           <span>{{ babies() }}</span>
           <button mat-icon-button (click)="increment('babies')"><mat-icon>add_circle_outline</mat-icon></button>
         </div>
       </div>
     </mat-menu>
+
+    <div class="divider"></div>
+
+    <div class="search-segment filters-segment">
+      <button mat-icon-button routerLink="/search" matTooltip="Plus de filtres">
+        <mat-icon>tune</mat-icon>
+      </button>
+    </div>
 
     <button mat-fab color="primary" (click)="search()" class="search-button-icon">
       <mat-icon>search</mat-icon>

@@ -53,21 +53,40 @@ export class App {
   }
 
   toggleDrawer(drawer: any): void {
-    // Clear existing timer if any
+    // If closing, clear timer
+    if (drawer.opened) {
+      this.clearTimer();
+      drawer.close();
+      return;
+    }
+
+    // Opening
+    drawer.open();
+    this.startTimer(drawer);
+  }
+
+  startTimer(drawer: any): void {
+    this.clearTimer();
+    this.autoCloseTimer = setTimeout(() => {
+      drawer.close();
+    }, 5000);
+  }
+
+  clearTimer(): void {
     if (this.autoCloseTimer) {
       clearTimeout(this.autoCloseTimer);
       this.autoCloseTimer = null;
     }
+  }
 
-    // Toggle drawer
-    drawer.toggle();
+  onDrawerMouseEnter(): void {
+    this.clearTimer();
+  }
 
-    // If drawer is now open, set auto-close timer for 5 seconds
+  onDrawerMouseLeave(drawer: any): void {
+    // Only restart timer if drawer is open
     if (drawer.opened) {
-      this.autoCloseTimer = setTimeout(() => {
-        drawer.close();
-        this.autoCloseTimer = null;
-      }, 5000);
+      this.startTimer(drawer);
     }
   }
 }

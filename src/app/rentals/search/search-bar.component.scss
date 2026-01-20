@@ -1,7 +1,27 @@
 .search-bar-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 24px;
+}
+
+// Removed .advanced-search-link styles
+
+.filters-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px; // Less padding for icon-only segment
+
+  button {
+    color: #424242;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+  }
 }
 
 .search-bar {
@@ -10,7 +30,7 @@
   background-color: #f5f5f5;
   border-radius: 30px;
   padding: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: fit-content;
 }
 
@@ -31,6 +51,7 @@
     border: none;
     font-size: 14px;
     color: #757575;
+
     &:focus {
       outline: none;
     }
@@ -63,6 +84,7 @@
 
 .travelers-menu {
   padding: 8px 16px;
+
   .menu-item {
     display: flex;
     justify-content: space-between;
@@ -70,6 +92,7 @@
     padding: 8px 0;
     min-width: 250px;
   }
+
   .counter {
     display: flex;
     align-items: center;

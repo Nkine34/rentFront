@@ -4,3 +4,6 @@ export * from './location.model';
 export * from './amenities.model';
 export * from './booking-details.model';
 export * from './search-criteria.model';
+export * from './location-photo.model';
+export * from './conversation.model';
+export * from './message.model';

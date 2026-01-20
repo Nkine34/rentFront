@@ -1,0 +1,26 @@
+<div class="inbox-container">
+    <mat-drawer-container class="inbox-drawer-container">
+
+        <!-- Sidebar: Conversation List -->
+        <mat-drawer mode="side" opened class="conversation-drawer">
+            <app-conversation-list></app-conversation-list>
+        </mat-drawer>
+
+        <!-- Main Content: Chat Window -->
+        <mat-drawer-content>
+            @if (store.activeConversation(); as conversation) {
+            <app-chat-window [conversation]="conversation"></app-chat-window>
+            } @else {
+            <div class="empty-state">
+                <div class="empty-content">
+                    <img src="/assets/icons/chat-placeholder.svg" alt="Select a conversation"
+                        onerror="this.src='/assets/placeholder.jpg'"> <!-- Fallback if icon missing -->
+                    <h3>Select a conversation</h3>
+                    <p>Choose a thread from the list to start messaging.</p>
+                </div>
+            </div>
+            }
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+</div>

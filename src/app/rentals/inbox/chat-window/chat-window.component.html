@@ -1,0 +1,40 @@
+<div class="chat-container">
+
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="header-info">
+            <h3>{{ conversation.hostName }}</h3>
+            <span class="location-ref">{{ conversation.locationName }}</span>
+        </div>
+        <div class="header-actions">
+            <!-- Future: Video call, Settings, Archive buttons -->
+            <button mat-icon-button><mat-icon>info_outline</mat-icon></button>
+        </div>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="messages-area" #scrollContainer>
+        @for (msg of messages; track msg.id) {
+        <div class="message-group" [class.mine]="msg.isMine">
+            <div class="message-bubble" [class.mine]="msg.isMine">
+                {{ msg.content }}
+            </div>
+            <div class="message-meta">
+                {{ msg.sentAt | date:'shortTime' }}
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+        <div class="input-wrapper">
+            <textarea [formControl]="messageControl" (keydown)="onKeydown($event)" placeholder="Type a message..."
+                rows="1"></textarea>
+            <button mat-icon-button color="primary" (click)="sendMessage()" [disabled]="!messageControl.value?.trim()">
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</div>
