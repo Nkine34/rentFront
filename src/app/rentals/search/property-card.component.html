@@ -1,0 +1,55 @@
+<div class="property-card" (click)="onViewDetails()">
+    <div class="card-image-wrapper">
+        <img [src]="property.imageUrl" [alt]="property.title" class="card-image">
+
+        <!-- Badge -->
+        @if (property.badge) {
+        <span class="card-badge" [class.featured]="property.badge === 'FEATURED'"
+            [class.new]="property.badge === 'NEW'">
+            {{ property.badge }}
+        </span>
+        }
+
+        <!-- Wishlist Button -->
+        <button mat-icon-button class="wishlist-btn" (click)="onToggleFavorite($event)">
+            <mat-icon>{{ property.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
+    </div>
+
+    <div class="card-content">
+        <div class="card-header">
+            <h3 class="card-title">{{ property.title }}</h3>
+            <div class="card-rating">
+                <mat-icon class="star-icon">star</mat-icon>
+                <span>{{ property.rating.toFixed(1) }}</span>
+            </div>
+        </div>
+
+        <p class="card-location">{{ property.location }}</p>
+
+        <div class="card-specs">
+            <div class="spec-item">
+                <mat-icon>bed</mat-icon>
+                <span>{{ property.bedrooms }} Bed</span>
+            </div>
+            <div class="spec-item">
+                <mat-icon>bathtub</mat-icon>
+                <span>{{ property.bathrooms }} Bath</span>
+            </div>
+            <div class="spec-item">
+                <mat-icon>square_foot</mat-icon>
+                <span>{{ property.sqft }} sqft</span>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="card-price">
+                <span class="price-amount">{{ property.pricePerMonth | currency:'USD':'symbol':'1.0-0' }}</span>
+                <span class="price-period">/mo</span>
+            </div>
+            <button mat-raised-button color="primary" class="details-btn" (click)="onViewDetails()">
+                View Details
+            </button>
+        </div>
+    </div>
+</div>

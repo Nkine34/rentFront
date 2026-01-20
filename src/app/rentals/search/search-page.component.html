@@ -1,10 +1,91 @@
-@if (store.loading()) {
-  <p>Recherche en cours...</p>
-} @else if (store.error(); as error) {
-  <p class="error-message">{{ error }}</p>
-} @else {
-  <app-location-list
-    [groupedLocations]="store.filteredAndGroupedLocations()"
-    (detailsClick)="navigateToDetails($event)">
-  </app-location-list>
-}
+<div class="search-page-container">
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-container">
+      <button mat-stroked-button class="filter-btn">
+        <span>Price Range</span>
+        <mat-icon>expand_more</mat-icon>
+      </button>
+
+      <button mat-stroked-button class="filter-btn">
+        <span>Property Type</span>
+        <mat-icon>expand_more</mat-icon>
+      </button>
+
+      <button mat-stroked-button class="filter-btn">
+        <span>Amenities</span>
+        <mat-icon>expand_more</mat-icon>
+      </button>
+
+      <button mat-stroked-button class="more-filters-btn">
+        <span>More Filters</span>
+        <mat-icon>tune</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Split Screen: Results + Map -->
+  <div class="split-layout">
+    <!-- Results Panel (Left) -->
+    <div class="results-panel">
+      @if (store.loading()) {
+      <div class="loading-state">
+        <mat-spinner diameter="60"></mat-spinner>
+        <p>Searching properties...</p>
+      </div>
+      } @else if (store.error(); as error) {
+      <div class="error-state">
+        <mat-icon style="font-size: 48px; width: 48px; height: 48px;">error_outline</mat-icon>
+        <p>{{ error }}</p>
+      </div>
+      } @else {
+      <div class="results-header">
+        <h1 class="results-title">{{ resultsCount() }} results{{ searchLocation() ? ' in ' + searchLocation() : '' }}
+        </h1>
+        <p class="results-subtitle">Discover exclusive homes and apartments for long-term stay</p>
+      </div>
+
+      <div class="results-list">
+        @for (property of propertyCards(); track property.id) {
+        <app-property-card [property]="property" (viewDetails)="navigateToDetails($event)"
+          (toggleFavorite)="onToggleFavorite($event)">
+        </app-property-card>
+        }
+      </div>
+      }
+    </div>
+
+    <!-- Map Panel (Right) -->
+    <div class="map-panel">
+      <div class="map-placeholder">
+        <!-- Map Overlay Controls -->
+        <div class="map-overlay">
+          <button mat-raised-button class="satellite-btn">
+            <mat-icon>satellite</mat-icon>
+            <span>Satellite</span>
+          </button>
+        </div>
+
+        <!-- Zoom Controls -->
+        <div class="zoom-controls">
+          <button mat-mini-fab class="map-control-btn">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-mini-fab class="map-control-btn">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+
+        <!-- Locate Button -->
+        <button mat-mini-fab class="map-control-btn locate-btn">
+          <mat-icon>my_location</mat-icon>
+        </button>
+
+        <!-- Placeholder Content -->
+        <mat-icon style="font-size: 64px; width: 64px; height: 64px; color: rgba(255,255,255,0.8);">map</mat-icon>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem;">Interactive Map</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Map integration coming soon</p>
+      </div>
+    </div>
+  </div>
+</div>
