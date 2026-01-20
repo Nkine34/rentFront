@@ -1,10 +1,153 @@
-@if (store.loading()) {
-  <p class="loading-message">Chargement des annonces...</p>
-} @else if (store.error(); as error) {
-  <p class="error-message">{{ error }}</p>
-} @else {
-  <app-location-list
-    [groupedLocations]="store.groupedLocations()"
-    (detailsClick)="navigateToDetails($event)">
-  </app-location-list>
-}
+<div class="home-container">
+  @if (store.loading()) {
+  <div class="loading-container">
+    <mat-spinner diameter="60"></mat-spinner>
+    <h3>Chargement des logements...</h3>
+    <p>Nous préparons les meilleures offres pour vous</p>
+  </div>
+  } @else if (store.error(); as error) {
+  <div class="error-container">
+    <mat-icon>error_outline</mat-icon>
+    <h3>Oups ! Une erreur s'est produite</h3>
+    <p>{{ error }}</p>
+  </div>
+  } @else {
+
+  <!-- TRENDING SECTION -->
+  <section class="section-wrapper">
+    <div class="section-header">
+      <div>
+        <div class="section-subtitle">TENDANCES LOCALES</div>
+        <h2>Logements populaires à proximité</h2>
+      </div>
+      <div class="nav-buttons">
+        <button (click)="scrollLeft(trendingContainer)" type="button">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button (click)="scrollRight(trendingContainer)" type="button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div #trendingContainer class="horizontal-scroll">
+      @for (location of trendingLocations(); track location.id) {
+      <div class="location-card" (click)="navigateToDetails(location.id)">
+        <div class="card-image-wrapper">
+          <img [src]="location.photos[0]" [alt]="location.type + ' in ' + location.address.city">
+          <div class="card-badge">
+            <mat-icon>star</mat-icon>
+            <span>{{ location.rating.toFixed(1) }}</span>
+          </div>
+          <button class="wishlist-btn" (click)="$event.stopPropagation()" type="button">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="card-title">{{ location.type }} {{ location.address.city }}</div>
+          <div class="card-location">
+            <mat-icon>location_on</mat-icon>
+            <span>{{ location.address.city }}, {{ location.address.country }}</span>
+          </div>
+          <div class="card-specs">
+            {{ location.maxGuests }} voyageurs · {{ location.bedrooms }} ch · {{ location.beds }} lit(s)
+          </div>
+          <div class="card-price">
+            <div class="price-amount">
+              {{ location.pricePerNight | currency:'EUR':'symbol':'1.0-0' }}
+              <span>/ nuit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- TOP STAYS SECTION -->
+  <section class="section-wrapper">
+    <div class="section-header">
+      <div>
+        <div class="section-subtitle">SÉLECTION NATIONALE</div>
+        <h2>Meilleurs séjours en France</h2>
+      </div>
+      <div class="nav-buttons">
+        <button (click)="scrollLeft(topContainer)" type="button">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button (click)="scrollRight(topContainer)" type="button">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div #topContainer class="horizontal-scroll">
+      @for (location of topStays(); track location.id) {
+      <div class="location-card" (click)="navigateToDetails(location.id)">
+        <div class="card-image-wrapper">
+          <img [src]="location.photos[0]" [alt]="location.type + ' in ' + location.address.city">
+          <div class="card-badge">
+            <mat-icon>star</mat-icon>
+            <span>{{ location.rating.toFixed(1) }}</span>
+          </div>
+          <button class="wishlist-btn" (click)="$event.stopPropagation()" type="button">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="card-title">{{ location.type }} {{ location.address.city }}</div>
+          <div class="card-location">
+            <mat-icon>location_on</mat-icon>
+            <span>{{ location.address.city }}, {{ location.address.country }}</span>
+          </div>
+          <div class="card-specs">
+            {{ location.maxGuests }} voyageurs · {{ location.bedrooms }} ch · {{ location.beds }} lit(s)
+          </div>
+          <div class="card-price">
+            <div class="price-amount">
+              {{ location.pricePerNight | currency:'EUR':'symbol':'1.0-0' }}
+              <span>/ nuit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
+    <div class="section-header">
+      <h2>Conçu pour les voyageurs modernes</h2>
+      <p>Une technologie de pointe et une hospitalité exceptionnelle pour rendre chaque séjour inoubliable.</p>
+    </div>
+
+    <div class="features-grid">
+      @for (feature of features; track feature.title) {
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>{{ feature.icon }}</mat-icon>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- ALL LISTINGS (if needed for legacy compatibility) -->
+  @if (store.groupedLocations() && Object.keys(store.groupedLocations()).length > 0) {
+  <section class="section-wrapper">
+    <div class="section-header">
+      <div>
+        <div class="section-subtitle">TOUTES LES ANNONCES</div>
+        <h2>Explorez tous nos logements</h2>
+      </div>
+    </div>
+    <app-location-list [groupedLocations]="store.groupedLocations()" (detailsClick)="navigateToDetails($event)">
+    </app-location-list>
+  </section>
+  }
+
+  }
+</div>

@@ -1,49 +1,132 @@
-<nav
-  style="padding: 16px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 16px;">
+<mat-drawer-container class="luxestay-container" autosize>
+  <!-- SIDEBAR -->
+  <mat-drawer #drawer mode="side" opened position="end" class="luxestay-sidebar">
+    <div class="sidebar-content">
+      <!-- User Profile -->
+      <div class="user-profile">
+        @if (authService.isLoggedIn() && authService.userProfile(); as profile) {
+        <div class="avatar">
+          <img src="/assets/default-avatar.png" [alt]="profile.firstName">
+          <span class="status-indicator"></span>
+        </div>
+        <div class="user-info">
+          <div class="user-name">{{ profile.firstName }} {{ profile.lastName }}</div>
+          <div class="user-badge">Premium Member</div>
+        </div>
+        } @else {
+        <div class="avatar">
+          <mat-icon>person</mat-icon>
+        </div>
+        <div class="user-info">
+          <div class="user-name">Guest</div>
+          <div class="user-badge">Visitor</div>
+        </div>
+        }
+      </div>
 
-  <!-- Ligne supérieure : Logo à gauche, Menu à droite -->
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <a routerLink="/" style="text-decoration: none; display: flex; align-items: center;">
-      <img src="/logo.png" alt="Logo" style="height: 40px;">
-    </a>
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+          <mat-icon>home</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">Home</span>
+            <span class="nav-subtitle">MAIN DASHBOARD</span>
+          </div>
+        </a>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu utilisateur">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
+        <a routerLink="/search" routerLinkActive="active" class="nav-item">
+          <mat-icon>explore</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">Explore Stays</span>
+            <span class="nav-subtitle">GLOBAL DESTINATIONS</span>
+          </div>
+        </a>
 
-  <!-- Ligne inférieure : Barre de recherche centrée -->
-  <div style="display: flex; justify-content: center; width: 100%;">
-    <app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
-  </div>
+        <a routerLink="/locations/new" routerLinkActive="active" class="nav-item">
+          <mat-icon>add_business</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">List Your Property</span>
+            <span class="nav-subtitle">START HOSTING</span>
+          </div>
+        </a>
 
-  <mat-menu #menu="matMenu">
-    @if (!authService.isLoggedIn()) {
-    <button mat-menu-item routerLink="/login">
-      <span>Connexion</span>
-    </button>
-    <button mat-menu-item routerLink="/host/rentals">
-      <span>Hôte</span>
-    </button>
-    <button mat-menu-item routerLink="/register">
-      <span>Inscription</span>
-    </button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item routerLink="/locations/new">
-      <span>Commencer à héberger</span>
-    </button>
-    } @else {
-    <button mat-menu-item routerLink="/profile">
-      <span>Profil de {{ authService.userProfile()?.firstName }}</span>
-    </button>
-    <button mat-menu-item routerLink="/host/rentals">
-      <span>Hôte</span>
-    </button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item (click)="authService.logout()">
-      <span>Déconnexion</span>
-    </button>
-    }
-  </mat-menu>
-</nav>
-<router-outlet />
+        <a routerLink="/profile" routerLinkActive="active" class="nav-item">
+          <mat-icon>person</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">Account</span>
+            <span class="nav-subtitle">PROFILE & SETTINGS</span>
+          </div>
+        </a>
+
+        <a routerLink="/help" routerLinkActive="active" class="nav-item">
+          <mat-icon>help_center</mat-icon>
+          <div class="nav-text">
+            <span class="nav-title">Help Center</span>
+            <span class="nav-subtitle">24/7 SUPPORT</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Language & Currency -->
+      <div class="language-selector">
+        <mat-icon>language</mat-icon>
+        <span>English (US)</span>
+        <span class="currency">USD</span>
+      </div>
+
+      <!-- Curated Collections -->
+      <div class="curated-section">
+        <div class="section-label">CURATED COLLECTIONS</div>
+        <a href="#" class="collection-item">Mountain Lofts</a>
+        <a href="#" class="collection-item">Coastal Villas</a>
+        <a href="#" class="collection-item">Urban Studios</a>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="sidebar-footer">
+        <button mat-icon-button (click)="toggleDarkMode()">
+          <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+        <span class="version">LUXESTAY V2.4</span>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <!-- MAIN CONTENT -->
+  <mat-drawer-content class="main-content">
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+      <div class="navbar-container">
+        <a routerLink="/" class="logo">
+          <mat-icon class="logo-icon">apartment</mat-icon>
+          <span class="logo-text">LUXESTAY</span>
+        </a>
+
+        <div class="search-container">
+          <app-search-bar (searchSubmit)="handleSearch($event)"></app-search-bar>
+        </div>
+
+        <!-- User Avatar to open menu -->
+        @if (authService.isLoggedIn() && authService.userProfile(); as profile) {
+        <button mat-icon-button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
+          <div class="navbar-avatar">
+            <img src="/assets/default-avatar.png" [alt]="profile.firstName">
+          </div>
+        </button>
+        } @else {
+        <button mat-icon-button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
+          <mat-icon>person</mat-icon>
+        </button>
+        }
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <router-outlet />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

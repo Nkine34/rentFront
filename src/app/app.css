@@ -1,0 +1,332 @@
+/* ==========================================
+   LUXESTAY SIDEBAR & LAYOUT
+   ========================================== */
+
+.luxestay-container {
+    width: 100%;
+    height: 100vh;
+}
+
+/* ==========================================
+   SIDEBAR STYLES
+   ========================================== */
+.luxestay-sidebar {
+    width: 320px;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    border-left: 1px solid #e5e7eb;
+}
+
+.sidebar-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+}
+
+/* User Profile Section */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.user-profile .avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-profile .avatar mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #6b7280;
+}
+
+.user-profile .avatar .status-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background: #10b981;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.user-profile .user-info {
+    flex: 1;
+}
+
+.user-profile .user-info .user-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.user-profile .user-info .user-badge {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation Menu */
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.sidebar-nav .nav-item:hover {
+    background: rgba(102, 126, 234, 0.08);
+    color: #667eea;
+}
+
+.sidebar-nav .nav-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.sidebar-nav .nav-item.active mat-icon {
+    color: #fff;
+}
+
+.sidebar-nav .nav-item.active .nav-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-nav .nav-item mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.sidebar-nav .nav-item .nav-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-nav .nav-item .nav-text .nav-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.sidebar-nav .nav-item .nav-text .nav-subtitle {
+    font-size: 0.6875rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #f3f4f6;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    color: #1a1a1a;
+}
+
+.language-selector mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #6b7280;
+}
+
+.language-selector .currency {
+    margin-left: auto;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+/* Curated Collections */
+.curated-section {
+    padding: 16px 0;
+    border-top: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+}
+
+.curated-section .section-label {
+    font-size: 0.6875rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding: 0 16px;
+}
+
+.curated-section .collection-item {
+    display: block;
+    padding: 10px 16px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.curated-section .collection-item:hover {
+    background: #f3f4f6;
+    color: #1a1a1a;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.sidebar-footer button {
+    flex-shrink: 0;
+}
+
+.sidebar-footer .version {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+/* ==========================================
+   MAIN CONTENT AREA
+   ========================================== */
+.main-content {
+    background: #ffffff;
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-navbar .navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.top-navbar .navbar-container .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.top-navbar .navbar-container .logo .logo-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .top-navbar .navbar-container .logo .logo-text {
+        display: none;
+    }
+}
+
+.top-navbar .navbar-container .search-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .top-navbar .navbar-container .search-container {
+        max-width: none;
+    }
+}
+
+.top-navbar .navbar-container .user-menu-trigger {
+    flex-shrink: 0;
+}
+
+.top-navbar .navbar-container .navbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.top-navbar .navbar-container .navbar-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .top-navbar .navbar-container .menu-toggle {
+        display: none;
+    }
+}
+
+/* Page Content */
+.page-content {
+    min-height: calc(100vh - 73px);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+    .luxestay-sidebar {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-content {
+        padding: 20px 16px;
+    }
+}
