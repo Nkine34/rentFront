@@ -10,10 +10,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { SearchCriteria } from '../models';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AdvancedSearchComponent } from '../advanced-search/advanced-search.component';
+import { SearchCriteria } from '../../../models';
 
 @Component({
-  selector: 'app-search-bar',
+  selector: 'app-simple-search',
   standalone: true,
   imports: [
     CommonModule,
@@ -28,10 +30,10 @@ import { SearchCriteria } from '../models';
     MatTooltipModule,
     RouterLink
   ],
-  templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.scss']
+  templateUrl: './simple-search.component.html',
+  styleUrls: ['./simple-search.component.scss']
 })
-export class SearchBarComponent {
+export class SimpleSearchComponent {
   @Output() searchSubmit = new EventEmitter<SearchCriteria>();
 
   searchForm = new FormGroup({
@@ -46,6 +48,34 @@ export class SearchBarComponent {
   pets = signal(0);
 
   totalTravelers = computed(() => this.adults() + this.children() + this.babies());
+
+  constructor(private dialog: MatDialog) { }
+
+  openAdvancedSearch() {
+    this.dialog.open(AdvancedSearchComponent, {
+      width: '600px',
+      maxWidth: '95vw',
+      panelClass: 'advanced-search-dialog'
+    }).afterClosed().subscribe((result: Partial<SearchCriteria> | undefined) => {
+      if (result) {
+        // Merge advanced filters with current form filters and emit
+        const formValue = this.searchForm.value;
+        const currentCriteria: SearchCriteria = {
+          destination: formValue.destination ?? null,
+          checkIn: formValue.checkIn ?? null,
+          checkOut: formValue.checkOut ?? null,
+          travelers: {
+            adults: this.adults(),
+            children: this.children(),
+            babies: this.babies(),
+            pets: this.pets()
+          }
+        };
+        const mergedCriteria = { ...currentCriteria, ...result };
+        this.searchSubmit.emit(mergedCriteria);
+      }
+    });
+  }
 
   search(): void {
     const formValue = this.searchForm.value;

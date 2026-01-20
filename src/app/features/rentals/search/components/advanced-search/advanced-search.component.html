@@ -1,0 +1,82 @@
+<h2 mat-dialog-title>Filtres Intelligents</h2>
+<mat-dialog-content>
+    <p class="subtitle">Sélectionnez votre profil de voyageur pour des filtres adaptés</p>
+
+    <div class="profile-selector">
+        <div class="profile-card" [class.active]="selectedProfile() === 'DIGITAL_NOMAD'"
+            (click)="selectProfile('DIGITAL_NOMAD')">
+            <mat-icon>wifi</mat-icon>
+            <span>Digital Nomad</span>
+        </div>
+        <div class="profile-card" [class.active]="selectedProfile() === 'FAMILY'" (click)="selectProfile('FAMILY')">
+            <mat-icon>family_restroom</mat-icon>
+            <span>Famille</span>
+        </div>
+        <div class="profile-card" [class.active]="selectedProfile() === 'QUIET'" (click)="selectProfile('QUIET')">
+            <mat-icon>nightlight_round</mat-icon>
+            <span>Silence</span>
+        </div>
+        <div class="profile-card" [class.active]="selectedProfile() === 'SMART_SAVER'"
+            (click)="selectProfile('SMART_SAVER')">
+            <mat-icon>savings</mat-icon>
+            <span>Smart Deal</span>
+        </div>
+    </div>
+
+    <div class="filters-content">
+
+        <!-- Digital Nomad Filters -->
+        <div class="filter-section" *ngIf="selectedProfile() === 'DIGITAL_NOMAD'">
+            <h3><mat-icon>speed</mat-icon> Vitesse Internet Minimale</h3>
+            <div class="slider-container">
+                <mat-slider min="0" max="1000" step="50" showTickMarks discrete [displayWith]="formatSpeedLabel">
+                    <input matSliderThumb [(ngModel)]="minInternetSpeed">
+                </mat-slider>
+                <span class="value-label">{{ minInternetSpeed }} Mbps +</span>
+            </div>
+
+            <div class="toggle-container">
+                <mat-slide-toggle [(ngModel)]="requireErgonomicChair" color="primary">
+                    Chaise Ergonomique
+                </mat-slide-toggle>
+            </div>
+        </div>
+
+        <!-- Quiet Filters -->
+        <div class="filter-section" *ngIf="selectedProfile() === 'QUIET'">
+            <div class="toggle-container">
+                <mat-slide-toggle [(ngModel)]="isQuietZone" color="primary">
+                    <mat-icon>volume_off</mat-icon>
+                    Zone "Silence Garanti"
+                </mat-slide-toggle>
+                <p class="hint">Uniquement les logements en zone résidentielle calme vérifiée.</p>
+            </div>
+        </div>
+
+        <!-- Family Filters -->
+        <div class="filter-section" *ngIf="selectedProfile() === 'FAMILY'">
+            <div class="toggles-grid">
+                <mat-slide-toggle [(ngModel)]="requireCrib" color="primary">
+                    Lit bébé
+                </mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="requireBathtub" color="primary">
+                    Baignoire
+                </mat-slide-toggle>
+            </div>
+        </div>
+
+        <!-- Smart Saver Filters -->
+        <div class="filter-section" *ngIf="selectedProfile() === 'SMART_SAVER'">
+            <div class="info-card">
+                <mat-icon>verified</mat-icon>
+                <p>En activant ce mode, nous privilégierons les offres "Early Bird", les réductions saisonnières et les
+                    longs séjours optimisés.</p>
+            </div>
+        </div>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-raised-button color="primary" (click)="applyFilters()">Appliquer les filtres</button>
+</mat-dialog-actions>

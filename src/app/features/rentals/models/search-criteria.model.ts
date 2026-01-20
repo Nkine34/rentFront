@@ -8,4 +8,9 @@ export interface SearchCriteria {
     babies: number;
     pets: number;
   };
+  // Advanced / Smart Filters
+  minInternetSpeed?: number;
+  isQuietZone?: boolean;
+  amenities?: string[];
+  priceRuleType?: 'SEASONAL' | 'EARLY_BIRD' | 'long_term';
 }
