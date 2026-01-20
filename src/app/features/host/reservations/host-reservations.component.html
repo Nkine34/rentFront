@@ -1,0 +1,70 @@
+<div class="host-reservations-container">
+    <h1>Gestion des Réservations</h1>
+
+    @if (isLoading()) {
+    <div class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+    </div>
+    } @else if (error()) {
+    <div class="error-state">
+        <mat-icon color="warn">error</mat-icon>
+        <p>{{ error() }}</p>
+        <p class="hint">Backend limitation: GET /api/me/reservations/incoming missing.</p>
+    </div>
+    } @else {
+    <mat-tab-group>
+        <mat-tab label="En attente ({{ pendingReservations.length }})">
+            <div class="reservations-list">
+                @for (res of pendingReservations; track res.id) {
+                <mat-card class="reservation-card pending">
+                    <mat-card-header>
+                        <mat-card-title>{{ res.locationTitle }}</mat-card-title>
+                        <mat-card-subtitle>
+                            {{ res.startDate | date:'d MMM' }} - {{ res.endDate | date:'d MMM yyyy' }}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="price">{{ res.totalPrice | currency:'EUR':'symbol':'1.0-2' }}</p>
+                    </mat-card-content>
+                    <mat-card-actions align="end">
+                        <button mat-button color="warn" (click)="updateStatus(res.id, 'REJECTED')">Refuser</button>
+                        <button mat-flat-button color="primary"
+                            (click)="updateStatus(res.id, 'CONFIRMED')">Accepter</button>
+                    </mat-card-actions>
+                </mat-card>
+                } @empty {
+                <p class="empty-msg">Aucune demande en attente.</p>
+                }
+            </div>
+        </mat-tab>
+
+        <mat-tab label="À venir">
+            <div class="reservations-list">
+                @for (res of upcomingReservations; track res.id) {
+                <mat-card class="reservation-card">
+                    <mat-card-header>
+                        <mat-card-title>{{ res.locationTitle }}</mat-card-title>
+                        <mat-card-subtitle>Confirmé</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+                } @empty {
+                <p class="empty-msg">Aucune réservation à venir.</p>
+                }
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Terminé/Annulé">
+            <div class="reservations-list">
+                @for (res of pastReservations; track res.id) {
+                <mat-card class="reservation-card dimmed">
+                    <mat-card-header>
+                        <mat-card-title>{{ res.locationTitle }}</mat-card-title>
+                        <mat-card-subtitle>{{ res.status }}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+                }
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    }
+</div>

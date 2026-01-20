@@ -96,8 +96,8 @@
 
       <!-- RIGHT COLUMN: Sticky Booking Sidebar -->
       <aside class="booking-sidebar">
-        <app-booking-card [pricePerNight]="location.pricePerNight" [details]="location.bookingDetails"
-          [maxGuests]="location.maxGuests" class="sticky-card">
+        <app-booking-card [locationId]="location.id" [pricePerNight]="location.pricePerNight"
+          [details]="location.bookingDetails" [maxGuests]="location.maxGuests" class="sticky-card">
         </app-booking-card>
       </aside>
     </div>

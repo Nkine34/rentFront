@@ -1,0 +1,84 @@
+.trips-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  background: #f7f7f7;
+  border-radius: 12px;
+
+  mat-icon {
+    font-size: 4rem;
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+    color: #bdbdbd;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  button {
+    margin-top: 1.5rem;
+  }
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.trip-card {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  mat-card-header {
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .status-chip {
+    margin-left: auto;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    &.CONFIRMED { background: #e6fffa; color: #047857; }
+    &.PENDING { background: #fffbeb; color: #b45309; }
+    &.CANCELLED { background: #fef2f2; color: #b91c1c; }
+    &.REJECTED { background: #f3f4f6; color: #374151; }
+  }
+
+  .trip-dates {
+    margin-bottom: 1rem;
+    p { margin: 0.25rem 0; }
+  }
+
+  .trip-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+}

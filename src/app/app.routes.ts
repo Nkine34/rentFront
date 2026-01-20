@@ -42,8 +42,18 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'trips',
+    loadComponent: () => import('./features/my-trips/my-trips.component').then(m => m.MyTripsComponent),
+    canActivate: [authGuard]
+  },
+  {
     path: 'host/become-host',
     loadComponent: () => import('./features/host/become-host/become-host.component').then(m => m.BecomeHostComponent),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'host/reservations',
+    loadComponent: () => import('./features/host/reservations/host-reservations.component').then(m => m.HostReservationsComponent),
     canActivate: [authGuard]
   },
   {

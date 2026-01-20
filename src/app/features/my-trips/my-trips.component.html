@@ -1,0 +1,50 @@
+<div class="trips-container">
+    <h1>Mes Voyages</h1>
+
+    @if (isLoading()) {
+    <div class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+    </div>
+    } @else if (reservations().length === 0) {
+    <div class="empty-state">
+        <mat-icon>flight_takeoff</mat-icon>
+        <h2>Pas encore de voyages programmés</h2>
+        <p>Il est temps de dépoussiérer vos valises !</p>
+        <button mat-raised-button color="primary" routerLink="/search">Explorer les destinations</button>
+    </div>
+    } @else {
+    <div class="trips-grid">
+        @for (trip of reservations(); track trip.id) {
+        <mat-card class="trip-card">
+            <mat-card-header>
+                <mat-icon mat-card-avatar>home</mat-icon>
+                <mat-card-title>{{ trip.locationTitle }}</mat-card-title>
+                <mat-card-subtitle>{{ trip.locationCity }}</mat-card-subtitle>
+                <span class="status-chip" [class]="trip.status">{{ getStatusLabel(trip.status) }}</span>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="trip-dates">
+                    <p>
+                        <strong>Arrivée :</strong> {{ trip.startDate | date:'d MMM yyyy' }}
+                    </p>
+                    <p>
+                        <strong>Départ :</strong> {{ trip.endDate | date:'d MMM yyyy' }}
+                    </p>
+                </div>
+                <p class="trip-price">
+                    Total : {{ trip.totalPrice | currency:'EUR':'symbol':'1.0-2' }}
+                </p>
+            </mat-card-content>
+
+            <mat-card-actions align="end">
+                <button mat-button color="primary" [routerLink]="['/details', trip.locationId]">Relouer</button>
+                @if (trip.status === 'PENDING' || trip.status === 'CONFIRMED') {
+                <button mat-button color="warn" (click)="cancelReservation(trip.id)">Annuler</button>
+                }
+            </mat-card-actions>
+        </mat-card>
+        }
+    </div>
+    }
+</div>
