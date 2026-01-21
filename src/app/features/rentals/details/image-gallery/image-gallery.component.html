@@ -2,6 +2,10 @@
 
     <div class="gallery-content" (click)="$event.stopPropagation()">
 
+        <div class="counter-badge">
+            {{ currentIndex + 1 }} / {{ photos.length }}
+        </div>
+
         <button mat-icon-button class="close-btn" (click)="onClose()">
             <mat-icon>close</mat-icon>
         </button>
@@ -22,8 +26,12 @@
         </button>
         }
 
-        <div class="counter-badge">
-            {{ currentIndex + 1 }} / {{ photos.length }}
+        <div class="thumbnails-strip">
+            @for (photo of photos; track $index) {
+            <div class="thumbnail" [class.active]="$index === currentIndex" (click)="currentIndex = $index">
+                <img [src]="photo.url" [alt]="'Thumbnail ' + ($index + 1)">
+            </div>
+            }
         </div>
 
     </div>
