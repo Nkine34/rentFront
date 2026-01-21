@@ -201,103 +201,282 @@ section {
 }
 
 h2 {
-  font-size: var(--h2);
+  font-size: 1.5rem;
   margin-bottom: var(--sp-3);
   color: #222;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.highlights-grid {
+/* HOST SECTION */
+.host-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-2);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-2) 0;
 
-  .highlight-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 50px;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-color: var(--primary);
-      color: var(--primary);
+  .host-info {
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
     }
 
-    mat-icon {
-      color: var(--primary);
+    .specs {
+      font-size: 1rem;
+      color: #222;
+      margin: 0;
+    }
+  }
+
+  .host-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+  }
+}
+
+/* HIGHLIGHTS SECTION */
+.highlights-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .highlight-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    .highlight-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+      color: #222;
+    }
+
+    .highlight-text {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #222;
+        margin-bottom: 2px;
+      }
+
+      .desc {
+        font-size: 0.9rem; // slightly smaller
+        color: #717171;
+      }
     }
   }
 }
 
-.description-section p {
-  font-size: 1.1rem;
-  color: #484848;
-  line-height: 1.7;
+/* DESCRIPTION SECTION */
+.description-section {
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; // Limit lines visually
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .read-more-btn {
+    padding: 0;
+    min-width: 0;
+    font-weight: 600;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      margin-left: 4px;
+    }
+  }
 }
+
 
 .divider {
   border: 0;
   height: 1px;
-  background: #eee;
-  margin: var(--sp-5) 0;
+  background: #ddd; // slightly darker
+  margin: 32px 0;
 }
 
 /* AMENITIES */
-.amenities-grid {
-  // Assuming a component inside, but styling container for spacing
-  margin-top: var(--sp-2);
+.amenities-section {
+  .amenities-grid {
+    margin-top: var(--sp-4);
+    margin-bottom: 24px;
+    // Assume component handles grid internal
+  }
+
+  .show-all-amerities-btn {
+    border-color: #222;
+    color: #222;
+    font-weight: 600;
+    padding: 0 24px;
+    height: 48px;
+    border-radius: 8px;
+
+    &:hover {
+      background: #f7f7f7;
+    }
+  }
 }
 
-/* CALENDAR SECTION */
-.availability-section {
-  .section-header {
+/* REVIEWS SUMMARY */
+.reviews-summary-section {
+  h2 {
     display: flex;
     align-items: center;
-    gap: var(--sp-2);
-    margin-bottom: var(--sp-2);
-  }
+    gap: 8px;
+    font-size: 1.4rem;
 
-  .badge-demand {
-    background: #ffebee;
-    color: #c62828;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    .star {
+      color: #222;
+    }
   }
+}
 
-  .dates-range {
-    font-size: 1.1rem;
+/* MAP PLACEHOLDER */
+.availability-section {
+  .map-placeholder {
+    background: #f0f0f0;
+    height: 400px;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #717171;
-    margin-bottom: var(--sp-3);
+    font-weight: 500;
+    gap: 8px;
+    margin-top: 16px;
   }
+}
 
-  .calendar-wrapper {
-    background: #f8f9fa;
-    padding: var(--sp-3);
-    border-radius: $radius;
-    display: inline-block; // Or flex
-    border: 1px solid #eee;
-  }
+/* =========================================
+   STICKY SIDEBAR (BOOKING)
+   ========================================= */
 
-  // Custom Material Calendar overrides deeply nested
-  ::ng-deep .premium-calendar {
-    background: transparent;
+/* SIMILAR PROPERTIES */
+.similar-properties-section {
+  margin-top: 48px;
 
-    .mat-calendar-body-selected {
-      background-color: var(--primary);
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
     }
 
-    .mat-calendar-body-today {
-      border-color: var(--primary);
+    .nav-arrows {
+      display: flex;
+      gap: 8px;
+
+      button {
+        border: 1px solid #ddd;
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .similar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+
+  .similar-card {
+    cursor: pointer;
+
+    .img-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1 / 0.95; // Slightly taller than square
+      margin-bottom: 12px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .heart-icon {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: white;
+        font-size: 24px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    &:hover .img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .info {
+      .top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4px;
+
+        .title {
+          font-weight: 600;
+          color: #222;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 0.9rem;
+
+          mat-icon {
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+
+      .loc {
+        display: block;
+        color: #717171;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+      }
+
+      .price {
+        font-size: 1rem;
+        color: #222;
+
+        strong {
+          font-weight: 600;
+        }
+      }
     }
   }
 }
@@ -310,16 +489,18 @@ h2 {
   top: 100px;
   /* Offset for header/nav */
   z-index: 100;
+  margin-top: var(--sp-2);
 }
 
 // Target the booking card component for specific margin override if needed
 ::ng-deep app-booking-card.sticky-card .booking-card {
-  box-shadow: var(--shadow-card);
-  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); // Slightly deeper shadow
+  border: 1px solid #ddd;
   border-radius: $radius;
+  background: white;
 
   &:hover {
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -346,9 +527,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .hero-header {
-    clip-path: none;
-    padding-bottom: var(--sp-4);
+  .detail-header {
+    h1 {
+      font-size: 1.6rem;
+    }
   }
 
   .gallery-grid {
@@ -362,6 +544,11 @@ h2 {
     .photo-item.main {
       grid-column: 1 / -1;
       grid-row: 1 / -1;
+    }
+
+    .show-all-btn {
+      right: 16px;
+      bottom: 16px;
     }
   }
 

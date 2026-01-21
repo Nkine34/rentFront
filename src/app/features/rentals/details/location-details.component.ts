@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, Signal, signal } from '@angular/core';
-import { CommonModule, DatePipe, NgIf } from '@angular/common'; // NgIf added specifically
+import { CommonModule, NgIf } from '@angular/common'; // NgIf added specifically
 import { map } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -31,7 +31,6 @@ import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
     BookingCardComponent,
     AmenitiesListComponent,
     ReviewListComponent,
-    DatePipe,
     ImageGalleryComponent
   ],
   templateUrl: './location-details.component.html',

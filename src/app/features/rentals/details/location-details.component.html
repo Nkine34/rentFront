@@ -1,29 +1,31 @@
 @if (location(); as location) {
 <div class="page-wrapper">
-  <!-- HERO HEADER (Gradient + Info) -->
-  <header class="hero-header">
-    <div class="container hero-content">
-      <div class="text-content">
-        <span class="badge-superhost" *ngIf="location.host.isSuperhost">🏆 Superhost</span>
-        <h1>{{ location.type }} à {{ location.address.city }}</h1>
-        <p class="subtitle">
-          <mat-icon>star</mat-icon> {{ location.rating }} ({{ location.totalReviews }} avis) •
-          {{ location.address.city }}, {{ location.address.country }} •
-          {{ location.maxGuests }} voyageurs • {{ location.bedrooms }} chambres
-        </p>
-      </div>
+  <!-- HERO HEADER (Text based) -->
+  <div class="container main-layout">
 
-      <div class="host-badge">
-        <img [src]="location.host.photo" [alt]="location.host.name" class="avatar">
-        <div class="host-meta">
-          <span class="name">{{ location.host.name }}</span>
-          <span class="response-rate">Répond à {{ location.host.responseRate }}%</span>
+    <header class="detail-header">
+      <div class="header-top">
+        <h1 class="font-serif">{{ location.type }}</h1>
+        <div class="actions">
+          <button mat-button class="action-btn">
+            <mat-icon>share</mat-icon> Share
+          </button>
+          <button mat-button class="action-btn">
+            <mat-icon>favorite_border</mat-icon> Save
+          </button>
         </div>
       </div>
-    </div>
-  </header>
 
-  <div class="container main-layout">
+      <div class="header-meta">
+        <div class="rating">
+          <mat-icon class="star-icon">star</mat-icon>
+          <span class="score">{{ location.rating }}</span>
+          <span class="reviews">({{ location.totalReviews }} reviews)</span>
+        </div>
+        <span class="separator">·</span>
+        <span class="location-text underline">{{ location.address.city }}, {{ location.address.country }}</span>
+      </div>
+    </header>
 
     <!-- PHOTO GALLERY (Grid) -->
     <section class="gallery-section">
@@ -31,8 +33,10 @@
         @for (photo of sortedPhotos().slice(0,5); track photo.id; let i = $index) {
         <div class="photo-item" [class.main]="i === 0" (click)="openGallery(i)">
           <img [src]="photo.url" [alt]="location.type">
-          @if (i === 4 && sortedPhotos().length > 5) {
-          <div class="more-photos-overlay">+{{ sortedPhotos().length - 5 }} photos</div>
+          @if (i === 4) {
+          <button class="show-all-btn" (click)="openGallery(0); $event.stopPropagation()">
+            <mat-icon>grid_view</mat-icon> Show all photos
+          </button>
           }
         </div>
         }
@@ -44,58 +48,84 @@
       <!-- LEFT COLUMN: Details -->
       <main class="details-column">
 
+        <!-- HOST INFO (Row) -->
+        <section class="host-section">
+          <div class="host-info">
+            <h2>Entire Villa hosted by {{ location.host.name }}</h2>
+            <p class="specs">
+              {{ location.maxGuests }} guests · {{ location.bedrooms }} bedrooms · {{ location.bedrooms }} beds · 4
+              baths
+            </p>
+          </div>
+          <img [src]="location.host.photo" class="host-avatar" [alt]="location.host.name">
+        </section>
+
+        <hr class="divider">
+
         <!-- HIGHLIGHTS -->
         <section class="highlights-section">
-          <h2>Points forts</h2>
-          <div class="highlights-grid">
-            @for (highlight of location.highlights; track highlight) {
-            <div class="highlight-chip">
-              <mat-icon>check_circle_outline</mat-icon>
-              <span>{{ highlight }}</span>
+          @for (highlight of location.highlights; track highlight) {
+          <div class="highlight-row">
+            <mat-icon class="highlight-icon">check_circle_outline</mat-icon>
+            <div class="highlight-text">
+              <span class="title">{{ highlight }}</span>
+              <span class="desc">One of the most loved homes on Airbnb</span>
             </div>
-            }
           </div>
+          }
         </section>
 
         <hr class="divider">
 
         <!-- DESCRIPTION -->
         <section class="description-section">
-          <h2>À propos de ce logement</h2>
           <p>{{ location.description }}</p>
+          <button mat-button class="read-more-btn">
+            Show more <mat-icon>chevron_right</mat-icon>
+          </button>
         </section>
 
         <hr class="divider">
 
         <!-- AMENITIES -->
         <section class="amenities-section">
-          <h2>Ce que propose ce logement</h2>
+          <h2>What this place offers</h2>
           <div class="amenities-grid">
-            <!-- Using a simplified list here for styling control, or existing component but styled -->
             <app-amenities-list [amenities]="location.amenities"></app-amenities-list>
           </div>
+          <button mat-stroked-button class="show-all-amerities-btn">
+            Show all 45 amenities
+          </button>
         </section>
 
         <hr class="divider">
 
-        <!-- CALENDAR SECTION (Main) -->
+        <!-- REVIEWS SUMMARY -->
+        <section class="reviews-summary-section">
+          <h2>
+            <mat-icon class="star">star</mat-icon>
+            {{ location.rating }} · {{ location.totalReviews }} reviews
+          </h2>
+          <!-- Placeholder for review carousel/list -->
+          <app-review-list [locationId]="location.id"></app-review-list>
+
+          <br>
+          <button mat-stroked-button>Show all {{location.totalReviews}} reviews</button>
+        </section>
+
+        <hr class="divider">
+
+        <!-- LOCATION MAP -->
         <section class="availability-section">
           <div class="section-header">
-            <h2>Disponibilités</h2>
-            <span class="badge-demand">🔥 Très demandé</span>
+            <h2>Where you'll be</h2>
           </div>
-          <p class="dates-range">{{ location.availableFrom | date:'d MMMM' }} - {{ location.availableTo | date:'d MMMM
-            yyyy' }}</p>
+          <p>{{ location.address.city }}, {{ location.address.country }}</p>
 
-          <div class="calendar-wrapper">
-            <mat-calendar [minDate]="location.availableFrom | date:'yyyy-MM-dd'"
-              [maxDate]="location.availableTo | date:'yyyy-MM-dd'" class="premium-calendar"></mat-calendar>
+          <div class="map-placeholder">
+            <mat-icon>map</mat-icon> Map Component
           </div>
         </section>
-        <hr class="divider">
-
-        <!-- REVIEWS SECTION -->
-        <app-review-list [locationId]="location.id"></app-review-list>
 
       </main>
 
@@ -105,9 +135,91 @@
           [details]="location.bookingDetails" [maxGuests]="location.maxGuests" class="sticky-card">
         </app-booking-card>
       </aside>
-    </div>
+    </div> <!-- End Content Grid -->
 
-  </div> <!-- End container -->
+  </div> <!-- End Main Layout Container 1 -->
+
+  <!-- SIMILAR PROPERTIES SECTION -->
+  <div class="container main-layout">
+    <hr class="divider">
+
+    <section class="similar-properties-section">
+      <div class="section-header">
+        <h2>Similar properties you might like</h2>
+        <div class="nav-arrows">
+          <button mat-icon-button disabled><mat-icon>chevron_left</mat-icon></button>
+          <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+        </div>
+      </div>
+
+      <div class="similar-grid">
+        <!-- Mock Data Cards -->
+        <div class="similar-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
+              alt="Villa Aegean">
+            <mat-icon class="heart-icon">favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="top-row">
+              <span class="title">Villa Aegean Pearl</span>
+              <span class="rating"><mat-icon>star</mat-icon> 4.95</span>
+            </div>
+            <span class="loc">Imerovigli, Greece</span>
+            <span class="price"><strong>$750</strong> / night</span>
+          </div>
+        </div>
+
+        <div class="similar-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1600596542815-27a9476cac9b?auto=format&fit=crop&w=600&q=80"
+              alt="Cliffside Sanctuary">
+            <mat-icon class="heart-icon">favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="top-row">
+              <span class="title">Cliffside Sanctuary</span>
+              <span class="rating"><mat-icon>star</mat-icon> 4.98</span>
+            </div>
+            <span class="loc">Akrotiri, Greece</span>
+            <span class="price"><strong>$1,250</strong> / night</span>
+          </div>
+        </div>
+
+        <div class="similar-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+              alt="White Onyx Suite">
+            <mat-icon class="heart-icon">favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="top-row">
+              <span class="title">White Onyx Suite</span>
+              <span class="rating"><mat-icon>star</mat-icon> 4.88</span>
+            </div>
+            <span class="loc">Akrotiri, Greece</span>
+            <span class="price"><strong>$900</strong> / night</span>
+          </div>
+        </div>
+
+        <div class="similar-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+              alt="Miltox Retreat">
+            <mat-icon class="heart-icon">favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="top-row">
+              <span class="title">Miltox Retreat</span>
+              <span class="rating"><mat-icon>star</mat-icon> 4.91</span>
+            </div>
+            <span class="loc">Fira, Greece</span>
+            <span class="price"><strong>$1,100</strong> / night</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- IMAGE GALLERY OVERLAY -->
   @if (isGalleryOpen()) {
@@ -117,7 +229,7 @@
 </div>
 } @else if (store.loading()) {
 <div class="loading-state">
-  <div class="spinner"></div> <!-- Custom CSS spinner -->
+  <div class="spinner"></div>
   <p>Chargement de votre expérience...</p>
 </div>
 } @else {
