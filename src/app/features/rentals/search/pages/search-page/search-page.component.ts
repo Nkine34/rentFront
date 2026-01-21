@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject, computed } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { LocationStore } from '../state/location.store';
-import { PropertyCardComponent, PropertyCardData } from './property-card.component';
+import { LocationStore } from '../../../state/location.store';
+import { PropertyCardComponent, PropertyCardData } from '../../components/property-card/property-card.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';

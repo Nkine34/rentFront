@@ -4,7 +4,7 @@ import { HomeComponent } from './features/rentals/home/home.component';
 import { locationsResolver } from './features/rentals/location.resolver';
 import { LoginComponent } from './features/auth/login/login.component';
 import { CallbackComponent } from './features/auth/callback/callback.component';
-import { SearchPageComponent } from './features/rentals/search/search-page.component';
+import { SearchPageComponent } from './features/rentals/search/pages/search-page/search-page.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { LocationDetailsComponent } from './features/rentals/details/location-details.component';
 

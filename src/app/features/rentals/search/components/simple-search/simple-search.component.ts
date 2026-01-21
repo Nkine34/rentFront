@@ -1,6 +1,5 @@
 import { Component, computed, signal, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,8 +26,7 @@ import { SearchCriteria } from '../../../models';
     MatNativeDateModule,
     MatMenuModule,
     MatIconModule,
-    MatTooltipModule,
-    RouterLink
+    MatTooltipModule
   ],
   templateUrl: './simple-search.component.html',
   styleUrls: ['./simple-search.component.scss']
@@ -49,37 +47,32 @@ export class SimpleSearchComponent {
 
   totalTravelers = computed(() => this.adults() + this.children() + this.babies());
 
+  // Store advanced criteria to persist them across search actions
+  private advancedCriteria: Partial<SearchCriteria> = {};
+
   constructor(private dialog: MatDialog) { }
 
   openAdvancedSearch() {
     this.dialog.open(AdvancedSearchComponent, {
       width: '600px',
       maxWidth: '95vw',
-      panelClass: 'advanced-search-dialog'
+      panelClass: 'advanced-search-dialog',
+      data: this.advancedCriteria // Optional: pass current state back to dialog if implemented
     }).afterClosed().subscribe((result: Partial<SearchCriteria> | undefined) => {
       if (result) {
-        // Merge advanced filters with current form filters and emit
-        const formValue = this.searchForm.value;
-        const currentCriteria: SearchCriteria = {
-          destination: formValue.destination ?? null,
-          checkIn: formValue.checkIn ?? null,
-          checkOut: formValue.checkOut ?? null,
-          travelers: {
-            adults: this.adults(),
-            children: this.children(),
-            babies: this.babies(),
-            pets: this.pets()
-          }
-        };
-        const mergedCriteria = { ...currentCriteria, ...result };
-        this.searchSubmit.emit(mergedCriteria);
+        this.advancedCriteria = result; // Persist selection
+        this.performSearch(); // Trigger search immediately
       }
     });
   }
 
   search(): void {
+    this.performSearch();
+  }
+
+  private performSearch(): void {
     const formValue = this.searchForm.value;
-    const searchCriteria: SearchCriteria = {
+    const baseCriteria: SearchCriteria = {
       destination: formValue.destination ?? null,
       checkIn: formValue.checkIn ?? null,
       checkOut: formValue.checkOut ?? null,
@@ -90,7 +83,11 @@ export class SimpleSearchComponent {
         pets: this.pets()
       }
     };
-    this.searchSubmit.emit(searchCriteria);
+
+    // Merge base criteria with persisted advanced criteria
+    const mergedCriteria = { ...baseCriteria, ...this.advancedCriteria };
+    console.log('Emitting Search Criteria:', mergedCriteria);
+    this.searchSubmit.emit(mergedCriteria);
   }
 
   increment(travelerType: 'adults' | 'children' | 'babies' | 'pets') {

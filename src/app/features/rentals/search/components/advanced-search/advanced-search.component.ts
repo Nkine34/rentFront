@@ -1,16 +1,14 @@
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { SearchCriteria } from '../../../models';
-
-type Profile = 'DIGITAL_NOMAD' | 'FAMILY' | 'QUIET' | 'SMART_SAVER';
 
 @Component({
     selector: 'app-advanced-search',
@@ -18,77 +16,88 @@ type Profile = 'DIGITAL_NOMAD' | 'FAMILY' | 'QUIET' | 'SMART_SAVER';
     imports: [
         CommonModule,
         MatDialogModule,
-        MatTabsModule,
         MatIconModule,
         MatButtonModule,
         MatSliderModule,
         MatSlideToggleModule,
         MatChipsModule,
+        MatDividerModule,
         FormsModule
     ],
     templateUrl: './advanced-search.component.html',
-    styleUrls: ['./advanced-search.component.scss']
+    styleUrls: ['./advanced-search.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdvancedSearchComponent {
-    selectedProfile = signal<Profile>('DIGITAL_NOMAD');
 
-    // Smart Filter States
-    minInternetSpeed = 0;
+    // Section 1: 🚀 Performance & Télétravail
+    minDownloadSpeed = 0;
+    minUploadSpeed = 0;
+    hasErgonomicChair = false;
+
+    // Section 2: 👨‍👩‍👧‍👦 Famille & Confort
+    hasCrib = false;
+    hasBathtub = false;
+    hasKitchen = false;
+
+    // Section 3: 🌙 Silence & Sérénité
     isQuietZone = false;
-    requireErgonomicChair = false;
-    requireCrib = false;
-    requireBathtub = false;
+    minSoundproofingRating = 0; // 0 means any, 4+ is high
 
-    constructor(public dialogRef: MatDialogRef<AdvancedSearchComponent>) { }
+    // Section 4: 💎 Offres & Durée
+    wantsLongTermDeal = false; // > 30% discount
+    wantsSeasonalOffer = false;
 
-    selectProfile(profile: Profile): void {
-        this.selectedProfile.set(profile);
-        this.applyProfilePresets(profile);
-    }
+    constructor(
+        public dialogRef: MatDialogRef<AdvancedSearchComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: Partial<SearchCriteria>
+    ) {
+        if (data) {
+            // Restore state from passed data
+            this.minDownloadSpeed = data.minInternetSpeed || 0;
+            this.minUploadSpeed = data.minUploadSpeed || 0;
+            this.hasErgonomicChair = data.amenities?.includes('ergonomic_chair') || false;
 
-    applyProfilePresets(profile: Profile): void {
-        // Reset all first
-        this.minInternetSpeed = 0;
-        this.isQuietZone = false;
-        this.requireErgonomicChair = false;
-        this.requireCrib = false;
-        this.requireBathtub = false;
+            this.hasCrib = data.amenities?.includes('crib') || false;
+            this.hasBathtub = data.amenities?.includes('bathtub') || false;
+            this.hasKitchen = data.amenities?.includes('kitchen') || false;
 
-        switch (profile) {
-            case 'DIGITAL_NOMAD':
-                this.minInternetSpeed = 100;
-                this.requireErgonomicChair = true;
-                break;
-            case 'QUIET':
-                this.isQuietZone = true;
-                break;
-            case 'FAMILY':
-                this.requireCrib = true;
-                this.requireBathtub = true;
-                break;
-            case 'SMART_SAVER':
-                // Logic for deals could be handled in backend, here we just might set a flag or leave defaults
-                break;
+            this.isQuietZone = data.isQuietZone || false;
+            this.minSoundproofingRating = data.minSoundproofingRating || 0;
+
+            this.wantsSeasonalOffer = data.priceRuleType === 'SEASONAL';
+            this.wantsLongTermDeal = data.priceRuleType === 'long_term';
         }
     }
 
     applyFilters(): void {
         const amenities: string[] = [];
-        if (this.requireErgonomicChair) amenities.push('ergonomic_chair');
-        if (this.requireCrib) amenities.push('crib');
-        if (this.requireBathtub) amenities.push('bathtub');
+        if (this.hasErgonomicChair) amenities.push('ergonomic_chair');
+        if (this.hasCrib) amenities.push('crib');
+        if (this.hasBathtub) amenities.push('bathtub');
+        if (this.hasKitchen) amenities.push('kitchen');
 
         const criteria: Partial<SearchCriteria> = {
-            minInternetSpeed: this.minInternetSpeed > 0 ? this.minInternetSpeed : undefined,
+            // Work
+            minInternetSpeed: this.minDownloadSpeed > 0 ? this.minDownloadSpeed : undefined,
+            minUploadSpeed: this.minUploadSpeed > 0 ? this.minUploadSpeed : undefined,
+
+            // Quiet
             isQuietZone: this.isQuietZone ? true : undefined,
+            minSoundproofingRating: this.minSoundproofingRating > 0 ? this.minSoundproofingRating : undefined,
+
+            // Amenities (Family + Work)
             amenities: amenities.length > 0 ? amenities : undefined,
-            priceRuleType: this.selectedProfile() === 'SMART_SAVER' ? 'SEASONAL' : undefined // Simplified logic
+
+            // Deals
+            // We map these boolean toggles to the enum expected by backend/model
+            priceRuleType: this.wantsSeasonalOffer ? 'SEASONAL' : (this.wantsLongTermDeal ? 'long_term' : undefined)
         };
 
         this.dialogRef.close(criteria);
     }
 
     formatSpeedLabel(value: number): string {
-        return `${value} Mbps`;
+        return `${value} Mb`;
     }
 }

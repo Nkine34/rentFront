@@ -32,7 +32,14 @@ export class SearchService {
       children: criteria.travelers.children,
       destination: criteria.destination || '',
       checkIn: criteria.checkIn ? this.formatDate(criteria.checkIn) : null,
-      checkOut: criteria.checkOut ? this.formatDate(criteria.checkOut) : null
+      checkOut: criteria.checkOut ? this.formatDate(criteria.checkOut) : null,
+      // Advanced Filters
+      minInternetSpeed: criteria.minInternetSpeed,
+      minUploadSpeed: criteria.minUploadSpeed,
+      isQuietZone: criteria.isQuietZone,
+      minSoundproofingRating: criteria.minSoundproofingRating,
+      amenities: criteria.amenities,
+      priceRuleType: criteria.priceRuleType
     };
 
     return this.http.post<Location[]>(url, searchPayload);

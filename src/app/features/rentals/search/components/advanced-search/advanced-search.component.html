@@ -1,82 +1,109 @@
-<h2 mat-dialog-title>Filtres Intelligents</h2>
+<h2 mat-dialog-title>
+    <mat-icon>tune</mat-icon> Filtres Avancés
+</h2>
+
 <mat-dialog-content>
-    <p class="subtitle">Sélectionnez votre profil de voyageur pour des filtres adaptés</p>
+    <div class="sections-container">
 
-    <div class="profile-selector">
-        <div class="profile-card" [class.active]="selectedProfile() === 'DIGITAL_NOMAD'"
-            (click)="selectProfile('DIGITAL_NOMAD')">
-            <mat-icon>wifi</mat-icon>
-            <span>Digital Nomad</span>
-        </div>
-        <div class="profile-card" [class.active]="selectedProfile() === 'FAMILY'" (click)="selectProfile('FAMILY')">
-            <mat-icon>family_restroom</mat-icon>
-            <span>Famille</span>
-        </div>
-        <div class="profile-card" [class.active]="selectedProfile() === 'QUIET'" (click)="selectProfile('QUIET')">
-            <mat-icon>nightlight_round</mat-icon>
-            <span>Silence</span>
-        </div>
-        <div class="profile-card" [class.active]="selectedProfile() === 'SMART_SAVER'"
-            (click)="selectProfile('SMART_SAVER')">
-            <mat-icon>savings</mat-icon>
-            <span>Smart Deal</span>
-        </div>
-    </div>
-
-    <div class="filters-content">
-
-        <!-- Digital Nomad Filters -->
-        <div class="filter-section" *ngIf="selectedProfile() === 'DIGITAL_NOMAD'">
-            <h3><mat-icon>speed</mat-icon> Vitesse Internet Minimale</h3>
-            <div class="slider-container">
-                <mat-slider min="0" max="1000" step="50" showTickMarks discrete [displayWith]="formatSpeedLabel">
-                    <input matSliderThumb [(ngModel)]="minInternetSpeed">
-                </mat-slider>
-                <span class="value-label">{{ minInternetSpeed }} Mbps +</span>
+        <!-- SECTION 1: WORK -->
+        <section class="filter-section work-section">
+            <div class="section-header">
+                <mat-icon class="section-icon">rocket_launch</mat-icon>
+                <div>
+                    <h3>Performance & Télétravail</h3>
+                    <p class="subtitle">Pour les pros : connexion garantie et confort.</p>
+                </div>
             </div>
 
-            <div class="toggle-container">
-                <mat-slide-toggle [(ngModel)]="requireErgonomicChair" color="primary">
+            <div class="controls-grid">
+                <div class="slider-control">
+                    <label>Download Min ({{minDownloadSpeed}} Mbps)</label>
+                    <mat-slider min="0" max="1000" step="50" showTickMarks discrete [displayWith]="formatSpeedLabel">
+                        <input matSliderThumb [(ngModel)]="minDownloadSpeed">
+                    </mat-slider>
+                </div>
+                <div class="slider-control">
+                    <label>Upload Min ({{minUploadSpeed}} Mbps)</label>
+                    <mat-slider min="0" max="500" step="10" showTickMarks discrete [displayWith]="formatSpeedLabel">
+                        <input matSliderThumb [(ngModel)]="minUploadSpeed">
+                    </mat-slider>
+                </div>
+            </div>
+
+            <div class="toggles-row">
+                <mat-slide-toggle [(ngModel)]="hasErgonomicChair" color="primary">
                     Chaise Ergonomique
                 </mat-slide-toggle>
             </div>
-        </div>
+        </section>
 
-        <!-- Quiet Filters -->
-        <div class="filter-section" *ngIf="selectedProfile() === 'QUIET'">
-            <div class="toggle-container">
-                <mat-slide-toggle [(ngModel)]="isQuietZone" color="primary">
-                    <mat-icon>volume_off</mat-icon>
-                    Zone "Silence Garanti"
-                </mat-slide-toggle>
-                <p class="hint">Uniquement les logements en zone résidentielle calme vérifiée.</p>
+        <mat-divider></mat-divider>
+
+        <!-- SECTION 2: FAMILY -->
+        <section class="filter-section family-section">
+            <div class="section-header">
+                <mat-icon class="section-icon">family_restroom</mat-icon>
+                <div>
+                    <h3>Famille & Confort</h3>
+                    <p class="subtitle">L'essentiel pour les enfants et le groupe.</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Family Filters -->
-        <div class="filter-section" *ngIf="selectedProfile() === 'FAMILY'">
             <div class="toggles-grid">
-                <mat-slide-toggle [(ngModel)]="requireCrib" color="primary">
-                    Lit bébé
-                </mat-slide-toggle>
-                <mat-slide-toggle [(ngModel)]="requireBathtub" color="primary">
-                    Baignoire
-                </mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="hasCrib" color="primary">Lit Bébé</mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="hasBathtub" color="primary">Baignoire</mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="hasKitchen" color="primary">Cuisine Équipée</mat-slide-toggle>
             </div>
-        </div>
+        </section>
 
-        <!-- Smart Saver Filters -->
-        <div class="filter-section" *ngIf="selectedProfile() === 'SMART_SAVER'">
-            <div class="info-card">
-                <mat-icon>verified</mat-icon>
-                <p>En activant ce mode, nous privilégierons les offres "Early Bird", les réductions saisonnières et les
-                    longs séjours optimisés.</p>
+        <mat-divider></mat-divider>
+
+        <!-- SECTION 3: QUIET -->
+        <section class="filter-section quiet-section">
+            <div class="section-header">
+                <mat-icon class="section-icon">nightlight_round</mat-icon>
+                <div>
+                    <h3>Silence & Sérénité</h3>
+                    <p class="subtitle">Garanti par nos capteurs sonores.</p>
+                </div>
             </div>
-        </div>
+            <div class="toggles-grid">
+                <mat-slide-toggle [(ngModel)]="isQuietZone" color="warn">
+                    Zone "Silence Absolu"
+                </mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="minSoundproofingRating" [checked]="minSoundproofingRating >= 4"
+                    (change)="minSoundproofingRating = $event.checked ? 4 : 0" color="primary">
+                    Isolation 4★+
+                </mat-slide-toggle>
+            </div>
+        </section>
+
+        <mat-divider></mat-divider>
+
+        <!-- SECTION 4: DEALS -->
+        <section class="filter-section deals-section">
+            <div class="section-header">
+                <mat-icon class="section-icon">savings</mat-icon>
+                <div>
+                    <h3>Offres Spéciales</h3>
+                    <p class="subtitle">Optimisez votre budget.</p>
+                </div>
+            </div>
+            <div class="toggles-grid">
+                <mat-slide-toggle [(ngModel)]="wantsLongTermDeal" color="accent">
+                    Longue Durée (-30%)
+                </mat-slide-toggle>
+                <mat-slide-toggle [(ngModel)]="wantsSeasonalOffer" color="accent">
+                    Offre Saisonnière
+                </mat-slide-toggle>
+            </div>
+        </section>
 
     </div>
 </mat-dialog-content>
+
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Annuler</button>
-    <button mat-raised-button color="primary" (click)="applyFilters()">Appliquer les filtres</button>
+    <button mat-raised-button color="primary" (click)="applyFilters()">
+        <mat-icon>check</mat-icon> Appliquer les filtres
+    </button>
 </mat-dialog-actions>

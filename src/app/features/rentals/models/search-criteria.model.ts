@@ -10,7 +10,9 @@ export interface SearchCriteria {
   };
   // Advanced / Smart Filters
   minInternetSpeed?: number;
+  minUploadSpeed?: number;
   isQuietZone?: boolean;
+  minSoundproofingRating?: number;
   amenities?: string[];
   priceRuleType?: 'SEASONAL' | 'EARLY_BIRD' | 'long_term';
 }
