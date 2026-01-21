@@ -7,9 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { BookingDetails } from '../models/booking-details.model';
-import { ReservationService } from '../../../shared/services/reservation.service';
-import { PriceBreakdownDto, StayQuoteDto } from '../../../shared/models/reservation.model';
+import { BookingDetails } from '../../../models/booking-details.model';
+import { ReservationService } from '../../../../../shared/services/reservation.service';
+import { PriceBreakdownDto, StayQuoteDto } from '../../../../../shared/models/reservation.model';
 import { Router } from '@angular/router';
 import { catchError, of, finalize } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -105,32 +105,14 @@ export class BookingCardComponent {
   reserve() {
     if (this.bookingForm.invalid || !this.quote()) return;
 
-    this.isReserving.set(true);
     const val = this.bookingForm.value;
-    const dto = {
-      startDate: this.formatDate(val.checkIn!),
-      endDate: this.formatDate(val.checkOut!),
-      guestsCount: val.guests!
+    const queryParams = {
+      start: this.formatDate(val.checkIn!),
+      end: this.formatDate(val.checkOut!),
+      guests: val.guests!
     };
 
-    this.reservationService.createReservation(this.locationId, dto)
-      .pipe(
-        finalize(() => this.isReserving.set(false))
-      )
-      .subscribe({
-        next: (res) => {
-          this.snackBar.open('Réservation confirmée !', 'Voir mes voyages', { duration: 5000 })
-            .onAction().subscribe(() => {
-              this.router.navigate(['/trips']);
-            });
-          this.bookingForm.reset();
-          this.quote.set(null);
-        },
-        error: (err: HttpErrorResponse) => {
-          const msg = err.error?.message || 'Erreur lors de la réservation.';
-          this.snackBar.open(msg, 'Fermer', { duration: 5000 });
-        }
-      });
+    this.router.navigate(['/checkout', this.locationId], { queryParams });
   }
 
   private formatDate(date: Date): string {

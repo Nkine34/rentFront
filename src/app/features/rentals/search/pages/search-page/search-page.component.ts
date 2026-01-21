@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { OpenStreetMapComponent } from '../../components/open-street-map/open-street-map.component';
 
 @Component({
   selector: 'app-search-page',
@@ -16,7 +17,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     PropertyCardComponent,
     MatButtonModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatIconModule,
+    MatProgressSpinnerModule,
+    OpenStreetMapComponent
   ],
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss'],

@@ -10,6 +10,8 @@ import { LocationStore } from './features/rentals/state/location.store';
 import { SearchCriteria } from './features/rentals/models';
 import { AuthService } from './features/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,8 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatDividerModule,
     MatSidenavModule,
-    SimpleSearchComponent
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -39,12 +42,7 @@ export class App {
 
   constructor() { }
 
-  handleSearch(criteria: SearchCriteria): void {
-    this.store.searchLocations(criteria);
-    if (this.router.url !== '/search') {
-      this.router.navigate(['/search']);
-    }
-  }
+
 
   toggleDarkMode(): void {
     this.isDarkMode = !this.isDarkMode;

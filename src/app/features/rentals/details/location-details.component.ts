@@ -12,11 +12,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { LocationStore } from '../state/location.store';
-import { BookingCardComponent } from './booking-card.component';
-import { AmenitiesListComponent } from './amenities-list.component';
-import { ReviewListComponent } from './reviews/review-list.component';
+import { BookingCardComponent } from './components/booking-card/booking-card.component';
+import { AmenitiesListComponent } from './components/amenities-list/amenities-list.component';
+import { ReviewListComponent } from './components/reviews/review-list.component';
 
-import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+import { ImageGalleryComponent } from './components/image-gallery/image-gallery.component';
 
 @Component({
   selector: 'app-location-details',

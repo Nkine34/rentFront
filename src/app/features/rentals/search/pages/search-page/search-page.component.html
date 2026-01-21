@@ -57,34 +57,8 @@
 
     <!-- Map Panel (Right) -->
     <div class="map-panel">
-      <div class="map-placeholder">
-        <!-- Map Overlay Controls -->
-        <div class="map-overlay">
-          <button mat-raised-button class="satellite-btn">
-            <mat-icon>satellite</mat-icon>
-            <span>Satellite</span>
-          </button>
-        </div>
-
-        <!-- Zoom Controls -->
-        <div class="zoom-controls">
-          <button mat-mini-fab class="map-control-btn">
-            <mat-icon>add</mat-icon>
-          </button>
-          <button mat-mini-fab class="map-control-btn">
-            <mat-icon>remove</mat-icon>
-          </button>
-        </div>
-
-        <!-- Locate Button -->
-        <button mat-mini-fab class="map-control-btn locate-btn">
-          <mat-icon>my_location</mat-icon>
-        </button>
-
-        <!-- Placeholder Content -->
-        <mat-icon style="font-size: 64px; width: 64px; height: 64px; color: rgba(255,255,255,0.8);">map</mat-icon>
-        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem;">Interactive Map</p>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Map integration coming soon</p>
+      <div class="map-placeholder" style="display: block; height: 100%; width: 100%; padding: 0;">
+        <app-open-street-map [locations]="store.filteredLocations()"></app-open-street-map>
       </div>
     </div>
   </div>

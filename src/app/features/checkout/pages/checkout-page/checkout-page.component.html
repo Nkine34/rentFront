@@ -1,0 +1,166 @@
+<div class="checkout-container">
+
+    <!-- HEADER -->
+    <header class="checkout-header">
+        <div class="logo-area">
+            <mat-icon class="logo-icon">apartment</mat-icon>
+            <span class="brand-name">LUXE Rentals</span>
+        </div>
+        <div class="header-actions">
+            <span class="secure-badge">
+                <mat-icon>lock</mat-icon> Secure Checkout
+            </span>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- BREADCRUMBS -->
+        <nav class="breadcrumbs">
+            <a routerLink="/search">Search Results</a>
+            <mat-icon>chevron_right</mat-icon>
+            <span class="current">Checkout</span>
+        </nav>
+
+        <h1 class="page-title">Confirm and Pay</h1>
+
+        <div class="content-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="form-column">
+
+                <!-- YOUR TRIP -->
+                <section class="trip-section">
+                    <h2>Your Trip</h2>
+
+                    <div class="info-row">
+                        <div class="info-content">
+                            <span class="label">Dates</span>
+                            <span class="value">{{ startDate() | date:'mediumDate' }} – {{ endDate() | date:'mediumDate'
+                                }}</span>
+                        </div>
+                        <button mat-button class="edit-btn">Edit</button>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-content">
+                            <span class="label">Guests</span>
+                            <span class="value">{{ guests() }} Guest{{ guests() > 1 ? 's' : '' }}</span>
+                        </div>
+                        <button mat-button class="edit-btn">Edit</button>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <!-- PAYMENT METHOD -->
+                <section class="payment-section">
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-tabs">
+                        <button class="tab" [class.active]="selectedPaymentMethod() === 'card'"
+                            (click)="selectPaymentMethod('card')">
+                            <mat-icon>credit_card</mat-icon> CARD
+                        </button>
+                        <button class="tab" [class.active]="selectedPaymentMethod() === 'paypal'"
+                            (click)="selectPaymentMethod('paypal')">
+                            <mat-icon>account_balance_wallet</mat-icon> PAYPAL
+                        </button>
+                        <button class="tab" [class.active]="selectedPaymentMethod() === 'apple'"
+                            (click)="selectPaymentMethod('apple')">
+                            <mat-icon>phone_iphone</mat-icon> APPLE PAY
+                        </button>
+                    </div>
+
+                    <!-- CARD FORM -->
+                    <form [formGroup]="paymentForm" class="card-form" *ngIf="selectedPaymentMethod() === 'card'">
+                        <div class="form-group full-width">
+                            <label>Cardholder Name</label>
+                            <input type="text" formControlName="cardName" placeholder="Johnathan Doe">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Card Number</label>
+                            <div class="input-wrapper">
+                                <input type="text" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+                                <mat-icon class="card-icon">credit_card</mat-icon>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiration Date</label>
+                                <input type="text" formControlName="expiration" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" formControlName="cvv" placeholder="***">
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- PLACEHOLDERS FOR OTHER METHODS -->
+                    <div class="method-placeholder" *ngIf="selectedPaymentMethod() !== 'card'">
+                        <p>Redirecting to {{ selectedPaymentMethod() | titlecase }}...</p>
+                    </div>
+                </section>
+
+                <div class="trust-badges">
+                    <span class="badge"><mat-icon>verified_user</mat-icon> SSL Secure Payment</span>
+                    <span class="badge"><mat-icon>security</mat-icon> Fraud Protection</span>
+                </div>
+
+                <button mat-flat-button color="primary" class="confirm-btn" (click)="onConfirmPayment()">
+                    Confirm and Pay
+                </button>
+                <p class="terms-text">
+                    By clicking "Confirm and Pay", you agree to the Host's House Rules, parts of the Rebooking Policy
+                    and the Guest Refund Policy.
+                </p>
+
+            </div>
+
+            <!-- RIGHT COLUMN (SIDEBAR) -->
+            <div class="sidebar-column">
+                <div class="order-summary-card">
+
+                    <div class="property-preview">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
+                            alt="Villa">
+                        <div class="prop-info">
+                            <span class="tag">LUXURY VILLA</span>
+                            <h3>Mediterranean Cliff House</h3>
+                            <div class="rating">
+                                <mat-icon>star</mat-icon> 4.95 <span>(128 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="card-divider">
+
+                    <h3>Price Details</h3>
+
+                    <div class="price-row">
+                        <span>$850.00 x 3 nights</span>
+                        <span>$2,550.00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Service fee</span>
+                        <span>$310.00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Occupancy taxes</span>
+                        <span>$125.00</span>
+                    </div>
+
+                    <hr class="card-divider">
+
+                    <div class="total-row">
+                        <span>Total (USD)</span>
+                        <span class="amount">$2,985.00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

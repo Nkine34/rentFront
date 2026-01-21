@@ -1,0 +1,26 @@
+<nav class="top-navbar">
+    <div class="navbar-container">
+        <a routerLink="/" class="logo">
+            <mat-icon class="logo-icon">apartment</mat-icon>
+            <span class="logo-text">LUXESTAY</span>
+        </a>
+
+        <div class="search-container">
+            <app-simple-search (searchSubmit)="handleSearch($event)"></app-simple-search>
+        </div>
+
+        <!-- User Avatar to open menu -->
+        @if (authService.isLoggedIn() && authService.userProfile(); as profile) {
+        <button class="user-menu-trigger" (click)="onMenuClick()">
+            <span class="trigger-name">{{ profile.firstName }}</span>
+            <div class="navbar-avatar">
+                <img src="/assets/default-avatar.png" [alt]="profile.firstName">
+            </div>
+        </button>
+        } @else {
+        <button mat-icon-button class="user-menu-trigger" (click)="onMenuClick()">
+            <mat-icon>person</mat-icon>
+        </button>
+        }
+    </div>
+</nav>

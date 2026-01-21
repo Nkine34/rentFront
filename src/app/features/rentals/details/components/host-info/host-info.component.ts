@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Host } from '../models/host.model';
+import { Host } from '../../../models/host.model';
 
 
 @Component({

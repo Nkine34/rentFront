@@ -107,36 +107,14 @@
   <!-- MAIN CONTENT -->
   <mat-drawer-content class="main-content">
     <!-- Top Navigation Bar -->
-    <nav class="top-navbar">
-      <div class="navbar-container">
-        <a routerLink="/" class="logo">
-          <mat-icon class="logo-icon">apartment</mat-icon>
-          <span class="logo-text">LUXESTAY</span>
-        </a>
-
-        <div class="search-container">
-          <app-simple-search (searchSubmit)="handleSearch($event)"></app-simple-search>
-        </div>
-
-        <!-- User Avatar to open menu -->
-        @if (authService.isLoggedIn() && authService.userProfile(); as profile) {
-        <button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
-          <span class="trigger-name">{{ profile.firstName }}</span>
-          <div class="navbar-avatar">
-            <img src="/assets/default-avatar.png" [alt]="profile.firstName">
-          </div>
-        </button>
-        } @else {
-        <button mat-icon-button class="user-menu-trigger" (click)="toggleDrawer(drawer)">
-          <mat-icon>person</mat-icon>
-        </button>
-        }
-      </div>
-    </nav>
+    <app-header (menuClick)="toggleDrawer(drawer)"></app-header>
 
     <!-- Page Content -->
     <div class="page-content">
       <router-outlet />
     </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
   </mat-drawer-content>
 </mat-drawer-container>

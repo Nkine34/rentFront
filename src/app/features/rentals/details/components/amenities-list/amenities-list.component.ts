@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
-import { Amenities } from '../models/amenities.model';
-import { AmenityDetailsPipe } from '../pipes/amenity-details.pipe';
+import { Amenities } from '../../../models/amenities.model';
+import { AmenityDetailsPipe } from '../../../pipes/amenity-details.pipe';
 
 @Component({
   selector: 'app-amenities-list',

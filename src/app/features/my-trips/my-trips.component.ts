@@ -11,7 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ReviewFormDialogComponent } from '../rentals/details/reviews/review-form-dialog.component';
+import { ReviewFormDialogComponent } from '../rentals/details/components/reviews/review-form-dialog.component';
 
 @Component({
     selector: 'app-my-trips',

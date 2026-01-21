@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
-import { ReviewService } from '../../../../shared/services/review.service';
-import { CreateReviewDto } from '../../../../shared/models/review.model';
+import { ReviewService } from '../../../../../shared/services/review.service';
+import { CreateReviewDto } from '../../../../../shared/models/review.model';
 
 @Component({
     selector: 'app-review-form-dialog',

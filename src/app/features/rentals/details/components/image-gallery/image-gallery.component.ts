@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output, HostListener, OnInit, OnDestroy
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { LocationPhoto } from '../../models/location-photo.model';
+import { LocationPhoto } from '../../../models/location-photo.model';
 
 @Component({
     selector: 'app-image-gallery',
